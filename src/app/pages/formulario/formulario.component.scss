@@ -45,12 +45,12 @@ section{
 }
 
 input[type=radio] {
-  width: 2em;
-  height: 1.8rem;
+  width: 32px;
+  height: 32px;
   border: 1px solid #6F309F;
   appearance: none;
   -webkit-appearance: none;
-  border-radius: 0.1rem;
+  border-radius: 5px;
   color: white;
 }
 
@@ -77,6 +77,12 @@ input[type=radio]:focus {
   .disclaimer{
     width: 100%;
     padding: 1rem;
+  }
+
+  .container_question{
+    .answer{
+      width: 200px;
+    }
   }
 
 }
