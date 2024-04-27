@@ -38,7 +38,10 @@ export class FormularioComponent {
         disabled: true,
         checkedYes: false,
         checkedNo: false,
-        content: '',
+        content: `Una franquicia es un acuerdo donde el
+        franquiciador permite al franquiciado explotar un negocio bajo su marca y sistema a cambio de un pago. Beneficia al
+        franquiciado con una marca establecida y soporte, mientras el franquiciador expande su mercado con menor riesgo. Se aplica
+        en varios sectores como restauración y retail. Ejemplos incluyen McDonald's y Starbucks.`,
       },
       {
         id: 3,
@@ -341,6 +344,7 @@ siembra.
       this.questions[4].disabled = true;
       this.questions[5].disabled = true;
       this.questions[6].disabled = true;
+      this.questions[3].checkedYes = false;
     }
 
     if (id === 5 && value) {
@@ -353,14 +357,13 @@ siembra.
     if (id === 5 && value === 'no') {
       this.questions[5].disabled = true;
     }
-    if (id === 6 && value) {
-      this.questions[5].disabled = false;
-    }
+
     if (id === 6 && value === 'no') {
       this.questions[3].checkedYes = true;
       this.questions[5].disabled = true;
       this.getAnswer('si', 4);
     }
+
     if (id === 6 && value === 'si') {
       this.questions[3].checkedYes = false;
       this.getAnswer('', 4);
