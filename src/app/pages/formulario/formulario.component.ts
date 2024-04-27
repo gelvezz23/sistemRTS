@@ -376,5 +376,6 @@ siembra.
       this.questions[questionIndex].value = value;
     }
     this.getValidateAnswer(id, value);
+    this.saveLocalStorage();
   }
 }
