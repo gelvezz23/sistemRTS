@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { ModalComponent } from '../../components/modal/modal.component';
+import { DisclaimerComponent } from '../../components/disclaimer/disclaimer.component';
 
 @Component({
   selector: 'app-formulario-dos',
   standalone: true,
   templateUrl: './formulario-dos.component.html',
   styleUrl: './formulario-dos.component.scss',
-  imports: [ModalComponent],
+  imports: [ModalComponent, DisclaimerComponent],
 })
 export class FormularioDosComponent {
   public questions: {

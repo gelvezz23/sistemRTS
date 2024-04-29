@@ -9,7 +9,8 @@ h3{
 }
 section{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  align-items: flex-start;
   width: 100%;
 }
 .disabled{
@@ -23,6 +24,23 @@ section{
   background-color: white;
 }
 
+.footer-form{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 1rem;
+
+  input[type=submit]{
+    background-color: #02B0F0;
+    border: none;
+    border-radius: 2rem;
+    color: white;
+    padding: 0.5rem 1rem;
+
+  }
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -30,6 +48,7 @@ section{
   padding: 20px;
   flex-direction: column;
 }
+
 
 .container_question{
   display: flex;
