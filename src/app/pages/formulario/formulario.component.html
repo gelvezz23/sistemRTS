@@ -2,18 +2,10 @@
   Sobre La actividad economica <br />
   que desea formalizar :
 </h2>
-
 <section>
-  <div class="disclaimer">
-    <p>
-      Todas las preguntas deben responderse con la informacion de la persona
-      natural o juridica quien lleva el negocio. Ejemplo, si realiza la
-      actividad economica a traves de una sociedad, la informacion es de la
-      sociedad
-    </p>
-  </div>
+ <app-disclaimer class="disclaimer" />
 
-  <form class="container">
+  <form class="container" (submit)="handleSubmit" >
     <div class="container_question">
       <div class="question"></div>
       <div class="answer">
@@ -25,31 +17,8 @@
     @for( quest of questions; track questions){
 
     <div class="container_question">
-      <div class="question">
-        @if(quest.disabled === true){
-        <h3 class="disabled">
-          {{ quest.question }}
-        </h3>
-        <img
-          src="./assets/images/icon-disabled.svg"
-          alt="?"
-          [attr.data-bs-toggle]="'modal'"
-          [attr.data-bs-target]="'#exampleModal-' + quest.id"
-        />
+      <app-quest [quest]="quest" class="question"/>
 
-        } @else {
-        <h3>
-          {{ quest.question }}
-        </h3>
-        <img
-          src="./assets/images/icon.svg"
-          alt="?"
-          [attr.data-bs-toggle]="'modal'"
-          [attr.data-bs-target]="'#exampleModal-' + quest.id"
-        />
-
-        }
-      </div>
       <div class="answer">
         @if(quest.disabled === true){
         <input
@@ -61,7 +30,7 @@
           value="si"
           [checked]="quest.checkedYes"
           [disabled]="quest.disabled"
-          [required]="quest.disabled"
+          [required]="quest.required"
         />
         <input
           (change)="getAnswer('no', quest.id)"
@@ -71,7 +40,7 @@
           name="{{ quest.id }}"
           [checked]="quest.checkedNo"
           [disabled]="quest.disabled"
-          [required]="quest.disabled"
+          [required]="quest.required"
           value="no"
         />
         @if (quest.id === 4) {
@@ -97,7 +66,7 @@
           value="si"
           [checked]="quest.checkedYes"
           [disabled]="quest.disabled"
-          [required]="quest.disabled"
+          [required]="quest.required"
         />
         <input
           (change)="getAnswer('no', quest.id)"
@@ -107,7 +76,7 @@
           name="{{ quest.id }}"
           [checked]="quest.checkedNo"
           [disabled]="quest.disabled"
-          [required]="quest.disabled"
+          [required]="quest.required"
           value="no"
         />
         @if (quest.id === 4) {

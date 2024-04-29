@@ -10,12 +10,11 @@ h3{
 section{
   display: flex;
   justify-content: space-evenly;
+  width: 100%;
 }
 .disabled{
   color: #8e8e8e;
 }
-
-
 
 .disclaimer{
   width: 20%;
@@ -34,16 +33,15 @@ section{
 
 .container_question{
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   gap: 1rem;
+  align-items: center;
   width: 100%;
   .question{
-    width: 80%;
+    width: 30%;
     gap: 1rem;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
   .answer{
     width: 20%;
@@ -52,6 +50,23 @@ section{
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+
+    &-inputs-text{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+      left: -9rem;
+      div{
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+
+        input{
+          height: 2rem;
+        }
+      }
+    }
   }
 }
 input[type=radio].disabled {
@@ -80,6 +95,10 @@ input[type=radio]:focus {
   outline-color: transparent;
 }
 
+.quest-10{
+  width: 50%;
+}
+
 
 
 
@@ -96,6 +115,11 @@ input[type=radio]:focus {
   .container_question{
     .answer{
       width: 200px;
+
+      &-inputs-text{
+        width: 100%;
+      }
+
     }
   }
 

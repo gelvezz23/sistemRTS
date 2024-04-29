@@ -33,7 +33,8 @@ export class FormularioDosComponent {
       },
       {
         id: 10,
-        question: '¿Cual fue el monto de sus consignaciones bancarias?',
+        question:
+          '¿Cual fue el monto de sus consignaciones bancarias, depositos o inversiones financieras en el año inmediatamente anterior?',
         value: '',
         disabled: false,
         checkedYes: false,
@@ -70,7 +71,6 @@ export class FormularioDosComponent {
   }
 
   public getValidateAnswer(id: number, value: string): void {
-    console.log(id);
     if (id === 1 && value === 'si') {
       this.questions[1].disabled = false;
       this.questions[2].disabled = false;

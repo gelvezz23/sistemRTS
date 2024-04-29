@@ -24,111 +24,140 @@
     @for( quest of questions; track questions){
 
     <div class="container_question">
+      @if(quest.disabled === true){
       <div class="question">
-        @if(quest.disabled === true){
-        <h3 class="disabled">
-          {{ quest.question }}
-        </h3>
+
+
+        @if(quest.id === 10){
+
+          <h3 class="quest-10">
+            {{ quest.question }}
+          </h3>
+
+        } @else {
+          <h3 class="disabled">
+            {{ quest.question }}
+          </h3>
+        }
+
+
+        @if(quest.id !== 10){
         <img
           src="./assets/images/icon-disabled.svg"
           alt="?"
           [attr.data-bs-toggle]="'modal'"
           [attr.data-bs-target]="'#exampleModal-' + quest.id"
         />
+      }
+      </div>
+
+      <div class="answer">
+        <input
+          (change)="getAnswer('si', quest.id)"
+          class="input-checkbox disabled"
+          type="radio"
+          id="si"
+          name="{{ quest.id }}"
+          value="si"
+          [checked]="quest.checkedYes"
+          [disabled]="quest.disabled"
+          [required]="quest.disabled"
+        />
+        <input
+          (change)="getAnswer('no', quest.id)"
+          class="input-checkbox disabled"
+          type="radio"
+          id="no"
+          name="{{ quest.id }}"
+          [checked]="quest.checkedNo"
+          [disabled]="quest.disabled"
+          [required]="quest.disabled"
+          value="no"
+        />
+      </div>
+
+      } @else {
+      <div class="question">
+        @if(quest.id === 10){
+
+          <h3 class="quest-10">
+            {{ quest.question }}
+          </h3>
 
         } @else {
-        <h3>
-          {{ quest.question }}
-        </h3>
+          <h3>
+            {{ quest.question }}
+          </h3>
+        }
+
+        @if(quest.id !== 10){
         <img
           src="./assets/images/icon.svg"
           alt="?"
           [attr.data-bs-toggle]="'modal'"
           [attr.data-bs-target]="'#exampleModal-' + quest.id"
         />
-
         }
       </div>
-      <div class="answer">
-        @if(quest.disabled === true){
-        <input
-          (change)="getAnswer('si', quest.id)"
-          class="input-checkbox disabled"
-          type="radio"
-          id="si"
-          name="{{ quest.id }}"
-          value="si"
-          [checked]="quest.checkedYes"
-          [disabled]="quest.disabled"
-          [required]="quest.disabled"
-        />
-        <input
-          (change)="getAnswer('no', quest.id)"
-          class="input-checkbox disabled"
-          type="radio"
-          id="no"
-          name="{{ quest.id }}"
-          [checked]="quest.checkedNo"
-          [disabled]="quest.disabled"
-          [required]="quest.disabled"
-          value="no"
-        />
-        @if (quest.id === 4) {
 
-        <input
-          (change)="getAnswer('no se', quest.id)"
-          class="input-checkbox disabled"
-          type="radio"
-          id="nose"
-          [checked]="quest.checkedNose"
-          name="{{ quest.id }}"
-          value="no se"
-          required
-        />
-        } } @else {
+      @if(quest.id === 10){
+      <div class="answer-inputs-text">
+        <div>
+          <label >De la actividad gravada con iva</label>
+          <input
+            (change)="getAnswer('no se', quest.id)"
+            class="input-checkbox disabled"
+            type="number"
+            id="nose"
+            name="gravada-con-iva"
+            required
+          />
+        </div>
 
-        <input
-          (change)="getAnswer('si', quest.id)"
-          class="input-checkbox"
-          type="radio"
-          id="si"
-          name="{{ quest.id }}"
-          value="si"
-          [checked]="quest.checkedYes"
-          [disabled]="quest.disabled"
-          [required]="quest.disabled"
-        />
-        <input
-          (change)="getAnswer('no', quest.id)"
-          class="input-checkbox"
-          type="radio"
-          id="no"
-          name="{{ quest.id }}"
-          [checked]="quest.checkedNo"
-          [disabled]="quest.disabled"
-          [required]="quest.disabled"
-          value="no"
-        />
-        @if (quest.id === 4) {
-
-        <input
-          (change)="getAnswer('no se', quest.id)"
-          class="input-checkbox"
-          type="radio"
-          id="nose"
-          name="{{ quest.id }}"
-          [checked]="quest.checkedNose"
-          value="no se"
-          required
-        />
-        } }
+        <div>
+          <label >Otras</label>
+          <input
+            (change)="getAnswer('no se', quest.id)"
+            class="input-checkbox disabled"
+            type="number"
+            id="nose"
+            name="gravada-con-iva"
+            required
+          />
+        </div>
       </div>
-      <app-modal
-        [id]="quest.id"
-        [modalTitle]="quest.question"
-        [modalContent]="quest.content"
-      />
+      } @else{
+      <div class="answer">
+        <input
+          (change)="getAnswer('si', quest.id)"
+          class="input-checkbox"
+          type="radio"
+          id="si"
+          name="{{ quest.id }}"
+          value="si"
+          [checked]="quest.checkedYes"
+          [disabled]="quest.disabled"
+          [required]="quest.disabled"
+        />
+        <input
+          (change)="getAnswer('no', quest.id)"
+          class="input-checkbox"
+          type="radio"
+          id="no"
+          name="{{ quest.id }}"
+          [checked]="quest.checkedNo"
+          [disabled]="quest.disabled"
+          [required]="quest.disabled"
+          value="no"
+        />
+      </div>
+      } }
     </div>
+    <app-modal
+      [id]="quest.id"
+      [modalTitle]="quest.question"
+      [modalContent]="quest.content"
+    />
 
     }
   </div>

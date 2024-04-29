@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { ModalComponent } from '../../components/modal/modal.component';
+import { DisclaimerComponent } from '../../components/disclaimer/disclaimer.component';
+import { QuestionComponent } from '../../components/question/question.component';
 
 @Component({
   selector: 'app-formulario',
   standalone: true,
   templateUrl: './formulario.component.html',
   styleUrl: './formulario.component.scss',
-  imports: [ModalComponent],
+  imports: [ModalComponent, DisclaimerComponent, QuestionComponent],
 })
 export class FormularioComponent {
   public questions: {
@@ -18,6 +20,7 @@ export class FormularioComponent {
     checkedYes: boolean | string;
     checkedNo: boolean | string;
     checkedNose?: boolean | string;
+    required: boolean;
   }[];
   constructor() {
     this.questions = [
@@ -27,6 +30,7 @@ export class FormularioComponent {
           '¿Coresponde una actividad de restaurante, cafeterías, autoservicio, bares y similares?',
         value: '',
         disabled: false,
+        required: true,
         checkedYes: false,
         checkedNo: false,
         content: '',
@@ -38,6 +42,7 @@ export class FormularioComponent {
         disabled: true,
         checkedYes: false,
         checkedNo: false,
+        required: true,
         content: `Una franquicia es un acuerdo donde el
         franquiciador permite al franquiciado explotar un negocio bajo su marca y sistema a cambio de un pago. Beneficia al
         franquiciado con una marca establecida y soporte, mientras el franquiciador expande su mercado con menor riesgo. Se aplica
@@ -48,6 +53,7 @@ export class FormularioComponent {
         question: '¿Se utilizan marcas propias?',
         value: '',
         disabled: true,
+        required: true,
         checkedYes: false,
         checkedNo: false,
         content:
@@ -59,6 +65,7 @@ export class FormularioComponent {
         value: '',
         disabled: false,
         checkedYes: false,
+        required: true,
         checkedNo: false,
         checkedNose: false,
         content: '',
@@ -68,6 +75,7 @@ export class FormularioComponent {
         question: '¿Consiste en venta de bienes corporales muebles?',
         value: '',
         disabled: true,
+        required: true,
         checkedYes: false,
         checkedNo: false,
         content: '',
@@ -78,6 +86,7 @@ export class FormularioComponent {
         value: '',
         disabled: true,
         checkedYes: false,
+        required: true,
         checkedNo: false,
         content: `Un bien excluido es aquel que no está gravada su venta con IVA, en virtud de la ley. El Estatuto Tributario en el artículo 424 indica algunos bienes excluidos, entre los cuales podemos encontrar los siguientes: Viene lista larga del 424:
         Animales vivos de la especie porcina.
@@ -294,6 +303,7 @@ siembra.
         disabled: true,
         checkedYes: false,
         checkedNo: false,
+        required: true,
         content: '',
       },
       {
@@ -302,17 +312,18 @@ siembra.
         value: '',
         disabled: false,
         checkedYes: false,
+        required: true,
         checkedNo: false,
         content: '',
       },
     ];
   }
+
   public saveLocalStorage(): void {
     localStorage.setItem('response', JSON.stringify(this.questions));
   }
 
   public getValidateAnswer(id: number, value: string): void {
-    console.log(id);
     if (id === 1 && value === 'si') {
       this.questions[1].disabled = false;
       this.questions[2].disabled = false;
@@ -380,5 +391,10 @@ siembra.
     }
     this.getValidateAnswer(id, value);
     this.saveLocalStorage();
+  }
+
+  public handleSubmit(event: any): void {
+    event.preventDefault();
+    console.log(event);
   }
 }

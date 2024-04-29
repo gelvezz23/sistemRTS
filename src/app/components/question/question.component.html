@@ -1,0 +1,25 @@
+
+  @if(quest.disabled === true){
+  <h3 class="disabled">
+    {{ quest.question }}
+  </h3>
+  <img
+    src="./assets/images/icon-disabled.svg"
+    alt="?"
+    [attr.data-bs-toggle]="'modal'"
+    [attr.data-bs-target]="'#exampleModal-' + quest.id"
+  />
+
+  } @else {
+  <h3>
+    {{ quest.question }}
+  </h3>
+  <img
+    src="./assets/images/icon.svg"
+    alt="?"
+    [attr.data-bs-toggle]="'modal'"
+    [attr.data-bs-target]="'#exampleModal-' + quest.id"
+  />
+
+  }
+
