@@ -48,11 +48,21 @@ export class FormularioDosComponent {
         content: '',
       },
       {
+        id: 101,
+        question:
+          '¿Cual fue el monto de sus consignaciones bancarias, depositos o inversiones financieras en el año inmediatamente anterior?',
+        value: '',
+        disabled: this.constitucion !== 'persona natural',
+        checkedYes: false,
+        checkedNo: false,
+        content: '',
+      },
+      {
         id: 11,
         question:
           '¿Realizo compras y consumos totales superioes a 1400 unidades de Valor Tributario (UVT) ($65.891.000) durante el año inmediatamente anterior ?',
         value: '',
-        disabled: false,
+        disabled: this.constitucion !== 'persona natural',
         checkedYes: false,
         checkedNo: false,
         content:
@@ -63,7 +73,7 @@ export class FormularioDosComponent {
         question: `¿La actividad económica se realiza bajo un sistema que implique la explotación de
           intangibles (por ejemplo, franquicia, concesión, regalía o similar) ?`,
         value: '',
-        disabled: false,
+        disabled: this.constitucion !== 'persona natural',
         checkedYes: false,
         checkedNo: false,
         content: `Los intangibles son activos no físicos que
@@ -76,7 +86,7 @@ export class FormularioDosComponent {
   }
 
   public saveLocalStorage(): void {
-    localStorage.setItem('response', JSON.stringify(this.questions));
+    localStorage.setItem('response-two', JSON.stringify(this.questions));
   }
 
   public getValidateAnswer(id: number, value: string): void {
@@ -143,6 +153,7 @@ export class FormularioDosComponent {
       this.questions[questionIndex].value = value;
     }
     this.getValidateAnswer(id, value);
+    this.saveLocalStorage();
   }
 
   public updateValue(event: any) {
@@ -150,6 +161,7 @@ export class FormularioDosComponent {
     if (Number.isNaN(val)) {
       val = 0;
     }
+    this.getAnswer(val.toString(), 10);
     this.cantidad = formatCurrency(
       val,
       'en-US',
@@ -158,14 +170,11 @@ export class FormularioDosComponent {
   }
 
   public updateValueDos(event: any) {
-    let formattedValue = this.cantidad.toString();
-    formattedValue = formattedValue.slice(0, -2);
-
     let val = parseInt(event.value || '', 10);
     if (Number.isNaN(val)) {
       val = 0;
     }
-
+    this.getAnswer(val.toString(), 101);
     this.cantidadDos = formatCurrency(
       val,
       'en-US',

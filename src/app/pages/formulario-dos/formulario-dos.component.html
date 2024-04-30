@@ -6,7 +6,7 @@
 <section>
   <app-disclaimer class="disclaimer" />
 
-  <form class="container" >
+  <form class="container">
     <div class="container_question">
       <div class="question"></div>
       <div class="answer">
@@ -14,34 +14,28 @@
         <label>No</label>
       </div>
     </div>
-    @for( quest of questions; track questions){
-
+    @for( quest of questions; track questions){ @if(quest.id !== 101){
     <div class="container_question">
       @if(quest.disabled === true){
       <div class="question">
-
-
         @if(quest.id === 10){
 
-          <h3 class="quest-10">
-            {{ quest.question }}
-          </h3>
+        <h3 class="quest-10">
+          {{ quest.question }}
+        </h3>
 
         } @else {
-          <h3 class="disabled">
-            {{ quest.question }}
-          </h3>
-        }
-
-
-        @if(quest.id !== 10){
+        <h3 class="disabled">
+          {{ quest.question }}
+        </h3>
+        } @if(quest.id !== 10){
         <img
           src="./assets/images/icon-disabled.svg"
           alt="?"
           [attr.data-bs-toggle]="'modal'"
           [attr.data-bs-target]="'#exampleModal-' + quest.id"
         />
-      }
+        }
       </div>
 
       <div class="answer">
@@ -73,17 +67,15 @@
       <div class="question">
         @if(quest.id === 10){
 
-          <h3 class="quest-10">
-            {{ quest.question }}
-          </h3>
+        <h3 class="quest-10">
+          {{ quest.question }}
+        </h3>
 
         } @else {
-          <h3>
-            {{ quest.question }}
-          </h3>
-        }
-
-        @if(quest.id !== 10){
+        <h3>
+          {{ quest.question }}
+        </h3>
+        } @if(quest.id !== 10){
         <img
           src="./assets/images/icon.svg"
           alt="?"
@@ -96,10 +88,10 @@
       @if(quest.id === 10){
       <div class="answer-inputs-text">
         <div>
-          <label >De la actividad gravada con iva</label>
+          <label>De la actividad gravada con iva</label>
           <input
-          (onChange)="updateValue($event.target || '')"
-          [value]="cantidad"
+            (change)="updateValue($event.target || '')"
+            [value]="cantidad"
             class="input-checkbox disabled"
             type="text"
             id="nose"
@@ -109,7 +101,7 @@
         </div>
 
         <div>
-          <label >Otras</label>
+          <label>Otras</label>
           <input
             (change)="updateValueDos($event.target || '')"
             [value]="cantidadDos"
@@ -153,11 +145,10 @@
       [modalTitle]="quest.question"
       [modalContent]="quest.content"
     />
-
-    }
+    } }
 
     <div class="footer-form">
-      <input type="submit" value="Continuar"/>
+      <input type="submit" value="Continuar" />
     </div>
   </form>
 </section>
