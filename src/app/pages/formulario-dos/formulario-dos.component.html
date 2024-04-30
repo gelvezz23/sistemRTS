@@ -98,9 +98,10 @@
         <div>
           <label >De la actividad gravada con iva</label>
           <input
-            (change)="getAnswer('no se', quest.id)"
+          (onChange)="updateValue($event.target || '')"
+          [value]="cantidad"
             class="input-checkbox disabled"
-            type="number"
+            type="text"
             id="nose"
             name="gravada-con-iva"
             required
@@ -110,9 +111,10 @@
         <div>
           <label >Otras</label>
           <input
-            (change)="getAnswer('no se', quest.id)"
+            (change)="updateValueDos($event.target || '')"
+            [value]="cantidadDos"
             class="input-checkbox disabled"
-            type="number"
+            type="text"
             id="nose"
             name="gravada-con-iva"
             required

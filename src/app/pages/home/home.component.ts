@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
 import { FormularioComponent } from '../formulario/formulario.component';
-import { FormularioDosComponent } from '../formulario-dos/formulario-dos.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  imports: [FormularioComponent, FormularioDosComponent],
+  imports: [FormularioComponent, FormularioComponent],
 })
-export class HomeComponent {}
+export class HomeComponent {
+  constructor(private router: Router) {}
+
+  public handleClick() {
+    this.router.navigate(['form']);
+  }
+}

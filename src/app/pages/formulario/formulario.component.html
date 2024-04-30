@@ -5,7 +5,7 @@
 <section>
  <app-disclaimer class="disclaimer" />
 
-  <form class="container" (submit)="handleSubmit" >
+  <form class="container" (ngSubmit)="handleSubmit($event.target)" >
     <div class="container_question">
       <div class="question"></div>
       <div class="answer">

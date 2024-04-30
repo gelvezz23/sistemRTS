@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalComponent } from '../../components/modal/modal.component';
 import { DisclaimerComponent } from '../../components/disclaimer/disclaimer.component';
+import { formatCurrency, getCurrencySymbol } from '@angular/common';
 
 @Component({
   selector: 'app-formulario-dos',
@@ -20,7 +21,11 @@ export class FormularioDosComponent {
     checkedNo: boolean | string;
     checkedNose?: boolean | string;
   }[];
+  public constitucion: string;
+  public cantidad!: string;
+  public cantidadDos!: string;
   constructor() {
+    this.constitucion = 'persona natural';
     this.questions = [
       {
         id: 9,
@@ -37,7 +42,7 @@ export class FormularioDosComponent {
         question:
           '¿Cual fue el monto de sus consignaciones bancarias, depositos o inversiones financieras en el año inmediatamente anterior?',
         value: '',
-        disabled: false,
+        disabled: this.constitucion !== 'persona natural',
         checkedYes: false,
         checkedNo: false,
         content: '',
@@ -66,7 +71,10 @@ export class FormularioDosComponent {
         A diferencia de cosas físicas como computadoras o edificios, su valor viene de lo que representan, como ideas o reputación.`,
       },
     ];
+    this.cantidad = '';
+    this.cantidadDos = '';
   }
+
   public saveLocalStorage(): void {
     localStorage.setItem('response', JSON.stringify(this.questions));
   }
@@ -135,5 +143,33 @@ export class FormularioDosComponent {
       this.questions[questionIndex].value = value;
     }
     this.getValidateAnswer(id, value);
+  }
+
+  public updateValue(event: any) {
+    let val = parseInt(event.value || '', 10);
+    if (Number.isNaN(val)) {
+      val = 0;
+    }
+    this.cantidad = formatCurrency(
+      val,
+      'en-US',
+      getCurrencySymbol('USD', 'wide')
+    );
+  }
+
+  public updateValueDos(event: any) {
+    let formattedValue = this.cantidad.toString();
+    formattedValue = formattedValue.slice(0, -2);
+
+    let val = parseInt(event.value || '', 10);
+    if (Number.isNaN(val)) {
+      val = 0;
+    }
+
+    this.cantidadDos = formatCurrency(
+      val,
+      'en-US',
+      getCurrencySymbol('USD', 'narrow')
+    );
   }
 }
