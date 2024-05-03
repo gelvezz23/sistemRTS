@@ -10,6 +10,9 @@ import { Component, Input } from '@angular/core';
 export class ModalComponent {
   [x: string]: any;
   public bienesExcluidos: string[];
+  filtroNombre: string = '';
+  showList: boolean = false;
+  matchingSearch: string[] = [];
   @Input({ required: true }) modalTitle!: string;
   @Input({ required: true }) modalContent!: string;
   @Input({ required: true }) id!: number;
@@ -192,5 +195,20 @@ export class ModalComponent {
       'Incentivos de premio inmediato de juegos de suerte y azar territoriales.',
       'El petróleo crudo recibido por parte de la Agencia Nacional de Hidrocarburos por concepto de pago de regalías para su respectiva monetización.	',
     ];
+  }
+
+  getItems(target: any) {
+    const value = (target.value || '').toLowerCase();
+    this.showList = value !== '';
+    if (this.showList) {
+      this.matchingSearch = this.bienesExcluidos.filter((items) =>
+        items.toLowerCase().includes(value)
+      );
+    }
+    console.log('count: ', value, this.matchingSearch.length);
+  }
+
+  filtroNombreChange(target: any) {
+    this.filtroNombre = target.value;
   }
 }

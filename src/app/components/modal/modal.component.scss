@@ -1,4 +1,13 @@
 .modal-body{
   max-height: 15rem;
   overflow-y: auto;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.inputFilter{
+  width: 100%;
+  padding: 1rem;
+  margin: auto;
 }

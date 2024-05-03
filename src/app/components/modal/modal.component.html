@@ -20,6 +20,34 @@
       </div>
       <div class="modal-body overflow-auto">
         @if(id === 8){
+
+          <input type="text" (input)="getItems($event.target)" placeholder="Buscador..." class="inputFilter">
+@if(matchingSearch.length > 0){
+
+  @for(items of matchingSearch; track matchingSearch; let idx = $index) {
+    <div class="list-group">
+      <button type="button" class="list-group-item list-group-item-action">
+       {{idx + 1}}. {{ items }}
+      </button>
+
+    </div>
+  }
+}@else{
+  @for(items of bienesExcluidos; track bienesExcluidos; let idx = $index ) {
+    <div class="list-group">
+      <button type="button" class="list-group-item list-group-item-action">
+        {{idx + 1}}. {{ items }}
+      </button>
+
+    </div>
+}
+
+
+
+}
+
+
+
           @for( items of bienesExcluidos; track bienesExcluidos){
         <div class="list-group">
           <button type="button" class="list-group-item list-group-item-action">
