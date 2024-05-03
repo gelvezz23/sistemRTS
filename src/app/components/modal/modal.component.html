@@ -1,15 +1,41 @@
-<div class="modal fade" [id]="'exampleModal-' + id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div
+  class="modal fade"
+  [id]="'exampleModal-' + id"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">{{modalTitle}}</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          {{ modalTitle }}
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
-      <div class="modal-body">
-        {{modalContent}}
+      <div class="modal-body overflow-auto">
+        @if(id === 8){
+          @for( items of bienesExcluidos; track bienesExcluidos){
+        <div class="list-group">
+          <button type="button" class="list-group-item list-group-item-action">
+            {{ items }}
+          </button>
+
+        </div>
+      }
+        }
+
+        {{ modalContent }}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">volver</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          volver
+        </button>
       </div>
     </div>
   </div>
