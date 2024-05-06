@@ -90,7 +90,7 @@
         <div>
           <label>De la actividad gravada con iva</label>
           <input
-            (change)="updateValue($event.target || '')"
+            (change)="updateValue($event.target || '', 10)"
             [value]="cantidad"
             class="input-checkbox disabled"
             type="text"
@@ -103,7 +103,7 @@
         <div>
           <label>Otras</label>
           <input
-            (change)="updateValueDos($event.target || '')"
+            (change)="updateValue($event.target || '', 101)"
             [value]="cantidadDos"
             class="input-checkbox disabled"
             type="text"

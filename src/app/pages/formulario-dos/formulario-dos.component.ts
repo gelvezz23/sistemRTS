@@ -156,29 +156,26 @@ export class FormularioDosComponent {
     this.saveLocalStorage();
   }
 
-  public updateValue(event: any) {
+  public updateValue(event: any, id: number) {
     let val = parseInt(event.value || '', 10);
     if (Number.isNaN(val)) {
       val = 0;
     }
-    this.getAnswer(val.toString(), 10);
-    this.cantidad = formatCurrency(
-      val,
-      'en-US',
-      getCurrencySymbol('USD', 'wide')
-    );
-  }
 
-  public updateValueDos(event: any) {
-    let val = parseInt(event.value || '', 10);
-    if (Number.isNaN(val)) {
-      val = 0;
+    if (id === 10) {
+      this.cantidad = formatCurrency(
+        val,
+        'en-US',
+        getCurrencySymbol('USD', 'wide')
+      );
     }
-    this.getAnswer(val.toString(), 101);
-    this.cantidadDos = formatCurrency(
-      val,
-      'en-US',
-      getCurrencySymbol('USD', 'narrow')
-    );
+    if (id === 101) {
+      this.cantidadDos = formatCurrency(
+        val,
+        'en-US',
+        getCurrencySymbol('USD', 'wide')
+      );
+    }
+    this.getAnswer(val.toString(), id);
   }
 }

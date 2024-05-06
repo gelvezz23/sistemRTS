@@ -1,7 +1,4 @@
-* {
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-}
+
 .container {
   display: flex;
   width: 100%;
@@ -15,6 +12,7 @@
   font-size: larger;
   font-weight: 500;
   line-height: 1.7rem;
+  max-width:15rem;
 }
 .container .ques-container {
   font-size: large;
@@ -31,7 +29,7 @@
   align-items: center;
   margin-bottom: 1.5rem;
 }
-.container .ques-container input {
+.container .ques-container input.input {
   border: 2px solid #6f309f;
   width: 13rem;
   height: 2rem;
@@ -46,6 +44,27 @@
 }
 .container .ques-container .large-ques {
   width: 21rem;
+}
+
+img{
+  margin: 0px 1rem;
+}
+
+.footer-form{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 1rem;
+
+  input[type=submit]{
+    background-color: #02B0F0;
+    border: none ;
+    border-radius: 2rem ;
+    color: white;
+    padding: 0.5rem 1rem ;
+
+  }
 }
 
 

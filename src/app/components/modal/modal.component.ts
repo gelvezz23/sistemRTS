@@ -205,7 +205,6 @@ export class ModalComponent {
         items.toLowerCase().includes(value)
       );
     }
-    console.log('count: ', value, this.matchingSearch.length);
   }
 
   filtroNombreChange(target: any) {
