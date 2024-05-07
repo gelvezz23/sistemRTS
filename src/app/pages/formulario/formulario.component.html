@@ -83,13 +83,13 @@
         @if (quest.id === 4) {
 
         <input
-          (change)="getAnswer('no se', quest.id)"
+          (change)="getAnswer('nose', quest.id)"
           class="input-checkbox"
           type="radio"
           id="nose"
           name="{{ quest.id }}"
           [checked]="quest.checkedNose"
-          value="no se"
+          value="nose"
           required
         />
         } }

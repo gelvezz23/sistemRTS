@@ -115,7 +115,7 @@ export class FormularioComponent {
         id: 8,
         question: '¿Estos servicios están excluidos?',
         value: '',
-        disabled: false,
+        disabled: true,
         checkedYes: false,
         required: true,
         checkedNo: false,
@@ -147,7 +147,7 @@ export class FormularioComponent {
       this.questions[2].disabled = false;
     }
 
-    if (id === 4 && value === 'no se') {
+    if (id === 4 && value === 'nose') {
       this.questions[4].disabled = false;
       this.questions[6].disabled = false;
     }
@@ -178,12 +178,23 @@ export class FormularioComponent {
     if (id === 6 && value === 'no') {
       this.questions[3].checkedYes = true;
       this.questions[5].disabled = true;
+      this.questions[7].disabled = true;
+
       this.getAnswer('si', 4);
     }
 
     if (id === 6 && value === 'si') {
+      this.questions[7].disabled = true;
       this.questions[3].checkedYes = false;
-      this.getAnswer('', 4);
+      this.getAnswer('nose', 4);
+    }
+    console.log(id, value);
+    if (id === 7 && value === 'si') {
+      this.questions[7].disabled = false;
+    }
+
+    if (id === 7 && value === 'no') {
+      this.questions[7].disabled = true;
     }
   }
 
