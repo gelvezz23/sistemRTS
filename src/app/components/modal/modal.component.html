@@ -27,6 +27,8 @@
           placeholder="Buscador..."
           class="inputFilter"
         />
+        <a href="http://www.secretariasenado.gov.co/senado/basedoc/estatuto_tributario.html" target="_blank" >ver mas </a>
+
         @if(matchingSearch.length > 0){ @for(items of matchingSearch; track
         matchingSearch; let idx = $index) {
         <div class="list-group">
@@ -57,6 +59,7 @@
             placeholder="Buscador..."
             class="inputFilter"
           />
+          <a href="http://www.secretariasenado.gov.co/senado/basedoc/estatuto_tributario.html" target="_blank" >ver mas </a>
           @if(matchingSearchDos.length > 0){
             @for(items of matchingSearchDos; track matchingSearchDos; let idx = $index) {
           <div class="list-group">

@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
   imports: [ModalComponent, DisclaimerComponent, QuestionComponent],
 })
 export class FormularioComponent {
+  isValid: boolean = false;
   public questions: {
     id: number;
     question: string;
@@ -201,13 +202,18 @@ export class FormularioComponent {
   public handleSubmit($event: any): void {
     $event.preventDefault();
 
-    this.questions.map((items) => {
-      if (items.value === '' && items.disabled === false) {
-        items.error = true;
+    let isValid = true;
+    this.questions.forEach((item) => {
+      if (item.value === '' && !item.disabled) {
+        item.error = true;
+        isValid = false;
       } else {
-        items.error = false;
-        this.router.navigate(['form2']);
+        item.error = false;
       }
     });
+
+    if (isValid) {
+      this.router.navigate(['form2']);
+    }
   }
 }

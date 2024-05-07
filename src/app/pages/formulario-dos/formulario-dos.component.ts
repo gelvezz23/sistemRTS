@@ -196,13 +196,19 @@ export class FormularioDosComponent {
   public handleSubmit($event: any): void {
     $event.preventDefault();
 
-    this.questions.map((items) => {
-      if (items.value === '' && items.disabled === false) {
-        items.error = true;
+    // Validate only enabled fields
+    let isValid = true;
+    this.questions.forEach((item) => {
+      if (item.value === '' && !item.disabled) {
+        item.error = true;
+        isValid = false;
       } else {
-        items.error = false;
-        this.router.navigate(['form3']);
+        item.error = false;
       }
     });
+
+    if (isValid) {
+      this.router.navigate(['form3']);
+    }
   }
 }
