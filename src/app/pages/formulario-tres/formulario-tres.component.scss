@@ -6,7 +6,16 @@
   padding: 1rem;
   justify-content: center;
 }
-
+.disclaimer{
+  width: 20%;
+  font-size: 0.8rem;
+  padding: 1rem;
+  color: #6f309f;
+  background-color: white;
+}
+.disabled{
+  color: #8e8e8e;
+}
 .container .info-container p {
   color: #6f309f;
   font-size: larger;

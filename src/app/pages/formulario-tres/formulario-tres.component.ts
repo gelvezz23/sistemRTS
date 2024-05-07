@@ -1,12 +1,13 @@
 import { formatCurrency, getCurrencySymbol } from '@angular/common';
 import { Component } from '@angular/core';
+import { DisclaimerComponent } from '../../components/disclaimer/disclaimer.component';
 
 @Component({
   selector: 'app-formulario-tres',
   standalone: true,
-  imports: [],
   templateUrl: './formulario-tres.component.html',
   styleUrl: './formulario-tres.component.scss',
+  imports: [DisclaimerComponent],
 })
 export class FormularioTresComponent {
   public cantidad!: string;
@@ -41,7 +42,7 @@ export class FormularioTresComponent {
     ];
   }
   public withoutformat(value: string) {
-    return value.replace(/[\$|\,|\.]/g, '');
+    return value.replace(/[\$|\,|\.]|00$/g, '');
   }
   public saveLocalStorage(): void {
     localStorage.setItem('response-Three', JSON.stringify(this.answers));

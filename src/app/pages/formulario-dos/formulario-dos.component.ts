@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ModalComponent } from '../../components/modal/modal.component';
 import { DisclaimerComponent } from '../../components/disclaimer/disclaimer.component';
 import { formatCurrency, getCurrencySymbol } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario-dos',
@@ -20,11 +21,13 @@ export class FormularioDosComponent {
     checkedYes: boolean | string;
     checkedNo: boolean | string;
     checkedNose?: boolean | string;
+    required: boolean;
+    error: boolean;
   }[];
   public constitucion: string;
   public cantidad!: string;
   public cantidadDos!: string;
-  constructor() {
+  constructor(private router: Router) {
     this.constitucion = 'persona natural';
     this.questions = [
       {
@@ -34,6 +37,8 @@ export class FormularioDosComponent {
         disabled: false,
         checkedYes: false,
         checkedNo: false,
+        required: true,
+        error: false,
         content:
           'El establecimiento de comercio es un conjunto de bienes organizados por el empresario para desarrollar y cumplir los fines de la empresa, ejemplo: tiendas, supermercados, restaurantes, cafeterías, fábricas, almacenes, etc.',
       },
@@ -42,9 +47,11 @@ export class FormularioDosComponent {
         question:
           '¿Cual fue el monto de sus consignaciones bancarias, depositos o inversiones financieras en el año inmediatamente anterior?',
         value: '',
+        required: true,
         disabled: this.constitucion !== 'persona natural',
         checkedYes: false,
         checkedNo: false,
+        error: false,
         content: '',
       },
       {
@@ -52,9 +59,11 @@ export class FormularioDosComponent {
         question:
           '¿Cual fue el monto de sus consignaciones bancarias, depositos o inversiones financieras en el año inmediatamente anterior?',
         value: '',
+        required: true,
         disabled: this.constitucion !== 'persona natural',
         checkedYes: false,
         checkedNo: false,
+        error: false,
         content: '',
       },
       {
@@ -62,9 +71,11 @@ export class FormularioDosComponent {
         question:
           '¿Realizo compras y consumos totales superioes a 1400 unidades de Valor Tributario (UVT) ($65.891.000) durante el año inmediatamente anterior ?',
         value: '',
+        required: true,
         disabled: this.constitucion !== 'persona natural',
         checkedYes: false,
         checkedNo: false,
+        error: false,
         content:
           '¿La actividad economica se realiza bajo un sistema que implica la explotacion de intangibles (por ejemplo, franquicia,concesion, regalia o similar)',
       },
@@ -75,7 +86,10 @@ export class FormularioDosComponent {
         value: '',
         disabled: this.constitucion !== 'persona natural',
         checkedYes: false,
+        required: true,
         checkedNo: false,
+        error: false,
+
         content: `Los intangibles son activos no físicos que
         tienen valor para una organización o persona, como marcas comerciales, patentes, derechos de autor y propiedad intelectual.
         A diferencia de cosas físicas como computadoras o edificios, su valor viene de lo que representan, como ideas o reputación.`,
@@ -177,5 +191,18 @@ export class FormularioDosComponent {
       );
     }
     this.getAnswer(val.toString(), id);
+  }
+
+  public handleSubmit($event: any): void {
+    $event.preventDefault();
+
+    this.questions.map((items) => {
+      if (items.value === '' && items.disabled === false) {
+        items.error = true;
+      } else {
+        items.error = false;
+        this.router.navigate(['form3']);
+      }
+    });
   }
 }

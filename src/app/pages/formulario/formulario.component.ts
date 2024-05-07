@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ModalComponent } from '../../components/modal/modal.component';
 import { DisclaimerComponent } from '../../components/disclaimer/disclaimer.component';
 import { QuestionComponent } from '../../components/question/question.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario',
@@ -21,8 +22,9 @@ export class FormularioComponent {
     checkedNo: boolean | string;
     checkedNose?: boolean | string;
     required: boolean;
+    error: boolean;
   }[];
-  constructor() {
+  constructor(private router: Router) {
     this.questions = [
       {
         id: 1,
@@ -34,6 +36,7 @@ export class FormularioComponent {
         checkedYes: false,
         checkedNo: false,
         content: '',
+        error: false,
       },
       {
         id: 2,
@@ -43,6 +46,7 @@ export class FormularioComponent {
         checkedYes: false,
         checkedNo: false,
         required: true,
+        error: false,
         content: `Una franquicia es un acuerdo donde el
         franquiciador permite al franquiciado explotar un negocio bajo su marca y sistema a cambio de un pago. Beneficia al
         franquiciado con una marca establecida y soporte, mientras el franquiciador expande su mercado con menor riesgo. Se aplica
@@ -56,6 +60,7 @@ export class FormularioComponent {
         required: true,
         checkedYes: false,
         checkedNo: false,
+        error: false,
         content:
           'Marca es una categoría de signo distintivo que identifica los productos o servicios de una empresa o empresario, como por ejemplo Coca Cola o Apple.',
       },
@@ -68,6 +73,7 @@ export class FormularioComponent {
         required: true,
         checkedNo: false,
         checkedNose: false,
+        error: false,
         content: '',
       },
       {
@@ -78,6 +84,7 @@ export class FormularioComponent {
         required: true,
         checkedYes: false,
         checkedNo: false,
+        error: false,
         content: '',
       },
       {
@@ -88,6 +95,7 @@ export class FormularioComponent {
         checkedYes: false,
         required: true,
         checkedNo: false,
+        error: false,
         content: ``,
       },
       {
@@ -99,6 +107,7 @@ export class FormularioComponent {
         checkedYes: false,
         checkedNo: false,
         required: true,
+        error: false,
         content: '',
       },
       {
@@ -109,6 +118,7 @@ export class FormularioComponent {
         checkedYes: false,
         required: true,
         checkedNo: false,
+        error: false,
         content: '',
       },
     ];
@@ -189,6 +199,15 @@ export class FormularioComponent {
   }
 
   public handleSubmit($event: any): void {
-    console.log($event);
+    $event.preventDefault();
+
+    this.questions.map((items) => {
+      if (items.value === '' && items.disabled === false) {
+        items.error = true;
+      } else {
+        items.error = false;
+        this.router.navigate(['form2']);
+      }
+    });
   }
 }

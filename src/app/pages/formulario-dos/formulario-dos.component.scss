@@ -3,14 +3,15 @@ h2{
   line-height: 3rem;
   color: #02B0F0;
   font-size: 3rem;
+  padding: 1rem;
 }
 h3{
   font-size: 1rem;
 }
 section{
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  justify-content: space-between;
+
   width: 100%;
 }
 .disabled{
@@ -40,12 +41,33 @@ section{
 
   }
 }
+.error{
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1rem;
+  color:#f77979;
+  padding: 0px;
+  margin: 0;
+}
+.error-inputs{
+  width: 92%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1rem;
+  color:#f77979;
+  padding: 0px;
+  margin: 0;
+}
 
 .container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 20px;
+  width: 100%;
   flex-direction: column;
 }
 
@@ -53,17 +75,18 @@ section{
 .container_question{
   display: flex;
   gap: 1rem;
+
   align-items: center;
   width: 100%;
   .question{
-    width: 30%;
+    width: 50%;
     gap: 1rem;
     display: flex;
     align-items: center;
     justify-content: flex-start;
   }
   .answer{
-    width: 20%;
+    width: 50%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
@@ -82,6 +105,7 @@ section{
         justify-content: flex-end;
 
         input{
+          color: black;
           height: 2rem;
         }
       }

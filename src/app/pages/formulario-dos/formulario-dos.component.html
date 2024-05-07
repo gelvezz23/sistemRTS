@@ -48,7 +48,7 @@
           value="si"
           [checked]="quest.checkedYes"
           [disabled]="quest.disabled"
-          [required]="quest.disabled"
+          [required]="quest.required"
         />
         <input
           (change)="getAnswer('no', quest.id)"
@@ -58,7 +58,7 @@
           name="{{ quest.id }}"
           [checked]="quest.checkedNo"
           [disabled]="quest.disabled"
-          [required]="quest.disabled"
+          [required]="quest.required"
           value="no"
         />
       </div>
@@ -96,10 +96,12 @@
             type="text"
             id="nose"
             name="gravada-con-iva"
-            required
+            [required]="quest.required"
           />
         </div>
-
+        @if(quest.error){
+          <p class="error-inputs">Campo requerido *</p>
+        }
         <div>
           <label>Otras</label>
           <input
@@ -109,9 +111,10 @@
             type="text"
             id="nose"
             name="gravada-con-iva"
-            required
+            [required]="quest.required"
           />
         </div>
+
       </div>
       } @else{
       <div class="answer">
@@ -124,7 +127,7 @@
           value="si"
           [checked]="quest.checkedYes"
           [disabled]="quest.disabled"
-          [required]="quest.disabled"
+          [required]="quest.required"
         />
         <input
           (change)="getAnswer('no', quest.id)"
@@ -134,7 +137,7 @@
           name="{{ quest.id }}"
           [checked]="quest.checkedNo"
           [disabled]="quest.disabled"
-          [required]="quest.disabled"
+          [required]="quest.required"
           value="no"
         />
       </div>
@@ -145,10 +148,13 @@
       [modalTitle]="quest.question"
       [modalContent]="quest.content"
     />
+    @if(quest.error){
+      <p class="error">Campo requerido *</p>
+    }
     } }
 
     <div class="footer-form">
-      <input type="submit" value="Continuar" />
+      <input type="submit" value="Continuar" (click)="handleSubmit($event)" />
     </div>
   </form>
 </section>

@@ -13,6 +13,6 @@ export class HomeComponent {
   constructor(private router: Router) {}
 
   public handleClick() {
-    this.router.navigate(['form']);
+    this.router.navigate(['info']);
   }
 }

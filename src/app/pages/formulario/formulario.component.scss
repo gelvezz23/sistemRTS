@@ -1,8 +1,9 @@
 h2{
   font-weight: 900;
-  line-height: 3rem;
+  line-height: 2rem;
   color: #02B0F0;
-  font-size: 3rem;
+  font-size: 2rem;
+  padding: 1rem;
 }
 h3{
   font-size: 1rem;
@@ -13,6 +14,16 @@ section{
 }
 .disabled{
   color: #8e8e8e;
+}
+.error{
+  width: 70%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1rem;
+  color:#f77979;
+  padding: 0px;
+  margin: 0;
 }
 .disclaimer{
   width: 20%;

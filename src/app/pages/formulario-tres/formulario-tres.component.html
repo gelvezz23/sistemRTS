@@ -1,12 +1,5 @@
 <section class="container">
-  <div class="info-container">
-    <p>
-      Todas las preguntas deben responderse con la información de la persona
-      natural o jurídica quien lleva el negocio. Ejemplo: si realiza la
-      actividad económica a través de una sociedad, la información es de la
-      sociedad.
-    </p>
-  </div>
+  <app-disclaimer class="disclaimer" />
   <section class="ques-container">
     <form action="">
       <div>
@@ -17,10 +10,12 @@
           [attr.data-bs-toggle]="'modal'"
           [attr.data-bs-target]="'#exampleModal-1'"
         />
-        <input class="input"
+        <input
+          class="input"
           type="text"
           (change)="updateValue($event.target || '', 20)"
           [value]="cantidad"
+          required
         />
       </div>
       <div>
@@ -31,58 +26,72 @@
           [attr.data-bs-toggle]="'modal'"
           [attr.data-bs-target]="'#exampleModal-2'"
         />
-        <input class="input"
+        <input
+          class="input"
           type="text"
           (change)="updateValue($event.target || '', 21)"
           [value]="cantidadDos"
+          required
         />
       </div>
       <div class="span">
-        <span>¿Cuáles fueron todos sus ingresos brutos del años anterior?</span>
+        <span>¿Cuáles fueron todos sus ingresos brutos del año anterior?</span>
       </div>
       <div>
         <label for="text">¿Ingresos de actividades gravadas con IVA?</label
-        ><input class="input"
+        ><input
+          class="input"
           type="text"
           (change)="updateValue($event.target || '', 22)"
           [value]="cantidadTres"
+          required
         />
       </div>
       <div>
         <label for="text" class="large-ques"
           >Ingresos de actividades de restaurante, cafeterías, autoservicio,
           bares y similares</label
-        ><input class="input"
+        ><input
+          class="input"
           type="text"
           (change)="updateValue($event.target || '', 23)"
           [value]="cantidadCuatro"
+          required
         />
       </div>
       <div>
         <label for="text">Ingresos Laborales</label
-        ><input class="input"
+        ><input
+          class="input"
           type="text"
           (change)="updateValue($event.target || '', 24)"
           [value]="cantidadCinco"
+          required
         />
       </div>
       <div>
         <label for="text">Otros ingresos</label
-        ><input class="input"
+        ><input
+          class="input"
           type="text"
           (change)="updateValue($event.target || '', 25)"
           [value]="cantidadSeis"
+          required
         />
       </div>
       <div>
         <label for="text">Total de ingresos brutos</label
-        ><input class="input"
+        ><input
+          class="input"
           type="text"
           (change)="updateValue($event.target || '', 26)"
           [value]="cantidadSiete"
+          required
         />
       </div>
-
+      <div class="span">
+        <span>¿Cuáles son sus ingresos brutos del año anterior?</span>
+      </div>
       <div class="footer-form">
         <input type="submit" value="Continuar" />
       </div>
