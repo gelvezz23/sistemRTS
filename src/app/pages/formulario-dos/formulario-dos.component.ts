@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalComponent } from '../../components/modal/modal.component';
 import { DisclaimerComponent } from '../../components/disclaimer/disclaimer.component';
-import { formatCurrency, getCurrencySymbol } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './formulario-dos.component.html',
   styleUrl: './formulario-dos.component.scss',
   imports: [ModalComponent, DisclaimerComponent],
+  providers: [CurrencyPipe],
 })
 export class FormularioDosComponent {
   public questions: {
@@ -26,8 +27,9 @@ export class FormularioDosComponent {
   }[];
   public constitucion: string;
   public cantidad!: string;
+  public test!: number;
   public cantidadDos!: string;
-  constructor(private router: Router) {
+  constructor(private router: Router, private currencyPipe: CurrencyPipe) {
     this.constitucion = 'persona natural';
     this.questions = [
       {
@@ -171,32 +173,46 @@ export class FormularioDosComponent {
   }
 
   public updateValue(event: any, id: number) {
-    let val = parseInt(event.value || '', 10);
-    if (Number.isNaN(val)) {
-      val = 0;
-    }
-
+    console.log(this.questions);
+    let input = event.value?.trim() || '';
+    let val = parseInt(input || '', 10);
     if (id === 10) {
-      this.cantidad = formatCurrency(
-        val,
-        'en-US',
-        getCurrencySymbol('USD', 'wide')
-      );
+      this.cantidad =
+        this.currencyPipe.transform(
+          input.replace(/\D/g, '').replace(/^0+/),
+          'USD',
+          'symbol',
+          '1.0-0'
+        ) || '';
+      this.getAnswer(input.replace(/\D/g, ''), 10);
     }
     if (id === 101) {
-      this.cantidadDos = formatCurrency(
-        val,
-        'en-US',
-        getCurrencySymbol('USD', 'wide')
-      );
+      this.cantidadDos =
+        this.currencyPipe.transform(
+          input.replace(/\D/g, '').replace(/^0+/),
+          'USD',
+          'symbol',
+          '1.0-0'
+        ) || '';
+      this.getAnswer(input.replace(/\D/g, ''), 101);
     }
-    this.getAnswer(val.toString(), id);
+  }
+
+  public filtrarNumero(event: KeyboardEvent) {
+    const allowedKeys =
+      /[0-9]|\bDelete\b|\bBackspace\b|[\u2190-\u2193]|\bArrowLeft\b|\bArrowRight\b|\bDelete\b/g;
+
+    if (event.key.match(allowedKeys)) {
+      return true; // Permite la entrada
+    } else {
+      event.preventDefault(); // Evita la entrada
+    }
+    return;
   }
 
   public handleSubmit($event: any): void {
     $event.preventDefault();
 
-    // Validate only enabled fields
     let isValid = true;
     this.questions.forEach((item) => {
       if (item.value === '' && !item.disabled) {

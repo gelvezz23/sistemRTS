@@ -1,0 +1,56 @@
+<section class="content_container">
+  <section class="container">
+    <h2>Caracterización negocio</h2>
+    <section class="form-container">
+      <div class="ques-container">
+        <label>Titular del negocio*</label>
+        <div>
+          <select name="business" id="business">
+            <option value="">Seleccione</option>
+
+            <option value="persona natural">Persona Natural</option>
+            <option value="persona juridica">Persona Juridica</option>
+          </select>
+          <img
+            src="./assets/images/icon.svg"
+            alt="?"
+            [attr.data-bs-toggle]="'modal'"
+            [attr.data-bs-target]="'#exampleModal-'"
+          />
+        </div>
+      </div>
+      <div class="ques-container">
+        <label
+          >Clasifica el negocio de acuerdo a la Actividad del negocio*</label
+        >
+        <div>
+          <select name="business" id="business">
+            <option value="">Seleccione</option>
+            <option value="comercial">Comercial</option>
+            <option value="Profesion liberal o artistica">
+              Profesión liberal o artistica
+            </option>
+            <option value="agricultura o ganaderia">
+              Agricultura y ganadería
+            </option></select
+          ><img
+            src="./assets/images/icon.svg"
+            alt="?"
+            [attr.data-bs-toggle]="'modal'"
+            [attr.data-bs-target]="'#exampleModal-'"
+          />
+        </div>
+      </div>
+      <div class="ques-container yesNo">
+        <label>¿Emplea trabajadores?</label
+        ><select name="business" id="business">
+          <option value="">Seleccione</option>
+
+          <option value="si">Si</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+      <div class="button"><button>continuar</button></div>
+    </section>
+  </section>
+</section>

@@ -5,6 +5,7 @@ import { FormularioComponent } from './pages/formulario/formulario.component';
 import { FormularioDosComponent } from './pages/formulario-dos/formulario-dos.component';
 import { FormularioTresComponent } from './pages/formulario-tres/formulario-tres.component';
 import { InfoComponent } from './pages/info/info.component';
+import { InfoDosComponent } from './pages/info-dos/info-dos.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,4 +13,5 @@ export const routes: Routes = [
   { path: 'form2', component: FormularioDosComponent },
   { path: 'form3', component: FormularioTresComponent },
   { path: 'info', component: InfoComponent },
+  { path: 'info2', component: InfoDosComponent },
 ];

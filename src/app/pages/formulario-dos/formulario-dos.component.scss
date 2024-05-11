@@ -41,6 +41,19 @@ section{
 
   }
 }
+
+
+.answer-inputs-text div{
+  display: flex;
+
+
+}
+
+.answer-inputs-divs{
+  display: flex;
+  flex-direction: column;
+}
+
 .error{
   width: 60%;
   display: flex;

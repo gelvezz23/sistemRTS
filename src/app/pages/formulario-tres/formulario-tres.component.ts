@@ -1,13 +1,14 @@
 import { formatCurrency, getCurrencySymbol } from '@angular/common';
 import { Component } from '@angular/core';
 import { DisclaimerComponent } from '../../components/disclaimer/disclaimer.component';
-
+import { CurrencyPipe } from '@angular/common';
 @Component({
   selector: 'app-formulario-tres',
   standalone: true,
   templateUrl: './formulario-tres.component.html',
   styleUrl: './formulario-tres.component.scss',
   imports: [DisclaimerComponent],
+  providers: [CurrencyPipe],
 })
 export class FormularioTresComponent {
   public cantidad!: string;
@@ -17,11 +18,17 @@ export class FormularioTresComponent {
   public cantidadCinco!: string;
   public cantidadSeis!: string;
   public cantidadSiete!: string;
+  public cantidadOcho!: string;
+  public cantidadNueve!: string;
+  public cantidadDiez!: string;
+  public cantidadOnce!: string;
+  public cantidadDoce!: string;
   public total!: number;
+  public totalDos!: number;
 
   public answers!: { id: number; value: string }[];
 
-  constructor() {
+  constructor(private currencyPipe: CurrencyPipe) {
     this.cantidad = '';
     this.cantidadDos = '';
     this.cantidadTres = '';
@@ -29,7 +36,13 @@ export class FormularioTresComponent {
     this.cantidadCinco = '';
     this.cantidadSeis = '';
     this.cantidadSiete = '';
+    this.cantidadOcho = '';
+    this.cantidadNueve = '';
+    this.cantidadDiez = '';
+    this.cantidadOnce = '';
+    this.cantidadDoce = '';
     this.total = 0;
+    this.totalDos = 0;
 
     this.answers = [
       { id: 20, value: '' },
@@ -39,11 +52,13 @@ export class FormularioTresComponent {
       { id: 24, value: '' },
       { id: 25, value: '' },
       { id: 26, value: '' },
+      { id: 28, value: '' },
+      { id: 29, value: '' },
+      { id: 30, value: '' },
+      { id: 31, value: '' },
     ];
   }
-  public withoutformat(value: string) {
-    return value.replace(/[\$|\,|\.]|00$/g, '');
-  }
+
   public saveLocalStorage(): void {
     localStorage.setItem('response-Three', JSON.stringify(this.answers));
   }
@@ -60,85 +75,153 @@ export class FormularioTresComponent {
   }
 
   public updateValue(event: any, id: number) {
-    let val = parseInt(event.value || '', 10);
+    let input = event.value || '';
+    let val = parseInt(input || '', 10);
     if (Number.isNaN(val)) {
       val = 0;
     }
 
     if (id === 20) {
-      this.cantidad = formatCurrency(
-        val,
-        'en-US',
-        getCurrencySymbol('USD', 'wide')
-      );
-      this.getAnswer(this.withoutformat(this.cantidad), id);
+      this.cantidad =
+        this.currencyPipe.transform(
+          input.replace(/\D/g, '').replace(/^0/),
+          'USD',
+          'symbol',
+          '1.0-0'
+        ) || '';
+
+      this.getAnswer(this.cantidad, id);
     }
     if (id === 21) {
-      this.cantidadDos = formatCurrency(
-        val,
-        'en-US',
-        getCurrencySymbol('USD', 'wide')
-      );
-      this.getAnswer(this.withoutformat(this.cantidadDos), id);
+      this.cantidadDos =
+        this.currencyPipe.transform(
+          input.replace(/\D/g, '').replace(/^0+/),
+          'USD',
+          'symbol',
+          '1.0-0'
+        ) || '';
+      this.getAnswer(this.cantidadDos, id);
     }
 
     if (id === 22) {
-      this.cantidadTres = formatCurrency(
-        val,
-        'en-US',
-        getCurrencySymbol('USD', 'wide')
-      );
-      this.getAnswer(this.withoutformat(this.cantidadTres), id);
+      this.cantidadTres =
+        this.currencyPipe.transform(
+          input.replace(/\D/g, '').replace(/^0+/),
+          'USD',
+          'symbol',
+          '1.0-0'
+        ) || '';
+      this.getAnswer(this.cantidadTres, id);
     }
 
     if (id === 23) {
-      this.cantidadCuatro = formatCurrency(
-        val,
-        'en-US',
-        getCurrencySymbol('USD', 'wide')
-      );
-      this.getAnswer(this.withoutformat(this.cantidadCuatro), id);
+      this.cantidadCuatro =
+        this.currencyPipe.transform(
+          input.replace(/\D/g, '').replace(/^0+/),
+          'USD',
+          'symbol',
+          '1.0-0'
+        ) || '';
+      this.getAnswer(this.cantidadCuatro, id);
     }
 
     if (id === 24) {
-      this.cantidadCinco = formatCurrency(
-        val,
-        'en-US',
-        getCurrencySymbol('USD', 'wide')
-      );
-      this.getAnswer(this.withoutformat(this.cantidadCinco), id);
+      this.cantidadCinco =
+        this.currencyPipe.transform(
+          input.replace(/\D/g, '').replace(/^0+/),
+          'USD',
+          'symbol',
+          '1.0-0'
+        ) || '';
+      this.getAnswer(this.cantidadCinco, id);
     }
     if (id === 25) {
-      this.cantidadSeis = formatCurrency(
-        val,
-        'en-US',
-        getCurrencySymbol('USD', 'wide')
-      );
-      this.getAnswer(this.withoutformat(this.cantidadSeis), id);
+      this.cantidadSeis =
+        this.currencyPipe.transform(
+          input.replace(/\D/g, '').replace(/^0+/),
+          'USD',
+          'symbol',
+          '1.0-0'
+        ) || '';
+      this.getAnswer(this.cantidadSeis, id);
     }
 
     this.total =
-      Number(this.cantidad.replace(/[\$|\,|\.]/g, '')) +
-      Number(this.cantidadDos.replace(/[\$|\,|\.]/g, '')) +
-      Number(this.cantidadTres.replace(/[\$|\,|\.]/g, '')) +
-      Number(this.cantidadCuatro.replace(/[\$|\,|\.]/g, '')) +
-      Number(this.cantidadCinco.replace(/[\$|\,|\.]/g, '')) +
-      Number(this.cantidadSeis.replace(/[\$|\,|\.]/g, ''));
+      Number(this.cantidad.replace(/\D/g, '')) +
+      Number(this.cantidadDos.replace(/\D/g, '')) +
+      Number(this.cantidadTres.replace(/\D/g, '')) +
+      Number(this.cantidadCuatro.replace(/\D/g, '')) +
+      Number(this.cantidadCinco.replace(/\D/g, '')) +
+      Number(this.cantidadSeis.replace(/\D/g, ''));
 
-    this.cantidadSiete = formatCurrency(
-      this.total,
-      'en-US',
-      getCurrencySymbol('USD', 'wide')
-    );
-    this.getAnswer(this.withoutformat(this.cantidadSiete), 26);
+    this.cantidadSiete =
+      this.currencyPipe.transform(this.total, 'USD', 'symbol', '1.0-0') || '';
 
-    if (id === 26) {
-      this.cantidadSiete = formatCurrency(
-        this.total,
-        'en-US',
-        getCurrencySymbol('USD', 'wide')
-      );
-      this.getAnswer(this.withoutformat(this.cantidadSiete), id);
+    this.getAnswer(this.cantidadSiete, 26);
+
+    if (id === 28) {
+      this.cantidadOcho =
+        this.currencyPipe.transform(
+          input.replace(/\D/g, '').replace(/^0+/),
+          'USD',
+          'symbol',
+          '1.0-0'
+        ) || '';
+      this.getAnswer(this.cantidadOcho, id);
     }
+    if (id === 29) {
+      this.cantidadNueve =
+        this.currencyPipe.transform(
+          input.replace(/\D/g, '').replace(/^0+/),
+          'USD',
+          'symbol',
+          '1.0-0'
+        ) || '';
+      this.getAnswer(this.cantidadOcho, id);
+    }
+    if (id === 30) {
+      this.cantidadDiez =
+        this.currencyPipe.transform(
+          input.replace(/\D/g, '').replace(/^0+/),
+          'USD',
+          'symbol',
+          '1.0-0'
+        ) || '';
+      this.getAnswer(this.cantidadDiez, id);
+    }
+    if (id === 31) {
+      this.cantidadOnce =
+        this.currencyPipe.transform(
+          input.replace(/\D/g, '').replace(/^0+/),
+          'USD',
+          'symbol',
+          '1.0-0'
+        ) || '';
+      this.getAnswer(this.cantidadOnce, id);
+    }
+
+    this.totalDos =
+      Number(this.cantidadOcho.replace(/\D/g, '')) +
+      Number(this.cantidadNueve.replace(/\D/g, '')) +
+      Number(this.cantidadDiez.replace(/\D/g, '')) +
+      Number(this.cantidadOnce.replace(/\D/g, ''));
+
+    this.cantidadDoce =
+      this.currencyPipe.transform(this.totalDos, 'USD', 'symbol', '1.0-0') ||
+      '';
+    this.getAnswer(this.cantidadDoce, 32);
+  }
+
+  public filtrarNumero(event: KeyboardEvent) {
+    console.log(event.key);
+    const allowedKeys =
+      /[0-9]|\bDelete\b|\bBackspace\b|[\u2190-\u2193]|\bArrowLeft\b|\bArrowRight\b|\bDelete\b/g;
+
+    if (event.key.match(allowedKeys)) {
+      return true; // Permite la entrada
+    } else {
+      event.preventDefault(); // Evita la entrada
+    }
+    return;
   }
 }

@@ -1,21 +1,14 @@
-.header {
+nav {
   display: flex;
-align-items: center;
-color: black;
-  padding-bottom: 4rem;
+  align-items: center;
+  height: 4rem;
+  padding: 1rem 4rem;
 }
+nav h1 {
 
-.header h1 {
-  width: 100%;
-  font-size: 2rem;
-  font-weight: 900;
-  color: black;
-  padding-top: 2rem;
-  margin: 0;
+  font-weight: 800;
 }
-
-.header h1 + p {
-  margin: 0;
-  color: black;
-  padding-bottom: 1.2rem;
+nav img {
+  height: 1.5rem;
+  padding-left: 1rem;
 }

@@ -3,7 +3,9 @@
   <section class="ques-container">
     <form action="">
       <div>
-        <label for="text">¿Cuál fue su patrimonio bruto el año anterior?</label>
+        <label for="patirmonio_bruto"
+          >¿Cuál fue su patrimonio bruto el año anterior?</label
+        >
         <img
           src="./assets/images/icon.svg"
           alt="?"
@@ -13,8 +15,11 @@
         <input
           class="input"
           type="text"
-          (change)="updateValue($event.target || '', 20)"
+          (input)="updateValue($event.target || '', 20)"
+          (keydown)="filtrarNumero($event)"
           [value]="cantidad"
+          name="patirmonio_bruto"
+          id="patirmonio_bruto"
           required
         />
       </div>
@@ -29,8 +34,9 @@
         <input
           class="input"
           type="text"
-          (change)="updateValue($event.target || '', 21)"
+          (input)="updateValue($event.target || '', 21)"
           [value]="cantidadDos"
+          (keydown)="filtrarNumero($event)"
           required
         />
       </div>
@@ -42,8 +48,9 @@
         ><input
           class="input"
           type="text"
-          (change)="updateValue($event.target || '', 22)"
+          (input)="updateValue($event.target || '', 22)"
           [value]="cantidadTres"
+          (keydown)="filtrarNumero($event)"
           required
         />
       </div>
@@ -54,8 +61,9 @@
         ><input
           class="input"
           type="text"
-          (change)="updateValue($event.target || '', 23)"
+          (input)="updateValue($event.target || '', 23)"
           [value]="cantidadCuatro"
+          (keydown)="filtrarNumero($event)"
           required
         />
       </div>
@@ -64,8 +72,9 @@
         ><input
           class="input"
           type="text"
-          (change)="updateValue($event.target || '', 24)"
+          (input)="updateValue($event.target || '', 24)"
           [value]="cantidadCinco"
+          (keydown)="filtrarNumero($event)"
           required
         />
       </div>
@@ -74,8 +83,9 @@
         ><input
           class="input"
           type="text"
-          (change)="updateValue($event.target || '', 25)"
+          (input)="updateValue($event.target || '', 25)"
           [value]="cantidadSeis"
+          (keydown)="filtrarNumero($event)"
           required
         />
       </div>
@@ -84,7 +94,7 @@
         ><input
           class="input"
           type="text"
-          (change)="updateValue($event.target || '', 26)"
+          (keydown)="(false)"
           [value]="cantidadSiete"
           required
         />
@@ -92,8 +102,59 @@
       <div class="span">
         <span>¿Cuáles son sus ingresos brutos del año anterior?</span>
       </div>
+      <div>
+        <label for="text">¿Ingresos de actividades gravadas con IVA?</label
+        ><input
+          type="text"
+          class="input"
+          (input)="updateValue($event.target || '', 28)"
+          [value]="cantidadOcho"
+          (keydown)="filtrarNumero($event)"
+          required
+        />
+      </div>
+      <div>
+        <label for="text"
+          >Ingresos de actividades de restaurante, cafeterías, autoservicio,
+          bares y similares</label
+        ><input
+          type="text"
+          class="input"
+          (input)="updateValue($event.target || '', 29)"
+          [value]="cantidadNueve"
+          (keydown)="filtrarNumero($event)"
+          required
+        />
+      </div>
+      <div>
+        <label for="text">Ingresos Laborales</label
+        ><input
+          type="text"
+          class="input"
+          (input)="updateValue($event.target || '', 30)"
+          [value]="cantidadDiez"
+          (keydown)="filtrarNumero($event)"
+          required
+        />
+      </div>
+      <div>
+        <label for="text">Otros ingresos</label
+        ><input
+          type="text"
+          class="input"
+          (input)="updateValue($event.target || '', 31)"
+          [value]="cantidadOnce"
+          (keydown)="filtrarNumero($event)"
+          required
+        />
+      </div>
+      <div>
+        <label for="text">Total de ingresos brutos</label
+        ><input type="text" class="input"  (keydown)="(false)"
+        [value]="cantidadDoce" />
+      </div>
       <div class="footer-form">
-        <input type="submit" value="Continuar" />
+        <input type="submit" value="Ver la ruta de la formalizacion" />
       </div>
     </form>
   </section>

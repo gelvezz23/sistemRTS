@@ -1,0 +1,57 @@
+section{
+  background-color: #e0d7ec;
+  color: #6f309f;
+}
+
+.container h2 {
+  font-size: xx-large;
+  padding-top: 2rem;
+  font-weight: 800;
+}
+.container .form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 80%;
+  height: 70vh;
+}
+.container .form-container div {
+  display: flex;
+  align-items: center;
+}
+.container .form-container .ques-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.container .ques-container select {
+  border: none;
+  border-bottom: 2px solid #02b0ef;
+  background-color: #f0f8ff;
+  text-align: center;
+  width: 15rem;
+  height: 2.5rem;
+  font-size: medium;
+  color: #02b0ef;
+  margin-right: 1rem;
+  outline: none;
+  cursor: pointer;
+}
+.container .form-container .yesNo select {
+  margin-right: 3.5rem;
+}
+.container .form-container .button {
+  display: flex;
+  justify-content: center;
+}
+.container .form-container button {
+  height: 2rem;
+  width: 8rem;
+  font-size: medium;
+  font-weight: 500;
+  border: none;
+  border-radius: 17px;
+  background-color: #02b0ef;
+  color: #f0f8ff;
+  cursor: pointer;
+}
