@@ -6,6 +6,7 @@ import { FormularioDosComponent } from './pages/formulario-dos/formulario-dos.co
 import { FormularioTresComponent } from './pages/formulario-tres/formulario-tres.component';
 import { InfoComponent } from './pages/info/info.component';
 import { InfoDosComponent } from './pages/info-dos/info-dos.component';
+import { InfoTresComponent } from './pages/info-tres/info-tres.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,4 +15,5 @@ export const routes: Routes = [
   { path: 'form3', component: FormularioTresComponent },
   { path: 'info', component: InfoComponent },
   { path: 'info2', component: InfoDosComponent },
+  { path: 'info3', component: InfoTresComponent },
 ];
