@@ -7,6 +7,10 @@ section{
   align-items: center;
 }
 
+.selectError{
+  display: flex;
+  flex-direction: column;
+}
 .container h2 {
   font-size: xx-large;
   padding-top: 2rem;
@@ -27,6 +31,8 @@ section{
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 .container .ques-container select {
   border: none;

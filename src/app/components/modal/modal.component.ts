@@ -19,7 +19,7 @@ export class ModalComponent {
   matchingSearchDos: string[] = [];
   @Input({ required: true }) modalTitle!: string;
   @Input({ required: true }) modalContent!: string;
-  @Input({ required: true }) id!: number;
+  @Input({ required: true }) id!: number | string;
 
   constructor() {
     this.serviciosExcluidos = [

@@ -4,27 +4,34 @@
     <section class="form-container">
       <div class="ques-container">
         <label>Titular del negocio*</label>
-        <div>
-          <select name="business" id="business">
+<div>
+  <div class="selectError">
+          <select name="business" id="business" (change)="getAnswer($event, 1)">
             <option value="">Seleccione</option>
 
             <option value="persona natural">Persona Natural</option>
             <option value="persona juridica">Persona Juridica</option>
           </select>
+          @if(titular.error){
+            <p>el campo es requerido*</p>
+          }
+        </div>
           <img
             src="./assets/images/icon.svg"
             alt="?"
             [attr.data-bs-toggle]="'modal'"
-            [attr.data-bs-target]="'#exampleModal-'"
+            [attr.data-bs-target]="'#exampleModal-tipo-persona'"
           />
         </div>
+
       </div>
       <div class="ques-container">
         <label
           >Clasifica el negocio de acuerdo a la Actividad del negocio*</label
         >
-        <div>
-          <select name="business" id="business">
+<div>
+  <div class="selectError">
+          <select name="business" id="business" (change)="getAnswer($event, 2)">
             <option value="">Seleccione</option>
             <option value="comercial">Comercial</option>
             <option value="Profesion liberal o artistica">
@@ -32,25 +39,52 @@
             </option>
             <option value="agricultura o ganaderia">
               Agricultura y ganadería
-            </option></select
-          ><img
+            </option>
+          </select>
+          @if(negocio.error){
+            <p>el campo es requerido*</p>
+          }
+        </div>
+          <img
             src="./assets/images/icon.svg"
             alt="?"
             [attr.data-bs-toggle]="'modal'"
-            [attr.data-bs-target]="'#exampleModal-'"
+            [attr.data-bs-target]="'#exampleModal-actividad-comercial'"
           />
-        </div>
+</div>
+
+
       </div>
+
       <div class="ques-container yesNo">
         <label>¿Emplea trabajadores?</label
-        ><select name="business" id="business">
-          <option value="">Seleccione</option>
+        >
+  <div class="selectError">
 
+        <select name="business" id="business" (change)="getAnswer($event, 3)">
+          <option value="">Seleccione</option>
           <option value="si">Si</option>
           <option value="no">No</option>
         </select>
+        @if(trabajadores.error){
+          <p>el campo es requerido*</p>
+        }
+      </div>
+
       </div>
       <div class="button"><button (click)="handleClick()">continuar</button></div>
     </section>
   </section>
+
 </section>
+<app-modal
+  [id]="'tipo-persona'"
+  [modalTitle]="''"
+  [modalContent]="mensaje"
+/>
+
+<app-modal
+  [id]="'actividad-comercial'"
+  [modalTitle]="''"
+  [modalContent]="mensajeDos"
+/>

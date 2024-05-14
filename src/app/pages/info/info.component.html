@@ -7,17 +7,23 @@
             </p>
         </article>
         <div class="ques-container">
-            <div><label>¿Cuál es tu sexo?</label><select name="ques" id="ques">
+            <div>
+                <label>¿Cuál es tu sexo?</label>
+                <select name="ques" id="ques" (change)="getAnswer(1, $event)">
                     <option value="">- seleccione -</option>
                     <option value="mujer">Mujer</option>
                     <option value="hombre">Hombre</option>
-                </select></div>
-            <div><label>¿En qué rango de edad te encuentras?</label><select name="ques" id="ques">
+                </select>
+              </div>
+            <div>
+              <label>¿En qué rango de edad te encuentras?</label>
+                <select name="ques" id="ques" (change)="getAnswer(2, $event)">
                     <option value="">- seleccione -</option>
                     <option value="18-29">18 a 29</option>
                     <option value="30-49">30 a 49</option>
                     <option value="50-69">50 a 69</option>
-                </select></div>
+                </select>
+              </div>
             <div><label>Selecciona el departamento donde vives</label><select name="ques" id="ques">
                     <option value="">- seleccione -</option>
                     <option value="cundinamarca">Cundinamarca</option>

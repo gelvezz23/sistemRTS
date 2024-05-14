@@ -1,0 +1,76 @@
+
+.container {
+  display: flex;
+}
+.container .info-left-container {
+  width: 37%;
+  margin-right: 2rem;
+}
+.container .info-left-container h2 {
+  font-weight: 800;
+  font-size: xx-large;
+  color: #02b0ef;
+  margin-block: 1rem;
+}
+.container .info-left-container p {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.container .info-left-container .instructions-paragraph {
+  color: #6f309f;
+}
+.container .options-right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 85vh;
+  width: 32rem;
+}
+
+.container .options-right-container div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.container .options-right-container .title-options-year h3 {
+  margin-right: 1rem;
+}
+.container .options-right-container h3 {
+  font-size: x-large;
+}
+.container .options-right-container input[type="radio"] {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #6f309f;
+  appearance: none;
+  border-radius: 5px;
+  color: white;
+  padding: 12px;
+  cursor: pointer;
+}
+.container .options-right-container input[type="radio"]:checked {
+  background-image: url("./../../../assets/images/check-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #6f309f;
+  color: white;
+}
+
+.container .options-right-container input[type="radio"]:focus {
+  outline-color: transparent;
+}
+.container .options-right-container label {
+  cursor: pointer;
+}
+.container .options-right-container button {
+  height: 2rem;
+  width: 8rem;
+  font-size: medium;
+  font-weight: 500;
+  border: none;
+  border-radius: 17px;
+  background-color: #02b0ef;
+  color: #f0f8ff;
+  cursor: pointer;
+  margin-top: 1rem;
+}
