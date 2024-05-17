@@ -6,7 +6,7 @@
         <label>Titular del negocio*</label>
 <div>
   <div class="selectError">
-          <select name="business" id="business" (change)="getAnswer($event, 1)">
+          <select name="business" [(ngModel)]="titular.value" id="business" (change)="getAnswer($event, 1)">
             <option value="">Seleccione</option>
 
             <option value="persona natural">Persona Natural</option>
@@ -31,7 +31,7 @@
         >
 <div>
   <div class="selectError">
-          <select name="business" id="business" (change)="getAnswer($event, 2)">
+          <select [(ngModel)]="negocio.value" [disabled]="titular.value === 'persona juridica'" name="business" id="business" (change)="getAnswer($event, 2)">
             <option value="">Seleccione</option>
             <option value="comercial">Comercial</option>
             <option value="Profesion liberal o artistica">

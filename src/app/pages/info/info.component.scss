@@ -12,18 +12,27 @@ article p {
   width: 70vh;
   margin-bottom: 2rem;
 }
+.error{
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  color: red;
+}
 .ques-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap:1rem;
 }
 .ques-container div {
   display: flex;
   width: 50%;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2rem;
 }
 .ques-container select {
   background-color: aliceblue;

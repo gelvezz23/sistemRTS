@@ -29,27 +29,27 @@
         />
         <a href="http://www.secretariasenado.gov.co/senado/basedoc/estatuto_tributario.html" target="_blank" >ver mas </a>
 
-        @if(matchingSearch.length > 0){ @for(items of matchingSearch; track
-        matchingSearch; let idx = $index) {
+        @if(matchingSearch.length > 0){
+          @for(items of matchingSearch; track matchingSearch; let idx = $index) {
         <div class="list-group">
           <button type="button" class="list-group-item list-group-item-action">
             {{ idx + 1 }}. {{ items }}
           </button>
         </div>
-        } }@else{ @for(items of bienesExcluidos; track bienesExcluidos; let idx
-        = $index ) {
-        <div class="list-group">
-          <button type="button" class="list-group-item list-group-item-action">
-            {{ idx + 1 }}. {{ items }}
-          </button>
-        </div>
-        } } @for( items of bienesExcluidos; track bienesExcluidos){
-        <div class="list-group">
-          <button type="button" class="list-group-item list-group-item-action">
-            {{ items }}
-          </button>
-        </div>
-        } }
+        }
+        } @else if (matchingSearch.length === 0 && showList) {
+          <p>No encontro ningun resultado</p>
+
+        } @else {
+          @for( items of bienesExcluidos; track bienesExcluidos; let idx = $index){
+            <div class="list-group">
+              <button type="button" class="list-group-item list-group-item-action">
+                {{ items }}
+              </button>
+            </div>
+            }
+      }
+       }
 
         @if(id === 8){
 
@@ -67,20 +67,20 @@
               {{ idx + 1 }}. {{ items }}
             </button>
           </div>
-          } }@else{ @for(items of serviciosExcluidos; track serviciosExcluidos; let idx
-          = $index ) {
-          <div class="list-group">
-            <button type="button" class="list-group-item list-group-item-action">
-              {{ idx + 1 }}. {{ items }}
-            </button>
-          </div>
-          } } @for( items of serviciosExcluidos; track serviciosExcluidos){
-          <div class="list-group">
-            <button type="button" class="list-group-item list-group-item-action">
-              {{ items }}
-            </button>
-          </div>
           } }
+          @else if (matchingSearchDos.length === 0 && showListDos) {
+            <p>No encontro ningun resultado</p>
+
+          } @else{
+
+
+            @for( items of serviciosExcluidos; track serviciosExcluidos; let idx = $index){
+              <div class="list-group">
+                <button type="button" class="list-group-item list-group-item-action">
+                  {{ idx + 1 }}. {{ items }}
+                </button>
+              </div>
+              } } }
 
 
         {{ modalContent }}

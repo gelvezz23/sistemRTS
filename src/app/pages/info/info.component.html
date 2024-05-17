@@ -15,6 +15,11 @@
                     <option value="hombre">Hombre</option>
                 </select>
               </div>
+
+              @if(answers[0].error){
+                <div><p class="error">campo requerido *</p></div>
+              }
+
             <div>
               <label>¿En qué rango de edad te encuentras?</label>
                 <select name="ques" id="ques" (change)="getAnswer(2, $event)">
@@ -24,13 +29,24 @@
                     <option value="50-69">50 a 69</option>
                 </select>
               </div>
-            <div><label>Selecciona el departamento donde vives</label><select name="ques" id="ques">
+              @if(answers[1].error){
+                <div><p class="error">campo requerido *</p></div>
+              }
+            <div>
+              <label>Selecciona el departamento donde vives</label>
+              <select name="ques" id="ques" (change)="getAnswer(3, $event)">
                     <option value="">- seleccione -</option>
                     <option value="cundinamarca">Cundinamarca</option>
                     <option value="norte de santander">Norte de Santander</option>
                     <option value="santander">Santander</option>
-                </select></div>
-            <div><label>Selecciona el municipio donde vives</label><select name="ques" id="ques">
+                </select>
+            </div>
+            @if(answers[2].error){
+              <div><p class="error">campo requerido *</p></div>
+            }
+            <div>
+              <label>Selecciona el municipio donde vives</label>
+                <select name="ques" id="ques" (change)="getAnswer(4, $event)">
                     <option value="">- seleccione -</option>
                     <option value="Arauca">Arauca</option>
                     <option value="Armenia">Armenia</option>
@@ -64,17 +80,32 @@
                     <option value="Valledupar">Valledupar</option>
                     <option value="Villavicencio">Villavicencio</option>
                     <option value="Yopal">Yopal</option>
-                </select></div>
-            <div><label>¿En qué tipo de zona vives?</label><select name="ques" id="ques">
+                </select>
+            </div>
+            @if(answers[3].error){
+              <div><p class="error">campo requerido *</p></div>
+            }
+            <div>
+              <label>¿En qué tipo de zona vives?</label>
+              <select name="ques" id="ques" (change)="getAnswer(5, $event)">
                     <option value="">- seleccione -</option>
                     <option value="urbana">Urbana</option>
                     <option value="rural">Rural</option>
-                </select></div>
-            <div><label>¿Qué uso le dará al simulador?</label><select name="ques" id="ques">
+                </select>
+            </div>
+            @if(answers[4].error){
+              <div><p class="error">campo requerido *</p></div>
+            }
+            <div>
+              <label>¿Qué uso le dará al simulador?</label>
+              <select name="ques" id="ques" (change)="getAnswer(6, $event)">
                     <option value="">- seleccione -</option>
                     <option value="aprender">Aprender</option>
-
-                </select></div>
+                </select>
+            </div>
+            @if(answers[5].error){
+              <div><p class="error">campo requerido *</p></div>
+            }
             <div class="button"><button (click)="handleClick()">Siguiente</button></div>
 
         </div>

@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalComponent } from '../../components/modal/modal.component';
-
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-info-dos',
   standalone: true,
   templateUrl: './info-dos.component.html',
   styleUrl: './info-dos.component.scss',
-  imports: [ModalComponent],
+  imports: [ModalComponent, FormsModule],
 })
 export class InfoDosComponent {
   mensaje: string =
@@ -26,6 +26,9 @@ export class InfoDosComponent {
   public handleClick() {
     this.validateValues();
     if (this.titular.error || this.negocio.error || this.trabajadores.error) {
+      console.log(
+        this.titular.error || this.negocio.error || this.trabajadores.error
+      );
     } else {
       this.router.navigate(['info3']);
     }
@@ -35,6 +38,9 @@ export class InfoDosComponent {
     const value = $event.target.value;
     if (id === 1) {
       this.titular.value = value;
+      if (value === 'persona juridica') {
+        this.negocio.value = 'comercial';
+      }
     }
     if (id === 2) {
       this.negocio.value = value;
@@ -47,12 +53,18 @@ export class InfoDosComponent {
   public validateValues = () => {
     if (this.titular.value === '') {
       this.titular.error = true;
+    } else {
+      this.titular.error = false;
     }
     if (this.negocio.value === '') {
       this.negocio.error = true;
+    } else {
+      this.negocio.error = false;
     }
     if (this.trabajadores.value === '') {
       this.trabajadores.error = true;
+    } else {
+      this.trabajadores.error = false;
     }
   };
 }

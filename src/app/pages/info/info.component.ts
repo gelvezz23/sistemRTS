@@ -14,17 +14,55 @@ export class InfoComponent {
       id: 1,
       quest: '¿Cuál es tu sexo?',
       value: '',
+      error: false,
     },
 
     {
       id: 2,
       quest: '¿En qué rango de edad te encuentras?',
       value: '',
+      error: false,
+    },
+    {
+      id: 3,
+      quest: 'Selecciona el departamento donde vives',
+      value: '',
+      error: false,
+    },
+    {
+      id: 4,
+      quest: 'Selecciona el municipio donde vives',
+      value: '',
+      error: false,
+    },
+    {
+      id: 5,
+      quest: '¿En qué tipo de zona vives?',
+      value: '',
+      error: false,
+    },
+    {
+      id: 6,
+      quest: '¿Qué uso le dará al simulador?',
+      value: '',
+      error: false,
     },
   ];
   constructor(private router: Router) {}
   public handleClick() {
-    this.router.navigate(['info2']);
+    let isValid = true;
+    this.answers.forEach((item) => {
+      if (item.value === '') {
+        item.error = true;
+        isValid = false;
+      } else {
+        item.error = false;
+      }
+    });
+
+    if (isValid) {
+      this.router.navigate(['info2']);
+    }
   }
 
   public getAnswer(id: number, $event: any) {
