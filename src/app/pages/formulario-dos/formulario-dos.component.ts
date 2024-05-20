@@ -30,7 +30,9 @@ export class FormularioDosComponent {
   public test!: number;
   public cantidadDos!: string;
   constructor(private router: Router, private currencyPipe: CurrencyPipe) {
-    this.constitucion = 'persona natural';
+    this.constitucion = JSON.parse(
+      localStorage.getItem('caracterizacion_de_negocio') || '{}'
+    ).titular.value;
     this.questions = [
       {
         id: 9,

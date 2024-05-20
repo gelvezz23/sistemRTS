@@ -18,35 +18,58 @@ export class InfoDosComponent {
   por tierra, agua y aire, y sus accesorios (como los talleres mecánicos). Todas las actividades desarrolladas a través
   de personas jurídicas serán comerciales a efectos de esta encuesta`;
 
-  titular: { value: string; error: boolean } = { value: '', error: false };
-  negocio: { value: string; error: boolean } = { value: '', error: false };
-  trabajadores: { value: string; error: boolean } = { value: '', error: false };
+  titular: { value: string; error: boolean; quest: string } = {
+    value: '',
+    error: false,
+    quest: '',
+  };
+  negocio: { value: string; error: boolean; quest: string } = {
+    value: '',
+    error: false,
+    quest: '',
+  };
+  trabajadores: { value: string; error: boolean; quest: string } = {
+    value: '',
+    error: false,
+    quest: '',
+  };
 
   constructor(private router: Router) {}
+
+  public saveLocalStorage() {
+    const data = {
+      titular: this.titular,
+      negocio: this.negocio,
+      trabajadores: this.trabajadores,
+    };
+    localStorage.setItem('caracterizacion_de_negocio', JSON.stringify(data));
+  }
+
   public handleClick() {
     this.validateValues();
     if (this.titular.error || this.negocio.error || this.trabajadores.error) {
-      console.log(
-        this.titular.error || this.negocio.error || this.trabajadores.error
-      );
     } else {
+      this, this.saveLocalStorage();
       this.router.navigate(['info3']);
     }
   }
 
-  public getAnswer = ($event: any, id: number) => {
+  public getAnswer = ($event: any, id: number, quest: string) => {
     const value = $event.target.value;
     if (id === 1) {
       this.titular.value = value;
+      this.titular.quest = quest;
       if (value === 'persona juridica') {
         this.negocio.value = 'comercial';
       }
     }
     if (id === 2) {
       this.negocio.value = value;
+      this.negocio.quest = quest;
     }
     if (id === 3) {
       this.trabajadores.value = value;
+      this.trabajadores.quest = quest;
     }
   };
 

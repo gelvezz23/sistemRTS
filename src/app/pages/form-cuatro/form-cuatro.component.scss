@@ -74,3 +74,9 @@
   cursor: pointer;
   margin-top: 1rem;
 }
+
+.container .options-right-container button:disabled,
+button[disabled]{
+  background-color: #cccccc;
+  color: #666666;
+}

@@ -126,7 +126,10 @@ export class FormularioComponent {
   }
 
   public saveLocalStorage(): void {
-    localStorage.setItem('response', JSON.stringify(this.questions));
+    localStorage.setItem(
+      'actividad_economica_a_formalizar',
+      JSON.stringify(this.questions)
+    );
   }
 
   public getValidateAnswer(id: number, value: string): void {
