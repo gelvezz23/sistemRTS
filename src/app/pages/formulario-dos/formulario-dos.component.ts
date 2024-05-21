@@ -64,7 +64,7 @@ export class FormularioDosComponent {
           '¿Cual fue el monto de sus consignaciones bancarias, depositos o inversiones financieras en el año inmediatamente anterior?',
         value: '',
         required: true,
-        disabled: this.constitucion !== 'persona natural',
+        disabled: this.constitucion === 'persona natural',
         checkedYes: false,
         checkedNo: false,
         error: false,

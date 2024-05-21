@@ -52,6 +52,6 @@ export class FormCuatroComponent {
 
   public handleClickButton() {
     this.saveLocalStorage();
-    this.router.navigate(['form']);
+    this.router.navigate(['form5']);
   }
 }

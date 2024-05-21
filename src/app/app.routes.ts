@@ -8,6 +8,7 @@ import { InfoComponent } from './pages/info/info.component';
 import { InfoDosComponent } from './pages/info-dos/info-dos.component';
 import { InfoTresComponent } from './pages/info-tres/info-tres.component';
 import { FormCuatroComponent } from './pages/form-cuatro/form-cuatro.component';
+import { FormCincoComponent } from './pages/form-cinco/form-cinco.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,6 +16,7 @@ export const routes: Routes = [
   { path: 'form2', component: FormularioDosComponent },
   { path: 'form3', component: FormularioTresComponent },
   { path: 'form4', component: FormCuatroComponent },
+  { path: 'form5', component: FormCincoComponent },
   { path: 'info', component: InfoComponent },
   { path: 'info2', component: InfoDosComponent },
   { path: 'info3', component: InfoTresComponent },

@@ -14,4 +14,8 @@ export class InfoTresComponent {
   public redirectFormCuatro() {
     this.router.navigate(['form4']);
   }
+
+  public redirectOthepath() {
+    this.router.navigate(['form']);
+  }
 }

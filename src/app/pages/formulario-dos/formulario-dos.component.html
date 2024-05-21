@@ -14,29 +14,29 @@
         <label>No</label>
       </div>
     </div>
-    @for( quest of questions; track questions){ @if(quest.id !== 101){
+    @for( quest of questions; track questions){
+      @if(quest.id !== 101){
     <div class="container_question">
       @if(quest.disabled === true){
-      <div class="question">
-        @if(quest.id === 10){
-
-        <h3 class="quest-10">
-          {{ quest.question }}
-        </h3>
-
-        } @else {
-        <h3 class="disabled">
-          {{ quest.question }}
-        </h3>
-        } @if(quest.id !== 10){
-        <img
-          src="./assets/images/icon-disabled.svg"
-          alt="?"
-          [attr.data-bs-toggle]="'modal'"
-          [attr.data-bs-target]="'#exampleModal-' + quest.id"
-        />
-        }
-      </div>
+        <div class="question">
+          @if(quest.id === 10){
+            <h3 class="quest-10">
+              {{ quest.question }}
+            </h3>
+          } @else {
+            <h3 class="disabled">
+              {{ quest.question }}
+            </h3>
+          }
+          @if(quest.id !== 10){
+            <img
+              src="./assets/images/icon-disabled.svg"
+              alt="?"
+              [attr.data-bs-toggle]="'modal'"
+              [attr.data-bs-target]="'#exampleModal-' + quest.id"
+            />
+          }
+        </div>
 
       <div class="answer">
         <input
@@ -65,7 +65,7 @@
 
       } @else {
       <div class="question">
-        @if(quest.id === 10){
+        @if(quest.id === 10 || quest.id === 101){
 
         <h3 class="quest-10">
           {{ quest.question }}
@@ -75,7 +75,8 @@
         <h3>
           {{ quest.question }}
         </h3>
-        } @if(quest.id !== 10){
+        }
+        @if(quest.id !== 10){
         <img
           src="./assets/images/icon.svg"
           alt="?"
@@ -90,47 +91,45 @@
         <div>
           <label for="gravada-con-iva">De la actividad gravada con iva</label>
           <div class="answer-inputs-divs">
-          <input
-            (input)="updateValue($event.target || '', 10)"
-            [value]="cantidad"
-            (keydown)="filtrarNumero($event)"
-            class="input-checkbox disabled"
-            type="text"
-            id="gravada-con-iva"
-            name="gravada-con-iva"
-            [required]="quest.required"
-          />
-          @if(quest.error && quest.id === 10){
-            <p class="error-inputs">Campo requerido *</p>
-          }
-        </div>
-        </div>
-
-
-          <div>
-            <label>Otras</label>
-            <div class="answer-inputs-divs">
             <input
-              (input)="updateValue($event.target || '', 101)"
+              (input)="updateValue($event.target || '', 10)"
+              [value]="cantidad"
               (keydown)="filtrarNumero($event)"
-              [value]="cantidadDos.trim()"
               class="input-checkbox disabled"
               type="text"
-              id="nose"
-              min="0"
+              id="gravada-con-iva"
               name="gravada-con-iva"
               [required]="quest.required"
             />
-            @if(quest.error && quest.id === 101){
-              <span class="error-inputs">Campo requerido *</span>
+            @if(quest.error && quest.id === 10){
+              <p class="error-inputs">Campo requerido *</p>
             }
           </div>
-          </div>
+        </div>
 
-
-
+        <div>
+            <label>Otras</label>
+            <div class="answer-inputs-divs">
+              <input
+                (input)="updateValue($event.target || '', 101)"
+                (keydown)="filtrarNumero($event)"
+                [value]="cantidadDos.trim()"
+                class="input-checkbox disabled"
+                type="text"
+                id="nose"
+                min="0"
+                name="gravada-con-iva"
+                [required]="quest.required"
+              />
+              @if(quest.error && quest.id === 101){
+                <span class="error-inputs">Campo requerido *</span>
+              }
+            </div>
+        </div>
       </div>
       } @else{
+
+
       <div class="answer">
         <input
           (change)="getAnswer('si', quest.id)"
@@ -165,7 +164,9 @@
     @if(quest.error){
       <p class="error">Campo requerido *</p>
     }
-    } }
+
+      }
+    }
 
     <div class="footer-form">
       <input type="submit" value="Continuar" (click)="handleSubmit($event)" />
