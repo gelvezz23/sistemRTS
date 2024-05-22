@@ -43,7 +43,17 @@ export class FormCincoComponent {
 
   public viewButtonSeven() {
     const data = localStorage.getItem('caracterizacion_de_negocio');
+    const data2 = localStorage.getItem('modelos_hipoteticos');
+    const modeloHipoteticos = JSON.parse(data2 || '')[1].quest;
     const personaJuridica = JSON.parse(data || '').titular.value;
+    const answer =
+      'Más de 4500 a igual o menos de 30.000 UVT (Más de 4500 a igual o menos de 30.000 UVT (Más de $ 211.792.500 a igual o menos de $ 1.411.950.000)';
+    if (personaJuridica === 'persona juridica') {
+      return true;
+    } else if (answer === modeloHipoteticos) {
+      return true;
+    }
+
     return personaJuridica === 'persona juridica';
   }
 }
