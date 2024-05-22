@@ -80,42 +80,38 @@
 
         </div>
       </div>
-
-      <div class="stepper-item completed">
-        <div class="stepper-container-item"  style="top: -5rem;">
-          <div class="step-name">Impuesto <br> sobre la  <br>renta</div>
-
-          <div class="step-counter">7</div>
-
+      @if(viewButtonSeven()){
+        <div class="stepper-item completed">
+          <div class="stepper-container-item"  style="top: -5rem;">
+            <div class="step-name">Impuesto <br> sobre la  <br>renta</div>
+            <div class="step-counter">7</div>
+          </div>
         </div>
-      </div>
-
-      <div class="stepper-item completed">
-        <div class="stepper-container-item" >
-
-          <div class="step-counter">8</div>
-          <div class="step-name">Impuesto <br> sobre la  <br>renta</div>
-
-
+      }
+      @if(viewButtonEigth()){
+        <div class="stepper-item completed">
+          <div class="stepper-container-item" >
+            <div class="step-counter">8</div>
+            <div class="step-name">Impuesto <br> sobre la  <br>renta</div>
+          </div>
         </div>
-      </div>
-
-      <div class="stepper-item completed">
-        <div class="stepper-container-item" style="top: -5rem;">
-          <div class="step-name">Impuesto <br> de industria  <br>y comercio</div>
-
-          <div class="step-counter">9</div>
-
-
+      }
+      @if(viewButtonNine()){
+        <div class="stepper-item completed">
+          <div class="stepper-container-item" style="top: -5rem;">
+            <div class="step-name">Impuesto <br> de industria  <br>y comercio</div>
+            <div class="step-counter">9</div>
+          </div>
         </div>
-      </div>
-
+      }
+      @if(viewButtonTen()){
       <div class="stepper-item completed">
         <div class="stepper-container-item">
           <div class="step-counter">10</div>
           <div class="step-name">Impuesto <br> al consumo</div>
         </div>
       </div>
+    }
     </div>
         <div class="button"><button>Continuar</button></div>
     </section>
