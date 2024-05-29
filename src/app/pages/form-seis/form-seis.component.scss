@@ -1,0 +1,86 @@
+
+.formalized-business-container {
+  height: 90vh;
+  position: absolute;
+  left: 8%;
+  top: 6rem;
+}
+.formalized-business-container h2 {
+  color: #6f309f;
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+.formalized-business-container section {
+  display: flex;
+  padding-top: 1rem;
+}
+.formalized-business-container section p {
+  width: 34%;
+  line-height: 21px;
+}
+.ques-container {
+  width: 60%;
+  height: 41vh;
+  display: flex;
+  gap: 9%;
+  flex-direction: column;
+}
+.ques-container .yes-no {
+  display: flex;
+  justify-content: flex-end;
+}
+.ques-container .yes-no div {
+  width: 7.5rem;
+  position: relative;
+  right: 7px;
+  display: inline-flex;
+  justify-content: space-between;
+  font-weight: 800;
+}
+.ques-container div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ques-container label {
+  width: 50%;
+}
+.inputs-container {
+  width: 16rem;
+}
+.ques-container .see-results-btn {
+  display: flex;
+  justify-content: center;
+}
+.see-results-btn button {
+  background-color: #02b0ef;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  font-size: larger;
+  font-weight: 500;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  cursor: pointer;
+}
+.inputs-container input[type="radio"] {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #6f309f;
+  appearance: none;
+  border-radius: 5px;
+  color: white;
+  padding: 12px;
+  cursor: pointer;
+}
+.inputs-container input[type="radio"]:checked {
+  background-image: url("./../../../assets/images/check-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #6f309f;
+  color: white;
+}
+
+.inputs-container input[type="radio"]:focus {
+  outline-color: transparent;
+}

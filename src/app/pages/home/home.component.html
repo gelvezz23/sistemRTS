@@ -3,16 +3,18 @@
     <section class="container">
         <section class="content-container-left">
             <div class="introduction-container">
-                <h2>Bienvenido(a) al simulador RST</h2>
-                <p>¿Estás pensando en el futuro y en el crecimiento de tu negocio o actividad económica? Puedes usar el
-                    simulador de formalización para conocer los pasos prácticos para formalizar tu negocio o actividad
-                    económica
-                    y los beneficios que te traerá.</p>
+                <h2>Bienvenido(a) al simulador <br/> Negocios en forma</h2>
+                <p>El simulador de formalización permite conocer los pasos practicos para formalizar su negocio o actividad economica y los beneficios que le traera</p>
             </div>
             <div class="start-ques-container">
-                <p>Tus respuestas son completamente anónima, es decir que no podremos conocer tu identidad. Responde con
+                <p>Las respuestas son completamente anónima, es decir que no podremos conocer tu identidad. Responde con
                     libertad y simula diferentes escenarios.</p>
-                <button (click)="handleClick()">inicio</button>
+                <button (click)="handleClick()">iniciar</button>
+                @if(viewRecaptcha){
+                <div class="recaptcha">
+                <re-captcha (resolved)="resolved($event)" siteKey="6LeL20YUAAAAAB43haRm-v93jNxwi7EBraClHUgX"></re-captcha>
+              </div>
+            }
             </div>
         </section>
         <div class="content-container-rigth">

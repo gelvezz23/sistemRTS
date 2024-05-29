@@ -9,6 +9,7 @@ import { InfoDosComponent } from './pages/info-dos/info-dos.component';
 import { InfoTresComponent } from './pages/info-tres/info-tres.component';
 import { FormCuatroComponent } from './pages/form-cuatro/form-cuatro.component';
 import { FormCincoComponent } from './pages/form-cinco/form-cinco.component';
+import { FormSeisComponent } from './pages/form-seis/form-seis.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,6 +18,7 @@ export const routes: Routes = [
   { path: 'form3', component: FormularioTresComponent },
   { path: 'form4', component: FormCuatroComponent },
   { path: 'form5', component: FormCincoComponent },
+  { path: 'form6', component: FormSeisComponent },
   { path: 'info', component: InfoComponent },
   { path: 'info2', component: InfoDosComponent },
   { path: 'info3', component: InfoTresComponent },

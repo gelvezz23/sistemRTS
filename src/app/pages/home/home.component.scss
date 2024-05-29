@@ -1,22 +1,8 @@
-* {
-  margin: 0;
-}
+
 .container_home {
-  font-family: "Roboto", sans-serif;
-  background-color: #000;
+  background-color: #6f309f;
 }
-nav {
-  background-color: #02b0ef;
-  display: flex;
-  align-items: center;
-  color: #f0f8ff;
-  font-size: large;
-  padding: 3rem 0 1rem 5rem;
-}
-nav img {
-  width: 11rem;
-  padding-left: 7rem;
-}
+
 .container {
   display: flex;
   width: 100%;
@@ -31,6 +17,7 @@ nav img {
 
  h2 {
   font-size: xx-large;
+  font-weight: 800;
   padding-bottom: 1rem;
   color: #f0f8ff;
 }
@@ -40,11 +27,16 @@ nav img {
   color: #f0f8ff;
 }
 .start-ques-container {
-  color: #02b0ef;
+  color: #63cd71;
+  font-size: x-large;
   display: flex;
-  padding-inline: 5rem;
+
   flex-direction: column;
   align-items: center;
+}
+
+.recaptcha{
+  padding: 1rem;
 }
 .start-ques-container button {
   font-size: x-large;
