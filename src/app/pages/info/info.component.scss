@@ -1,6 +1,16 @@
 
+
 article{
   padding: 1rem;
+}
+
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+
 }
 article h1 {
   color: #6f309f;
@@ -21,31 +31,43 @@ article p {
   align-items: flex-start;
   color: red;
 }
+.disabled{
+  color: rgb(130, 130, 130);
+}
 .ques-container {
+  max-width: 800px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap:1rem;
+  padding: 1rem;
 }
 .ques-container div {
   display: flex;
-  width: 50%;
+width: 100%;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
 }
-.ques-container select {
-  background-color: aliceblue;
-  padding: 8px 0px 8px 30px;
-  width: 14rem;
 
-  border: none;
-  border-bottom: 1px solid #000;
-  outline: none;
+
+@media (max-width: 600px) {
+.ques-container div {
+flex-direction: column;
 }
+
+}
+.ng-select.ng-select-single .ng-select-container, .ng-select.ng-select-opened .ng-select-container{
+  background: transparent !important;
+  padding: 1rem;
+}
+
 .button {
   display: flex;
   justify-content: center !important;
+  padding-top: 3rem;
 }
 .button button {
   background-color: #02B0F0;

@@ -37,31 +37,77 @@
             />
           }
         </div>
+        @if(quest.id === 10 || quest.id === 101){
+          <div class="answer-inputs-text">
+            <div>
+              <label for="gravada-con-iva" class="disabled">De la actividad gravada con iva</label>
+              <div class="answer-inputs-divs">
+                <input
+                  (input)="updateValue($event.target || '', 10)"
+                  [value]="cantidad"
+                  (keydown)="filtrarNumero($event)"
+                  class="input-checkbox disabled"
+                  type="text"
+                  id="gravada-con-iva"
+                  name="gravada-con-iva"
+                  [required]="quest.required"
+                  [disabled]="true"
 
-      <div class="answer">
-        <input
-          (change)="getAnswer('si', quest.id)"
-          class="input-checkbox disabled"
-          type="radio"
-          id="si"
-          name="{{ quest.id }}"
-          value="si"
-          [checked]="quest.checkedYes"
-          [disabled]="quest.disabled"
-          [required]="quest.required"
-        />
-        <input
-          (change)="getAnswer('no', quest.id)"
-          class="input-checkbox disabled"
-          type="radio"
-          id="no"
-          name="{{ quest.id }}"
-          [checked]="quest.checkedNo"
-          [disabled]="quest.disabled"
-          [required]="quest.required"
-          value="no"
-        />
-      </div>
+                />
+                @if(quest.error && quest.id === 10){
+                  <p class="error-inputs">Campo requerido *</p>
+                }
+              </div>
+            </div>
+
+            <div>
+                <label class="disabled">Otras</label>
+                <div class="answer-inputs-divs">
+                  <input
+                    (input)="updateValue($event.target || '', 101)"
+                    (keydown)="filtrarNumero($event)"
+                    [value]="cantidadDos.trim()"
+                    class="input-checkbox disabled"
+                    type="text"
+                    id="nose"
+                    min="0"
+                    name="gravada-con-iva"
+                    [required]="quest.required"
+                    [disabled]="true"
+                  />
+                  @if(quest.error && quest.id === 101){
+                    <span class="error-inputs">Campo requerido *</span>
+                  }
+                </div>
+            </div>
+          </div>
+          } @else {
+            <div class="answer">
+              <input
+                (change)="getAnswer('si', quest.id)"
+                class="input-checkbox disabled"
+                type="radio"
+                id="si"
+                name="{{ quest.id }}"
+                value="si"
+                [checked]="quest.checkedYes"
+                [disabled]="quest.disabled"
+                [required]="quest.required"
+              />
+              <input
+                (change)="getAnswer('no', quest.id)"
+                class="input-checkbox disabled"
+                type="radio"
+                id="no"
+                name="{{ quest.id }}"
+                [checked]="quest.checkedNo"
+                [disabled]="quest.disabled"
+                [required]="quest.required"
+                value="no"
+              />
+            </div>
+          }
+
 
       } @else {
       <div class="question">

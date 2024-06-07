@@ -1,4 +1,12 @@
 
+.inputs-container input[type="radio"]:disabled{
+  border: 1px solid #a19ba8;
+}
+
+label.disabled{
+  color: #a19ba8;
+}
+
 .formalized-business-container {
   height: 90vh;
   position: absolute;

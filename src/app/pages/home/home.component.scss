@@ -11,6 +11,16 @@
   padding: 3rem;
   gap: 3rem;
 }
+
+@media (max-width:1200px) {
+  .container{
+    height: auto;
+    flex-direction: column-reverse;
+
+  }
+
+}
+
 .content-container-left, .content-container-rigth{
   width: 100%;
 }

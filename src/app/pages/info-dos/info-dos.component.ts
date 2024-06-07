@@ -50,7 +50,7 @@ export class InfoDosComponent {
     if (this.titular.error || this.negocio.error || this.trabajadores.error) {
     } else {
       this, this.saveLocalStorage();
-      this.router.navigate(['info3']);
+      this.router.navigate(['form6']);
     }
   }
 

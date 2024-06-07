@@ -1,19 +1,24 @@
-
+<article>
+  <h1>Conocimiento del usuario</h1>
+  <p>
+      Introduce algunos datos que permitirán establecer tu ruta de la formalización y mejorar la simulación.
+  </p>
+</article>
     <section>
-        <article>
-            <h1>Conocimiento del usuario</h1>
-            <p>
-                Introduce algunos datos que permitirán establecer tu ruta de la formalización y mejorar la simulación.
-            </p>
-        </article>
+
         <div class="ques-container">
             <div>
                 <label>¿Cuál es tu sexo?</label>
-                <select name="ques" id="ques" (change)="getAnswer(1, $event)">
-                    <option value="">- seleccione -</option>
-                    <option value="mujer">Mujer</option>
-                    <option value="hombre">Hombre</option>
-                </select>
+                <ng-select
+                  (change)="getAnswer(1, $event)"
+                  (clear)="clearAnswer(1, {name: ''})"
+                  [items]="[{name:'Mujer'}, {name:'Hombre'}, {name:'Otro'}]"
+                  bindLabel="name"
+                  bindValue="name"
+                  placeholder="- seleccione -"
+                  [(ngModel)]="selectedSexo"
+                  labelForId="sexo">
+                </ng-select>
               </div>
 
               @if(answers[0].error){
@@ -22,86 +27,98 @@
 
             <div>
               <label>¿En qué rango de edad te encuentras?</label>
-                <select name="ques" id="ques" (change)="getAnswer(2, $event)">
-                    <option value="">- seleccione -</option>
-                    <option value="18-29">18 a 29</option>
-                    <option value="30-49">30 a 49</option>
-                    <option value="50-69">50 a 69</option>
-                </select>
+              <ng-select
+                (change)="getAnswer(2, $event)"
+                (clear)="clearAnswer(2, {name: ''})"
+                [items]="[{name:'18 a 29'}, {name:'30 a 49'}, {name:'50 a más'}]"
+                bindLabel="name"
+                bindValue="name"
+                placeholder="- seleccione -"
+                [(ngModel)]="selectedEdad"
+                labelForId="edad">
+              </ng-select>
               </div>
               @if(answers[1].error){
                 <div><p class="error">campo requerido *</p></div>
               }
+
+
+
             <div>
               <label>Selecciona el departamento donde vives</label>
-              <select name="ques" id="ques" (change)="getAnswer(3, $event)">
-                    <option value="">- seleccione -</option>
-                    <option value="cundinamarca">Cundinamarca</option>
-                    <option value="norte de santander">Norte de Santander</option>
-                    <option value="santander">Santander</option>
-                </select>
+              <ng-select
+              (change)="getAnswer(3, $event)"
+              (clear)="clearAnswer(3, {name: ''})"
+                [items]="departamentos"
+                bindLabel="name"
+                bindValue="name"
+                placeholder="- seleccione -"
+                [(ngModel)]="selectedDepartamentos"
+                labelForId="ciudades">
+              </ng-select>
+
             </div>
             @if(answers[2].error){
               <div><p class="error">campo requerido *</p></div>
             }
-            <div>
+
+
+            <div >
               <label>Selecciona el municipio donde vives</label>
-                <select name="ques" id="ques" (change)="getAnswer(4, $event)">
-                    <option value="">- seleccione -</option>
-                    <option value="Arauca">Arauca</option>
-                    <option value="Armenia">Armenia</option>
-                    <option value="Barranquilla">Barranquilla</option>
-                    <option value="Bogotá">Bogotá</option>
-                    <option value="Bucaramanga">Bucaramanga</option>
-                    <option value="Cali">Cali</option>
-                    <option value="Cartagena">Cartagena</option>
-                    <option value="Cúcuta">Cúcuta</option>
-                    <option value="Florencia">Florencia</option>
-                    <option value="Ibagué">Ibagué</option>
-                    <option value="Leticia">Leticia</option>
-                    <option value="Manizales">Manizales</option>
-                    <option value="Medellín">Medellín</option>
-                    <option value="Mitú">Mitú</option>
-                    <option value="Mocoa">Mocoa</option>
-                    <option value="Montería">Montería</option>
-                    <option value="Neiva">Neiva</option>
-                    <option value="Pasto">Pasto</option>
-                    <option value="Pereira">Pereira</option>
-                    <option value="Popayán">Popayán</option>
-                    <option value="Puerto Carreño">Puerto Carreño</option>
-                    <option value="Puerto Inírida">Puerto Inírida</option>
-                    <option value="Quibdó">Quibdó</option>
-                    <option value="Riohacha">Riohacha</option>
-                    <option value="San Andrés">San Andrés</option>
-                    <option value="San José del Guaviare">San José del Guaviare</option>
-                    <option value="Santa Marta">Santa Marta</option>
-                    <option value="Sincelejo">Sincelejo</option>
-                    <option value="Tunja">Tunja</option>
-                    <option value="Valledupar">Valledupar</option>
-                    <option value="Villavicencio">Villavicencio</option>
-                    <option value="Yopal">Yopal</option>
-                </select>
-            </div>
-            @if(answers[3].error){
-              <div><p class="error">campo requerido *</p></div>
-            }
+              <ng-select
+                (change)="getAnswer(4, $event)"
+                (clear)="clearAnswer(4, {name: ''})"
+                [items]="municipios"
+                bindLabel="name"
+                bindValue="name"
+                placeholder="- seleccione -"
+                [(ngModel)]="selectedMunicipio"
+                labelForId="municipio">
+              </ng-select>
+              </div>
+              @if(answers[3].error){
+                <div><p class="error">campo requerido *</p></div>
+              }
+
+
             <div>
-              <label>¿En qué tipo de zona vives?</label>
-              <select name="ques" id="ques" (change)="getAnswer(5, $event)">
-                    <option value="">- seleccione -</option>
-                    <option value="urbana">Urbana</option>
-                    <option value="rural">Rural</option>
-                </select>
+              @if(disabledRural){
+                <label class="disabled">¿En qué tipo de zona vives?</label>
+
+              } @else{
+                <label class="">¿En qué tipo de zona vives?</label>
+
+              }
+
+              <ng-select
+                [disabled]="disabledRural"
+                (change)="getAnswer(5, $event)"
+                (clear)="clearAnswer(5, {name: ''})"
+                [items]="[{name:'Urbana'}, {name:'Rural'}]"
+                bindLabel="name"
+                bindValue="name"
+                placeholder="- seleccione -"
+                [(ngModel)]="selectedZona"
+                labelForId="zona">
+              </ng-select>
             </div>
             @if(answers[4].error){
               <div><p class="error">campo requerido *</p></div>
             }
             <div>
               <label>¿Qué uso le dará al simulador?</label>
-              <select name="ques" id="ques" (change)="getAnswer(6, $event)">
-                    <option value="">- seleccione -</option>
-                    <option value="aprender">Aprender</option>
-                </select>
+              <ng-select
+              (change)="getAnswer(6, $event)"
+              (clear)="clearAnswer(6, {name: ''})"
+              [items]="[{name:'Proyectar un negocio'}, {id: 22, name:'Enseñar'} , {name:'Evaluar un negocio en curso'}, {name: 'Aprender'}]"
+              bindLabel="name"
+              bindValue="name"
+              placeholder="- seleccione -"
+              [(ngModel)]="selectedUso"
+              labelForId="uso">
+            </ng-select>
+
+
             </div>
             @if(answers[5].error){
               <div><p class="error">campo requerido *</p></div>

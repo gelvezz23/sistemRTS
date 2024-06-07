@@ -10,6 +10,7 @@
                 <p>Las respuestas son completamente anónima, es decir que no podremos conocer tu identidad. Responde con
                     libertad y simula diferentes escenarios.</p>
                 <button (click)="handleClick()">iniciar</button>
+
                 @if(viewRecaptcha){
                 <div class="recaptcha">
                 <re-captcha (resolved)="resolved($event)" siteKey="6LeL20YUAAAAAB43haRm-v93jNxwi7EBraClHUgX"></re-captcha>

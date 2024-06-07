@@ -104,7 +104,10 @@ export class FormularioDosComponent {
   }
 
   public saveLocalStorage(): void {
-    localStorage.setItem('response-two', JSON.stringify(this.questions));
+    localStorage.setItem(
+      'formulario_sobre_actividad_economica',
+      JSON.stringify(this.questions)
+    );
   }
 
   public getValidateAnswer(id: number, value: string): void {
@@ -175,9 +178,7 @@ export class FormularioDosComponent {
   }
 
   public updateValue(event: any, id: number) {
-    console.log(this.questions);
     let input = event.value?.trim() || '';
-    let val = parseInt(input || '', 10);
     if (id === 10) {
       this.cantidad =
         this.currencyPipe.transform(
@@ -214,7 +215,7 @@ export class FormularioDosComponent {
 
   public handleSubmit($event: any): void {
     $event.preventDefault();
-
+    console.log(this.questions);
     let isValid = true;
     this.questions.forEach((item) => {
       if (item.value === '' && !item.disabled) {

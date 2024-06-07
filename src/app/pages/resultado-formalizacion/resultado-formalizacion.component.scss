@@ -1,0 +1,76 @@
+
+.congrats-container {
+  background-color: #6f309f;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: auto;
+  padding: 1rem;
+}
+
+.congrats-container div{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: #02b0ef !important;
+  font-weight: 900;
+  font-size: 4rem;
+  width: 100%;
+  display: flex;
+
+}
+p{
+  font-weight: 800;
+  color: white;
+  font-size: 1.5rem;
+}
+
+img{
+  width: 60%;
+  height: auto;
+}
+button {
+  width: 15rem;
+  margin-top: 2rem;
+  background-color: #02b0ef;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  font-size: larger;
+  font-weight: 500;
+  padding-block: 0.5rem;
+  padding-inline: 2rem;
+  cursor: pointer;
+}
+.text p{
+  font-size: 1rem;
+  font-weight: normal;
+}
+.text h2{
+  color:#02b0ef;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .congrats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: auto;
+  }
+
+  .congrats-container div{
+    width: 100%;
+  }
+
+  h1{
+    font-size: 2rem;
+  }
+}

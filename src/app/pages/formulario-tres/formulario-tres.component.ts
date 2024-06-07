@@ -2,6 +2,7 @@ import { formatCurrency, getCurrencySymbol } from '@angular/common';
 import { Component } from '@angular/core';
 import { DisclaimerComponent } from '../../components/disclaimer/disclaimer.component';
 import { CurrencyPipe } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-formulario-tres',
   standalone: true,
@@ -28,7 +29,7 @@ export class FormularioTresComponent {
 
   public answers!: { id: number; value: string }[];
 
-  constructor(private currencyPipe: CurrencyPipe) {
+  constructor(private currencyPipe: CurrencyPipe, private router: Router) {
     this.cantidad = '';
     this.cantidadDos = '';
     this.cantidadTres = '';
@@ -223,5 +224,9 @@ export class FormularioTresComponent {
       event.preventDefault(); // Evita la entrada
     }
     return;
+  }
+
+  public handleClick() {
+    this.router.navigate(['form7']);
   }
 }

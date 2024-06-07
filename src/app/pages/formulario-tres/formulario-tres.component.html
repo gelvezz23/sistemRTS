@@ -5,7 +5,7 @@
 <section class="container">
   <app-disclaimer class="disclaimer" />
   <section class="ques-container">
-    <form action="">
+
       <div>
         <label for="patirmonio_bruto"
           >¿Cuál fue su patrimonio bruto el año anterior?</label
@@ -158,8 +158,7 @@
         [value]="cantidadDoce" />
       </div>
       <div class="footer-form">
-        <input type="submit" value="Ver la ruta de la formalizacion" />
+        <input type="button" value="Ver la ruta de la formalizacion" (click)="handleClick()"/>
       </div>
-    </form>
   </section>
 </section>
