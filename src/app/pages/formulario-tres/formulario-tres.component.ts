@@ -27,7 +27,7 @@ export class FormularioTresComponent {
   public total!: number;
   public totalDos!: number;
 
-  public answers!: { id: number; value: string }[];
+  public answers!: { id: number; value: string; text: string }[];
 
   constructor(private currencyPipe: CurrencyPipe, private router: Router) {
     this.cantidad = '';
@@ -46,17 +46,34 @@ export class FormularioTresComponent {
     this.totalDos = 0;
 
     this.answers = [
-      { id: 20, value: '' },
-      { id: 21, value: '' },
-      { id: 22, value: '' },
-      { id: 23, value: '' },
-      { id: 24, value: '' },
-      { id: 25, value: '' },
-      { id: 26, value: '' },
-      { id: 28, value: '' },
-      { id: 29, value: '' },
-      { id: 30, value: '' },
-      { id: 31, value: '' },
+      {
+        id: 20,
+        value: '',
+        text: '¿Cuál fue su patrimonio bruto el año anterior?',
+      },
+      {
+        id: 21,
+        value: '',
+        text: '¿Cuál es su patrimonio bruto del presente año?',
+      },
+      { id: 22, value: '', text: '¿Ingresos de actividades gravadas con IVA?' },
+      {
+        id: 23,
+        value: '',
+        text: 'Ingresos de actividades de restaurante, cafeterías, autoservicio, bares y similares',
+      },
+      { id: 24, value: '', text: 'Ingresos Laborales' },
+      { id: 25, value: '', text: 'Otros ingresos' },
+      { id: 26, value: '', text: 'Total de ingresos brutos' },
+      { id: 28, value: '', text: '¿Ingresos de actividades gravadas con IVA?' },
+      {
+        id: 29,
+        value: '',
+        text: 'Ingresos de actividades de restaurante, cafeterías, autoservicio, bares y similares',
+      },
+      { id: 30, value: '', text: 'Ingresos Laborales' },
+      { id: 31, value: '', text: 'Otros ingresos' },
+      { id: 32, value: '', text: 'Total de ingresos brutos' },
     ];
   }
 
@@ -178,7 +195,7 @@ export class FormularioTresComponent {
           'symbol',
           '1.0-0'
         ) || '';
-      this.getAnswer(this.cantidadOcho, id);
+      this.getAnswer(this.cantidadNueve, id);
     }
     if (id === 30) {
       this.cantidadDiez =
