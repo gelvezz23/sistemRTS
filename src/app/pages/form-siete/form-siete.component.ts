@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-siete',
@@ -8,6 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './form-siete.component.scss',
 })
 export class FormSieteComponent {
+  constructor(private router: Router) {}
+
   public viewButtonOne() {
     const data = window.localStorage.getItem('caracterizacion_de_negocio');
     const titular = JSON.parse(data || '').titular.value;
@@ -256,5 +259,9 @@ export class FormSieteComponent {
       return true;
     }
     return false;
+  }
+
+  public handleClick() {
+    this.router.navigate(['beneficio']);
   }
 }

@@ -1,0 +1,35 @@
+.rating{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.rating:not(:checked) > input {
+
+  appearance: none;
+}
+
+.rating:not(:checked) > label {
+  cursor: pointer;
+  color: white;
+
+
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label
+{
+color: yellow;
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label{
+  color: yellow;
+}
+
+.rating > input:checked ~ label{
+  color: yellow;
+}
+
+

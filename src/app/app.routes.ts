@@ -15,6 +15,7 @@ import { FelicitacionesComponent } from './pages/felicitaciones/felicitaciones.c
 import { FormSieteComponent } from './pages/form-siete/form-siete.component';
 import { DescubreComponent } from './pages/descubre/descubre.component';
 import { BeneficiosComponent } from './pages/beneficios/beneficios.component';
+import { EncuestaComponent } from './pages/encuesta/encuesta.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,4 +33,5 @@ export const routes: Routes = [
   { path: 'felicitaciones', component: FelicitacionesComponent },
   { path: 'descubre', component: DescubreComponent },
   { path: 'beneficio', component: BeneficiosComponent },
+  { path: 'encuesta', component: EncuestaComponent },
 ];

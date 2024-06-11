@@ -13,10 +13,6 @@ export class FormCincoComponent {
   isViewButtonFive = true;
   isPersonaNatural = true;
 
-  public handleRedirect() {
-    this.router.navigate(['form5']);
-  }
-
   public viewButtonOne() {
     const data = localStorage.getItem('caracterizacion_de_negocio');
 
@@ -184,5 +180,9 @@ export class FormCincoComponent {
       return true;
     }
     return false;
+  }
+
+  public handleClick() {
+    this.router.navigate(['beneficio']);
   }
 }
