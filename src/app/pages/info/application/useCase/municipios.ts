@@ -171,7 +171,7 @@ export const municipiosV2: any = {
     { id: 22, name: 'Tubara' },
     { id: 23, name: 'Usiacuri' },
   ],
-  Bogotá: [{ id: 1, name: 'Bogota D.C.' }],
+  Bogotá: [{ id: 1, name: 'Bogotá D.C.' }],
   Bolívar: [
     { id: 1, name: 'Cicuco' },
     { id: 2, name: 'Hatillo De Loba' },

@@ -165,8 +165,6 @@ export class FormularioTresComponent {
     }
 
     this.total =
-      Number(this.cantidad.replace(/\D/g, '')) +
-      Number(this.cantidadDos.replace(/\D/g, '')) +
       Number(this.cantidadTres.replace(/\D/g, '')) +
       Number(this.cantidadCuatro.replace(/\D/g, '')) +
       Number(this.cantidadCinco.replace(/\D/g, '')) +

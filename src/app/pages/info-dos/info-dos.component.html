@@ -9,7 +9,7 @@
             <select name="business" [(ngModel)]="titular.value" id="business" (change)="getAnswer($event, 1, 'Titular del negocio')">
               <option value="">Seleccione</option>
               <option value="persona natural">Persona Natural</option>
-              <option value="persona juridica">Persona Juridica</option>
+              <option value="persona juridica">Persona Jurídica</option>
             </select>
             @if(titular.error){
               <p>el campo es requerido*</p>
@@ -31,7 +31,7 @@
                     <option value="">Seleccione</option>
                     <option value="comercial">Comercial</option>
                     <option value="profesion liberal o artistica">
-                      Profesión liberal o artistica
+                      Profesión liberal o artística
                     </option>
                     <option value="agricultura o ganaderia">
                       Agricultura y ganadería
@@ -59,7 +59,7 @@
 
         <select name="business" id="business" (change)="getAnswer($event, 3, '¿Emplea trabajadores?')">
           <option value="">Seleccione</option>
-          <option value="si">Si</option>
+          <option value="si">Sí</option>
           <option value="no">No</option>
         </select>
         @if(trabajadores.error){

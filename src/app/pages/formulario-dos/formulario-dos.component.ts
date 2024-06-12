@@ -182,7 +182,7 @@ export class FormularioDosComponent {
     if (id === 10) {
       this.cantidad =
         this.currencyPipe.transform(
-          input.replace(/\D/g, '').replace(/^0+/),
+          input.replace(/\D/g, ''),
           'USD',
           'symbol',
           '1.0-0'
@@ -192,7 +192,7 @@ export class FormularioDosComponent {
     if (id === 101) {
       this.cantidadDos =
         this.currencyPipe.transform(
-          input.replace(/\D/g, '').replace(/^0+/),
+          input.replace(/\D/g, ''),
           'USD',
           'symbol',
           '1.0-0'
