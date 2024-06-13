@@ -1,66 +1,60 @@
+<app-navbar-two/>
 
+<section class="formalized-business-container">
 
-    <section class="formalized-business-container">
-        <h2>¿Su negocio está formalizado?</h2>
-        <section>
-            <p>Para entender en qué dimensión de formalización se encuentra su negocio, le pedimos que responda las
-                siguientes preguntas. Esto permitirá obtener resultados más fiables sobre su progreso en el cambio hacia
-                la formalización.</p>
-            <div class="ques-container">
-                <div class="yes-no">
-                    <div>
-                        <span>no</span><span>sí</span>
-                    </div>
-                </div>
+  <div class="ques-container">
+    <h2>Evalúe si su negocio está <br> formalizado respondiendo <br>estas preguntas</h2>
+    <div class="yes-no">
+      <div>
+        <span>no</span><span>sí</span>
+      </div>
+    </div>
 
-                <div>
-                  @if(viewQuestOne()){
-                  <label for="answer yes-no-one">¿Tiene Registro Único Tributario (RUT)?</label>
-                  } @else{
-                  <label for="answer yes-no-one" class="disabled">¿Tiene Registro Único Tributario (RUT)?</label>
-                  }
-                    <div class="inputs-container">
-                        @if(viewQuestOne()){
-                          <img
-                            src="./assets/images/icon.svg"
-                            alt="?"
-                            [attr.data-bs-toggle]="'modal'"
-                            [attr.data-bs-target]="'#exampleModal-' + 1"
-                          />
-                          <input id="answer-one" name="check-one" type="radio" value="no" (change)="getAnswer('no', 1)">
-                          <input id="answer-one" name="check-one" type="radio" value="si" (change)="getAnswer('si', 1)">
-                        } @else{
-                          <img
-                            src="./assets/images/icon-disabled.svg"
-                            alt="?"
-                            [attr.data-bs-toggle]="'modal'"
-                            [attr.data-bs-target]="'#exampleModal-' + 1"
-                          />
-                          <input id="answer-one" name="check-one" type="radio" value="no" [disabled]="true">
-                          <input id="answer-one" name="check-one" type="radio" value="si" [disabled]="true">
-                        }
-                    </div>
-                </div>
+    <div>
+      @if(viewQuestOne()){
+        <label for="answer yes-no-one">¿Tiene Registro Único Tributario (RUT)?</label>
+      } @else{
+        <label for="answer yes-no-one" class="disabled">¿Tiene Registro Único Tributario (RUT)?</label>
+      }
+        <div class="inputs-container">
+          @if(viewQuestOne()){
+            <img
+              src="./assets/images/icon.svg"
+              alt="?"
+              [attr.data-bs-toggle]="'modal'"
+              [attr.data-bs-target]="'#exampleModal-' + 1"
+            />
+            <input id="answer-one" name="check-one" type="radio" value="no" (change)="getAnswer('no', 1)">
+            <input id="answer-one" name="check-one" type="radio" value="si" (change)="getAnswer('si', 1)">
+          } @else{
+            <img
+              src="./assets/images/icon-disabled.svg"
+              alt="?"
+              [attr.data-bs-toggle]="'modal'"
+              [attr.data-bs-target]="'#exampleModal-' + 1"
+            />
+            <input id="answer-one" name="check-one" type="radio" value="no" [disabled]="true">
+            <input id="answer-one" name="check-one" type="radio" value="si" [disabled]="true">
+          }
+        </div>
+    </div>
 
-
-
-                <div>
-                  @if(viewQuestTwo()){
-                  <label for="answer yes-no-two">¿Tiene Registro Mercantil?</label>
-                  } @else {
-                  <label for="answer yes-no-two" class="disabled">¿Tiene Registro Mercantil?</label>
-
-                  }
-                    <div class="inputs-container">
-                        @if(viewQuestTwo()){
-                          <img
-                            src="./assets/images/icon.svg"
-                            alt="?"
-                            [attr.data-bs-toggle]="'modal'"
-                            [attr.data-bs-target]="'#exampleModal-' + 2"
-                          />
-                        <input id="answer-two" name="check-two" type="radio" value="no" [disabled]="handleCheckedTwo()" (change)="getAnswer('no', 2)">
-                        <input id="answer-two" name="check-two" type="radio" value="si" [checked]="handleCheckedTwo()" (change)="getAnswer('si', 2)">
+    <div>
+      @if(viewQuestTwo()){
+        <label for="answer yes-no-two">¿Tiene Registro Mercantil?</label>
+      } @else {
+        <label for="answer yes-no-two" class="disabled">¿Tiene Registro Mercantil?</label>
+      }
+      <div class="inputs-container">
+        @if(viewQuestTwo()){
+          <img
+            src="./assets/images/icon.svg"
+            alt="?"
+            [attr.data-bs-toggle]="'modal'"
+            [attr.data-bs-target]="'#exampleModal-' + 2"
+          />
+          <input id="answer-two" name="check-two" type="radio" value="no" [disabled]="handleCheckedTwo()" (change)="getAnswer('no', 2)">
+          <input id="answer-two" name="check-two" type="radio" value="si" [checked]="handleCheckedTwo()" (change)="getAnswer('si', 2)">
                         } @else{
                           <img
                             src="./assets/images/icon-disabled.svg"
@@ -198,7 +192,13 @@
                         <input id="answer-seven" name="check-seven" type="radio" value="si" (change)="getAnswer('si', 7)">
                     </div>
                 </div>
-                <div class="see-results-btn"><button (click)="handleSubmit($event)">Ver Resultados</button></div>
-            </div>
-        </section>
+<div>
+  <p style="color: #006591">Recuerde que las respuestas son anónimas</p>
+</div>
+  </div>
+  <div class="content-image">
+    <img class="image" src="/assets/icons/recurso-3.png" alt="imagen">
+    <div class="see-results-btn"><button (click)="handleSubmit($event)">Ver <br> Resultados</button></div>
+  </div>
+
     </section>

@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalComponent } from '../../components/modal/modal.component';
 import { FormsModule } from '@angular/forms';
+import { NavbarTwoComponent } from '../../components/navbar-two/navbar-two.component';
 @Component({
   selector: 'app-info-dos',
   standalone: true,
   templateUrl: './info-dos.component.html',
   styleUrl: './info-dos.component.scss',
-  imports: [ModalComponent, FormsModule],
+  imports: [ModalComponent, FormsModule, NavbarTwoComponent],
 })
 export class InfoDosComponent {
   mensaje: string =

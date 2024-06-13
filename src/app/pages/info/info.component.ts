@@ -4,12 +4,13 @@ import { NgSelectConfig, NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
 import { municipiosV2 } from './application/useCase/municipios';
 import { departamentos } from './application/useCase/departamentos';
+import { NavbarTwoComponent } from '../../components/navbar-two/navbar-two.component';
 @Component({
   selector: 'app-info',
   standalone: true,
-  imports: [NgSelectModule, FormsModule],
   templateUrl: './info.component.html',
   styleUrl: './info.component.scss',
+  imports: [NgSelectModule, FormsModule, NavbarTwoComponent],
 })
 export class InfoComponent {
   answers = [

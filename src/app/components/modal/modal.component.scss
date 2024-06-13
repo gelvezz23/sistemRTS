@@ -11,3 +11,22 @@
   padding: 1rem;
   margin: auto;
 }
+.modal-header{
+  border-bottom: none !important;
+}
+.modal-footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: none !important;
+}
+
+.modal-footer button{
+  background-color: transparent;
+  border: none;
+  color: #006591;
+  font-size: 1.5rem;
+  text-decoration-line: underline;
+}
+
+

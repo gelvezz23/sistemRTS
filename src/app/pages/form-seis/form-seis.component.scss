@@ -8,29 +8,38 @@ label.disabled{
 }
 
 .formalized-business-container {
-  height: 90vh;
-  position: absolute;
-  left: 8%;
-  top: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
 }
-.formalized-business-container h2 {
-  color: #6f309f;
+ h2 {
+  color: #006591;
   font-weight: 800;
   font-size: 2.5rem;
 }
-.formalized-business-container section {
+.content-image{
   display: flex;
-  padding-top: 1rem;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding:2rem;
+  gap: 6rem;
+
 }
-.formalized-business-container section p {
-  width: 34%;
-  line-height: 21px;
+.image{
+  padding: 2rem;
+  width: 100%;
+  height: 26rem;
 }
+
 .ques-container {
-  width: 60%;
-  height: 41vh;
+max-width: 35rem;
+
+width: 100%;
   display: flex;
-  gap: 9%;
+  gap: 1rem;
   flex-direction: column;
 }
 .ques-container .yes-no {
@@ -61,14 +70,11 @@ label.disabled{
   justify-content: center;
 }
 .see-results-btn button {
-  background-color: #02b0ef;
+  background-color: #006591;
   color: #ffffff;
   border: none;
-  border-radius: 20px;
-  font-size: larger;
-  font-weight: 500;
-  padding-block: 0.5rem;
-  padding-inline: 1rem;
+  font-weight: 600;
+  width: 12rem;
   cursor: pointer;
 }
 .inputs-container input[type="radio"] {

@@ -1,19 +1,18 @@
 
 
 article{
-  padding: 1rem;
+  padding: 3rem;
 }
 
 section{
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  width: 100%;
 
+  width: 100%;
 }
-article h1 {
-  color: #6f309f;
+h1 {
+  color: #006591;
   font-size: xx-large;
   font-weight: 900;
 }
@@ -36,20 +35,19 @@ article p {
 }
 .ques-container {
   max-width: 800px;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap:1rem;
   padding: 1rem;
 }
 .ques-container div {
   display: flex;
-width: 100%;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  width: 100%;
 }
 
 
@@ -59,20 +57,19 @@ flex-direction: column;
 }
 
 }
-.ng-select.ng-select-single .ng-select-container, .ng-select.ng-select-opened .ng-select-container{
-  background: transparent !important;
-  padding: 1rem;
-}
+
 
 .button {
   display: flex;
-  justify-content: center !important;
-  padding-top: 3rem;
+  justify-content: flex-end !important;
+  padding: 3rem 0px;
+  width: 100%;
+  max-width: 1100px;
 }
-.button button {
+button {
   background-color: #02B0F0;
   border: none;
-  border-radius: 2rem;
   color: white;
+  font-weight: 600;
   padding: 0.5rem 1rem;
 }

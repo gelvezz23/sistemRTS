@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { RecaptchaModule } from 'ng-recaptcha';
+import { NavbarTwoComponent } from '../../components/navbar-two/navbar-two.component';
 
 @Component({
   selector: 'app-form-seis',
   standalone: true,
-  imports: [],
   templateUrl: './form-seis.component.html',
   styleUrl: './form-seis.component.scss',
+  imports: [NavbarTwoComponent],
 })
 export class FormSeisComponent {
   public questions: {

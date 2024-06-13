@@ -1,70 +1,64 @@
+<app-navbar-two/>
 <article>
   <h1>Conocimiento del usuario</h1>
-  <p>
-      Introduce algunos datos que permitirán establecer tu ruta de la formalización y mejorar la simulación.
-  </p>
 </article>
-    <section>
+<section>
+  <div class="ques-container">
+    <div>
+      <label>Sexo</label>
+      <ng-select
+        (change)="getAnswer(1, $event)"
+        (clear)="clearAnswer(1, {name: ''})"
+        [items]="[{name:'Mujer'}, {name:'Hombre'}, {name:'Otro'}]"
+        bindLabel="name"
+        bindValue="name"
+        placeholder="- seleccione -"
+        [(ngModel)]="selectedSexo"
+        labelForId="sexo">
+      </ng-select>
+    </div>
+    @if(answers[0].error){
+      <div><p class="error">campo requerido *</p></div>
+    }
 
-        <div class="ques-container">
+    <div>
+      <label>Rango <br> de edad</label>
+      <ng-select
+        (change)="getAnswer(2, $event)"
+        (clear)="clearAnswer(2, {name: ''})"
+        [items]="[{name:'18 a 29'}, {name:'30 a 49'}, {name:'50 a más'}]"
+        bindLabel="name"
+        bindValue="name"
+        placeholder="- seleccione -"
+        [(ngModel)]="selectedEdad"
+        labelForId="edad">
+      </ng-select>
+      </div>
+      @if(answers[1].error){
+        <div><p class="error">campo requerido *</p></div>
+      }
+
+      <div>
+        <label>Selecciona el departamento <br> donde vives</label>
+        <ng-select
+        (change)="getAnswer(3, $event)"
+        (clear)="clearAnswer(3, {name: ''})"
+          [items]="departamentos"
+          bindLabel="name"
+          bindValue="name"
+          placeholder="- seleccione -"
+          [(ngModel)]="selectedDepartamentos"
+          labelForId="ciudades">
+        </ng-select>
+
+      </div>
+      @if(answers[2].error){
+        <div><p class="error">campo requerido *</p></div>
+      }
+  </div>
+  <div class="ques-container">
             <div>
-                <label>¿Cuál es tu sexo?</label>
-                <ng-select
-                  (change)="getAnswer(1, $event)"
-                  (clear)="clearAnswer(1, {name: ''})"
-                  [items]="[{name:'Mujer'}, {name:'Hombre'}, {name:'Otro'}]"
-                  bindLabel="name"
-                  bindValue="name"
-                  placeholder="- seleccione -"
-                  [(ngModel)]="selectedSexo"
-                  labelForId="sexo">
-                </ng-select>
-              </div>
-
-              @if(answers[0].error){
-                <div><p class="error">campo requerido *</p></div>
-              }
-
-            <div>
-              <label>¿En qué rango de edad te encuentras?</label>
-              <ng-select
-                (change)="getAnswer(2, $event)"
-                (clear)="clearAnswer(2, {name: ''})"
-                [items]="[{name:'18 a 29'}, {name:'30 a 49'}, {name:'50 a más'}]"
-                bindLabel="name"
-                bindValue="name"
-                placeholder="- seleccione -"
-                [(ngModel)]="selectedEdad"
-                labelForId="edad">
-              </ng-select>
-              </div>
-              @if(answers[1].error){
-                <div><p class="error">campo requerido *</p></div>
-              }
-
-
-
-            <div>
-              <label>Selecciona el departamento donde vives</label>
-              <ng-select
-              (change)="getAnswer(3, $event)"
-              (clear)="clearAnswer(3, {name: ''})"
-                [items]="departamentos"
-                bindLabel="name"
-                bindValue="name"
-                placeholder="- seleccione -"
-                [(ngModel)]="selectedDepartamentos"
-                labelForId="ciudades">
-              </ng-select>
-
-            </div>
-            @if(answers[2].error){
-              <div><p class="error">campo requerido *</p></div>
-            }
-
-
-            <div >
-              <label>Selecciona el municipio donde vives</label>
+              <label>Municipio <br> dónde vive</label>
               <ng-select
                 (change)="getAnswer(4, $event)"
                 (clear)="clearAnswer(4, {name: ''})"
@@ -83,10 +77,10 @@
 
             <div>
               @if(disabledRural){
-                <label class="disabled">¿En qué tipo de zona vives?</label>
+                <label class="disabled">Zona <br> dónde vive</label>
 
               } @else{
-                <label class="">¿En qué tipo de zona vives?</label>
+                <label class="">Zona <br> dónde vive</label>
 
               }
 
@@ -106,7 +100,7 @@
               <div><p class="error">campo requerido *</p></div>
             }
             <div>
-              <label>¿Qué uso le dará al simulador?</label>
+              <label>Qué uso le dará <br> al simulador</label>
               <ng-select
               (change)="getAnswer(6, $event)"
               (clear)="clearAnswer(6, {name: ''})"
@@ -123,10 +117,12 @@
             @if(answers[5].error){
               <div><p class="error">campo requerido *</p></div>
             }
-            <div class="button"><button (click)="handleClick()">Siguiente</button></div>
+
 
         </div>
 
     </section>
-
+    <div class="button">
+      <button (click)="handleClick()">Continuar</button>
+    </div>
 
