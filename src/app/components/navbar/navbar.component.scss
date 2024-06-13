@@ -1,15 +1,25 @@
 nav {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   height: 4rem;
-  padding: 1rem 4rem;
+  width: 100%;
+  padding: 4rem 4rem 0px 0px;
   background-color: transparent;
+  position: sticky;
+  gap: 1rem;
 }
-nav h1 {
-
+nav h2 {
+  font-size: 1.3rem;
   font-weight: 800;
+  color: #262944;
+  padding: 0px;
+  margin: 0px;
+  padding: 0px 10px;
+  border-right: 2px solid white;
 }
+
 nav img {
   height: 1.5rem;
-  padding-left: 1rem;
+
 }

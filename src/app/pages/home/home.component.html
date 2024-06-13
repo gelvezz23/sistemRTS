@@ -1,28 +1,40 @@
     <section class="container_home">
-
+    <app-navbar/>
     <section class="container">
         <section class="content-container-left">
             <div class="introduction-container">
-                <h2>Bienvenido(a) al simulador <br/> Negocios en forma</h2>
-                <p>El simulador de formalización permite conocer los pasos practicos para formalizar su negocio o actividad economica y los beneficios que le traera</p>
+                <h2>Bienvenidos al</h2>
+                <h1>simulador de <br/> formalización</h1>
+                <p>
+                  Aquí podrá evaluar si su negocio es formal o <br>
+                  informal y conocer la ruta de la <br>
+                  formalización tributaria
+                </p>
             </div>
             <div class="start-ques-container">
-                <p>Las respuestas son completamente anónima, es decir que no podremos conocer tu identidad. Responde con
-                    libertad y simula diferentes escenarios.</p>
-                <button (click)="handleClick()">iniciar</button>
+                <p>Aquí podrá evaluar si su negocio es formal o informal y conocer la ruta de la formailización tributaria</p>
 
-                @if(viewRecaptcha){
-                <div class="recaptcha">
-                <re-captcha (resolved)="resolved($event)" siteKey="6LeL20YUAAAAAB43haRm-v93jNxwi7EBraClHUgX"></re-captcha>
-              </div>
-            }
             </div>
         </section>
         <div class="content-container-rigth">
-            <div>
-                <img src="https://i.pinimg.com/564x/b6/6d/2e/b66d2e9e16cf39a1a2296fb5b8c06151.jpg" alt="two-people">
-                <span>Video "despertando el poder del cumplimiento tributario"</span>
-            </div>
+            <img src="/assets/icons/recurso-1.png" alt="icono"/>
         </div>
     </section>
+
+    <div class="home-footer">
+      <div>
+      <button (click)="handleClick()">iniciar</button>
+      @if(viewRecaptcha){
+        <div class="recaptcha">
+          <re-captcha (resolved)="resolved($event)" siteKey="6LeL20YUAAAAAB43haRm-v93jNxwi7EBraClHUgX"></re-captcha>
+        </div>
+      }
+    </div>
+      <p>VIDEO Despertando el poder <br> del cumplimiento tributario</p>
+    </div>
+
+
+
+
+
   </section>

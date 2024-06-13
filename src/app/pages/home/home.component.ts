@@ -2,14 +2,19 @@ import { Component } from '@angular/core';
 import { FormularioComponent } from '../formulario/formulario.component';
 import { Router } from '@angular/router';
 import { RecaptchaModule } from 'ng-recaptcha';
+import { NavbarComponent } from '../../components/navbar/navbar.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-
-  imports: [FormularioComponent, FormularioComponent, RecaptchaModule],
+  imports: [
+    FormularioComponent,
+    FormularioComponent,
+    RecaptchaModule,
+    NavbarComponent,
+  ],
 })
 export class HomeComponent {
   [x: string]: any;
