@@ -1,22 +1,37 @@
 
 section{
-  background-color: #6f309f;
+  background-image: url('/assets/images/bg-desktop_2.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+.navbar{
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  align-items: end;
 }
 /* #02b0ef */
 .discover-more-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 2rem;
   align-items: center;
-  height: 90vh;
+  height: 100vh;
   width: 100%;
 
 
 }
 .discover-more-container h2 {
   color: #fff;
-  font-size: 5rem;
+  font-size: 2rem;
   font-weight: 800;
+  display: flex;
+  width: 55%;
+  justify-content: start;
+  align-items: start;
 }
 .discover-more-container p {
   display: flex;
@@ -25,6 +40,7 @@ section{
   font-size: x-large;
   max-width: 60%;
   padding: 1rem;
+  color: #02b0ef;
 }
 .social-networks-container {
   display: flex;
@@ -42,9 +58,37 @@ section{
 .discover-more-container button {
   background-color: #02b0ef;
   border: none;
-  border-radius: 25px;
   color: #fff;
-  font-size: x-large;
-  padding-block: 0.5rem;
-  padding-inline: 2rem;
+  font-size:1.3rem;
+  width: 10rem;
+  font-weight: 800;
+}
+
+
+@media (max-width: 900px) {
+  section{
+    background-image: url('/assets/images/bg-mobile-2.png');
+    background-size: cover;
+
+  }
+  .discover-more-container{
+    height: auto;
+    padding: 1rem;
+    height: 100vh;
+    background-color: #272944;
+  }
+  .discover-more-container h2, .discover-more-container p{
+    width: 100%;
+    font-size: 1.3rem;
+    max-width: 100%;
+  }
+  .social-networks-container{
+    width: 100%;
+  }
+  .social-networks-container{
+    gap: 0.8rem;
+  }
+  .button{
+    padding: 2rem 1rem;
+  }
 }

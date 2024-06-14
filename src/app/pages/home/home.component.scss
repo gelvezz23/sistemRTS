@@ -30,8 +30,6 @@ h1{
 
 }
 
-
-
 .container {
   display: flex;
   width: 100%;
@@ -46,15 +44,7 @@ h1{
   max-width: 35rem;
 }
 
-@media (max-width:1200px) {
-  .container{
-    height: auto;
-    flex-direction: column-reverse;
-  }
-  .container_home{
-    background-size: cover;
-  }
-}
+
 
 .introduction-container p {
   font-size: x-large;
@@ -96,11 +86,44 @@ button {
 .home-footer div{
   display: flex;
   flex-direction: column;
+
 }
 
 .home-footer p {
   color: white;
   font-weight: 600;
+}
+
+
+@media (max-width:900px) {
+  section{
+    height: auto;
+    padding: 3rem 0rem;
+  }
+  .container{
+    height: auto;
+    flex-direction: column;
+  }
+  .container_home{
+    background-image: url('/assets/images/bg-mobile.png');
+    background-size: cover;
+  }
+  .home-footer{
+    flex-direction: column;
+  }
+  .content-container-rigth img {
+    width: auto;
+    height: 8rem;
+  }
+  .video{
+    display: none;
+  }
+  .introduction-container p{
+    font-size: 1.2rem;
+  }
+  .start-ques-container{
+    font-size: 1rem;
+  }
 }
 
 

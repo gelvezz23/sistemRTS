@@ -8,7 +8,6 @@ section{
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 100%;
 }
 h1 {
@@ -34,6 +33,7 @@ article p {
   color: rgb(130, 130, 130);
 }
 .ques-container {
+  width: 100%;
   max-width: 800px;
   display: flex;
   flex-direction: column;
@@ -47,21 +47,10 @@ article p {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  width: 100%;
 }
-
-
-@media (max-width: 600px) {
-.ques-container div {
-flex-direction: column;
-}
-
-}
-
-
 .button {
   display: flex;
-  justify-content: flex-end !important;
+  justify-content: flex-end ;
   padding: 3rem 0px;
   width: 100%;
   max-width: 1100px;
@@ -72,4 +61,27 @@ button {
   color: white;
   font-weight: 600;
   padding: 0.5rem 1rem;
+}
+
+@media (max-width: 900px) {
+  section{
+    width: 100%;
+    flex-direction: column;
+  }
+  label{
+    font-size: 1rem;
+  }
+
+  .ques-container, .ques-container div{
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .button{
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+
 }

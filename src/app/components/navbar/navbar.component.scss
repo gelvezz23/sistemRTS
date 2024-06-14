@@ -1,12 +1,12 @@
 nav {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
   height: 4rem;
   width: 100%;
   padding: 4rem 4rem 0px 0px;
   background-color: transparent;
   position: sticky;
+  justify-content: end;
+  align-items: end;
   gap: 1rem;
 }
 nav h2 {
@@ -16,10 +16,24 @@ nav h2 {
   padding: 0px;
   margin: 0px;
   padding: 0px 10px;
+  display: flex;
+
   border-right: 2px solid white;
 }
 
 nav img {
   height: 1.5rem;
 
+}
+
+@media (max-width:900px) {
+  nav{
+    padding: 1rem;
+  }
+  nav h2{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    font-size: 0.9rem;
+  }
 }

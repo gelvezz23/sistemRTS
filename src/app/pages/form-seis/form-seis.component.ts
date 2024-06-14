@@ -177,5 +177,6 @@ export class FormSeisComponent {
     if (isValid) {
       this.router.navigate(['resultado1']);
     }
+    console.log(this.questions);
   }
 }

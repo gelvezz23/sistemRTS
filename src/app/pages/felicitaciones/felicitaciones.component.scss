@@ -1,60 +1,71 @@
 section{
-display: flex;
-flex-direction: column;
-background-color: #6f309f;
-width: 100%;
-height: 100vh;
-padding: 1rem;
-gap: 1rem;
-}
-.congrats-container {
-  height: 83vh;
-  line-height: 4rem;
-}
-.congrats-container div:first-child {
+  background-image: url('/assets/images/bg-desk.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  max-width: 100vh;
+  align-items: center;
+  width: 100%;
 }
-.congrats-container div span {
-  color: #fff;
-  font-weight: 800;
-  font-size: 3rem;
-}
-.blue-content-container {
+.navbar{
   display: flex;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  gap: 1rem;
+  width: 100%;
+  justify-content: end;
+  align-items: end;
 }
-.blue-content-container span {
-  color: #02b0ef !important;
-  max-width: 39rem;
+
+section .congrats-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
-.blue-content-container button {
-display: flex;
-justify-content: center;
-align-items: center;
-  background-color: #02b0ef;
-  color: #ffffff;
+h2{
+  color: white;
+  font-weight: 800;
+font-size: 3rem;
+}
+
+img{
+  width: auto;
+  height: 25rem;
+}
+
+div{
+  max-width: 900px;
+}
+button{
   border: none;
-  border-radius: 35px;
-font-size: 1.2rem;
-  font-weight: 500;
+  background-color: #262944;
+  color:white;
+  font-weight: 800;
   width: 10rem;
-  height: 3rem;
-  padding: 0px 2px;
-  cursor: pointer;
+  height: 2rem;
+  margin: 2rem 0px;
+}
+@media (max-width: 900px) {
+section{
+  background-image: url('/assets/images/bg-mobile.png');
+
 }
 
-@media (max-width: 900px) {
-  section, .congrats-container{
-    height: auto;
-  line-height: 3rem;
-
+  .congrats-container{
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
   }
-
-  .congrats-container div span {
-    font-size: 2rem;
+  img{
+    height: 10rem;
+  }
+  h2{
+    padding-top: 3rem;
+    font-size: 1.5rem;
+  }
+  div{
+    display: flex;
+    flex-direction: column;
   }
 }

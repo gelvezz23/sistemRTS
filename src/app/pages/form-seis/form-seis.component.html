@@ -38,6 +38,9 @@
           }
         </div>
     </div>
+    @if(questions[0].error){
+      <p class="error">campo requerido</p>
+    }
 
     <div>
       @if(viewQuestTwo()){
@@ -55,115 +58,117 @@
           />
           <input id="answer-two" name="check-two" type="radio" value="no" [disabled]="handleCheckedTwo()" (change)="getAnswer('no', 2)">
           <input id="answer-two" name="check-two" type="radio" value="si" [checked]="handleCheckedTwo()" (change)="getAnswer('si', 2)">
-                        } @else{
-                          <img
-                            src="./assets/images/icon-disabled.svg"
-                            alt="?"
-                            [attr.data-bs-toggle]="'modal'"
-                            [attr.data-bs-target]="'#exampleModal-' + 2"
-                          />
-                          <input id="answer-two" name="check-two" type="radio" value="no" [disabled]="true" (change)="getAnswer('no', 2)">
-                          <input id="answer-two" name="check-two" type="radio" value="si" [disabled]="true" (change)="getAnswer('si', 2)">
-                        }
-                    </div>
-                </div>
+          } @else{
+            <img
+              src="./assets/images/icon-disabled.svg"
+              alt="?"
+              [attr.data-bs-toggle]="'modal'"
+              [attr.data-bs-target]="'#exampleModal-' + 2"
+            />
+            <input id="answer-two" name="check-two" type="radio" value="no" [disabled]="true" (change)="getAnswer('no', 2)">
+            <input id="answer-two" name="check-two" type="radio" value="si" [disabled]="true" (change)="getAnswer('si', 2)">
+          }
+      </div>
+    </div>
+    @if(questions[1].error){
+      <p class="error">campo requerido</p>
+    }
 
-                <div>
-                    @if(viewQuestThree()){
-                      <label for="answer yes-no-three">¿Renueva el Registro Mercantil cada año?</label>
+    <div>
+      @if(viewQuestThree()){
+        <label for="answer yes-no-three">¿Renueva el Registro Mercantil cada año?</label>
+      } @else{
+        <label for="answer yes-no-three" class="disabled">¿Renueva el Registro Mercantil cada año?</label>
+      }
+        <div class="inputs-container">
+          @if(viewQuestThree()){
+            <img
+              src="./assets/images/icon.svg"
+              alt="?"
+              [attr.data-bs-toggle]="'modal'"
+              [attr.data-bs-target]="'#exampleModal-' + 3"
+            />
+            <input id="answer-three" name="check-three" type="radio" value="no" (change)="getAnswer('no', 3)">
+            <input id="answer-three" name="check-three" type="radio" value="si" (change)="getAnswer('si', 3)">
+          } @else {
+            <img
+              src="./assets/images/icon-disabled.svg"
+              alt="?"
+              [attr.data-bs-toggle]="'modal'"
+              [attr.data-bs-target]="'#exampleModal-' + 3"
+            />
+            <input id="answer-three" name="check-three" type="radio" value="no" [disabled]="true">
+            <input id="answer-three" name="check-three" type="radio" value="si" [disabled]="true">
+          }
+        </div>
+    </div>
+    @if(questions[2].error){
+      <p class="error">campo requerido</p>
+    }
 
-                    } @else{
-                      <label for="answer yes-no-three" class="disabled">¿Renueva el Registro Mercantil cada año?</label>
+    <div>
+      @if(viewQuestFour()){
+        <label for="answer yes-no-four" >¿Paga su salud, pensiones y riesgos laborales de los trabajadores?</label>
+      } @else{
+        <label for="answer yes-no-four" class="disabled">¿Paga su salud, pensiones y riesgos laborales de los trabajadores?</label>
+      }
+        <div class="inputs-container">
+          @if(viewQuestFour()){
+            <img
+              src="./assets/images/icon.svg"
+              alt="?"
+              [attr.data-bs-toggle]="'modal'"
+              [attr.data-bs-target]="'#exampleModal-' + 4"
+            />
+            <input id="answer-four" name="check-four" type="radio" value="no" (change)="getAnswer('no', 4)">
+            <input id="answer-four" name="check-four" type="radio" value="si" (change)="getAnswer('si', 4)">
+          } @else{
+            <img
+              src="./assets/images/icon-disabled.svg"
+              alt="?"
+              [attr.data-bs-toggle]="'modal'"
+              [attr.data-bs-target]="'#exampleModal-' + 4"
+            />
+            <input id="answer-four" name="check-four" type="radio" value="no" [disabled]="true">
+            <input id="answer-four" name="check-four" type="radio" value="si" [disabled]="true">
+          }
+        </div>
+    </div>
+    @if(questions[3].error){
+      <p class="error">campo requerido</p>
+    }
 
-                    }
-
-                    <div class="inputs-container">
-
-                        @if(viewQuestThree()){
-                          <img
-                            src="./assets/images/icon.svg"
-                            alt="?"
-                            [attr.data-bs-toggle]="'modal'"
-                            [attr.data-bs-target]="'#exampleModal-' + 3"
-                          />
-                          <input id="answer-three" name="check-three" type="radio" value="no" (change)="getAnswer('no', 3)">
-                          <input id="answer-three" name="check-three" type="radio" value="si" (change)="getAnswer('si', 3)">
-                        } @else {
-                          <img
-                            src="./assets/images/icon-disabled.svg"
-                            alt="?"
-                            [attr.data-bs-toggle]="'modal'"
-                            [attr.data-bs-target]="'#exampleModal-' + 3"
-                          />
-                          <input id="answer-three" name="check-three" type="radio" value="no" [disabled]="true">
-                          <input id="answer-three" name="check-three" type="radio" value="si" [disabled]="true">
-                        }
-                    </div>
-                </div>
-
-                <div>
-                    @if(viewQuestFour()){
-                      <label for="answer yes-no-four" >¿Paga su salud, pensiones y riesgos laborales de los trabajadores?</label>
-                    } @else{
-                      <label for="answer yes-no-four" class="disabled">¿Paga su salud, pensiones y riesgos laborales de los trabajadores?</label>
-                    }
-
-                    <div class="inputs-container">
-                        @if(viewQuestFour()){
-                          <img
-                            src="./assets/images/icon.svg"
-                            alt="?"
-                            [attr.data-bs-toggle]="'modal'"
-                            [attr.data-bs-target]="'#exampleModal-' + 4"
-                          />
-                          <input id="answer-four" name="check-four" type="radio" value="no" (change)="getAnswer('no', 4)">
-                          <input id="answer-four" name="check-four" type="radio" value="si" (change)="getAnswer('si', 4)">
-                        } @else{
-                          <img
-                            src="./assets/images/icon-disabled.svg"
-                            alt="?"
-                            [attr.data-bs-toggle]="'modal'"
-                            [attr.data-bs-target]="'#exampleModal-' + 4"
-                          />
-                          <input id="answer-four" name="check-four" type="radio" value="no" [disabled]="true">
-                          <input id="answer-four" name="check-four" type="radio" value="si" [disabled]="true">
-                        }
-
-
-                    </div>
-                </div>
-
-                <div>
-                  @if(viewQuestFive()){
-                    <label for="answer yes-no-five">¿Paga su salud, pensiones y riesgos laborales?</label>
-                  } @else {
-                    <label for="answer yes-no-five" class="disabled">¿Paga su salud, pensiones y riesgos laborales?</label>
-                  }
-
-                    <div class="inputs-container">
-
-                        @if(viewQuestFive()){
-                          <img
-                            src="./assets/images/icon.svg"
-                            alt="?"
-                            [attr.data-bs-toggle]="'modal'"
-                            [attr.data-bs-target]="'#exampleModal-' + 5"
-                          />
-                          <input id="answer-five" name="check-five" type="radio" value="no" (change)="getAnswer('no', 5)">
-                          <input id="answer-five" name="check-five" type="radio" value="si" (change)="getAnswer('si', 5)">
-                        } @else {
-                          <img
-                            src="./assets/images/icon-disabled.svg"
-                            alt="?"
-                            [attr.data-bs-toggle]="'modal'"
-                            [attr.data-bs-target]="'#exampleModal-' + 5"
-                          />
-                          <input id="answer-five" name="check-five" type="radio" value="no" [disabled]="true">
-                          <input id="answer-five" name="check-five" type="radio" value="si" [disabled]="true">
-                        }
-
-                    </div>
-                </div>
+    <div>
+      @if(viewQuestFive()){
+        <label for="answer yes-no-five">¿Paga su salud, pensiones y riesgos laborales?</label>
+      } @else {
+        <label for="answer yes-no-five" class="disabled">¿Paga su salud, pensiones y riesgos laborales?</label>
+      }
+      <div class="inputs-container">
+        @if(viewQuestFive()){
+          <img
+            src="./assets/images/icon.svg"
+            alt="?"
+            [attr.data-bs-toggle]="'modal'"
+            [attr.data-bs-target]="'#exampleModal-' + 5"
+          />
+          <input id="answer-five" name="check-five" type="radio" value="no" (change)="getAnswer('no', 5)">
+          <input id="answer-five" name="check-five" type="radio" value="si" (change)="getAnswer('si', 5)">
+        } @else {
+          <img
+            src="./assets/images/icon-disabled.svg"
+            alt="?"
+            [attr.data-bs-toggle]="'modal'"
+            [attr.data-bs-target]="'#exampleModal-' + 5"
+          />
+          <input id="answer-five" name="check-five" type="radio" value="no" [disabled]="true">
+          <input id="answer-five" name="check-five" type="radio" value="si" [disabled]="true">
+        }
+      </div>
+    </div>
+    @if(questions[4].error){
+      <p class="error">campo requerido</p>
+    }
 
                 <div>
                   <label for="answer yes-no-six">¿Conoce los requerimientos o permisos para desarrollar su actividad y cumple con estos?</label>
@@ -178,6 +183,10 @@
                         <input id="answer-six" name="check-six" type="radio" value="si" (change)="getAnswer('si', 6)">
                     </div>
                 </div>
+                @if(questions[5].error){
+                  <p class="error">campo requerido</p>
+                }
+
 
                 <div>
                   <label for="answer yes-no-seven">¿Conoce los deberes y obligaciones tributarias de su actividad?</label>
@@ -192,6 +201,9 @@
                         <input id="answer-seven" name="check-seven" type="radio" value="si" (change)="getAnswer('si', 7)">
                     </div>
                 </div>
+                @if(questions[6].error){
+                  <p class="error">campo requerido</p>
+                }
 <div>
   <p style="color: #006591">Recuerde que las respuestas son anónimas</p>
 </div>

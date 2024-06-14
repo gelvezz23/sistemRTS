@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { RatingComponent } from '../../components/rating/rating.component';
 import { Router } from '@angular/router';
+import { NavbarTwoComponent } from '../../components/navbar-two/navbar-two.component';
 
 @Component({
   selector: 'app-encuesta',
   standalone: true,
   templateUrl: './encuesta.component.html',
   styleUrl: './encuesta.component.scss',
-  imports: [RatingComponent],
+  imports: [RatingComponent, NavbarTwoComponent],
 })
 export class EncuestaComponent {
   constructor(private router: Router) {}

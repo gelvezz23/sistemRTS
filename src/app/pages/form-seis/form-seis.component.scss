@@ -6,7 +6,6 @@
 label.disabled{
   color: #a19ba8;
 }
-
 .formalized-business-container {
   display: flex;
   justify-content: center;
@@ -30,8 +29,15 @@ label.disabled{
 }
 .image{
   padding: 2rem;
-  width: 100%;
+  width: auto;
   height: 26rem;
+}
+.error{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  color: red;
 }
 
 .ques-container {
@@ -97,4 +103,19 @@ width: 100%;
 
 .inputs-container input[type="radio"]:focus {
   outline-color: transparent;
+}
+
+@media (max-width: 900px) {
+  .formalized-business-container{
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .content-image{
+    padding: 0px;
+    gap: 0px;
+    flex-direction: column-reverse;
+  }
+  .image{
+    height: 10rem;
+  }
 }

@@ -1,7 +1,7 @@
 input[type=radio] {
   width: 32px;
   height: 32px;
-  border: 1px solid #6F309F;
+  border: 1px solid #b5b5b5;
   appearance: none;
   -webkit-appearance: none;
   border-radius: 5px;
@@ -21,7 +21,9 @@ input[type=radio]:focus {
 }
 h3{
   font-size: 1.2rem;
+  color: #6a6a6a;
   width: 100%;
+  font-weight: 400;
 }
 
 div{
@@ -57,21 +59,33 @@ div:last-child{
 }
 
 textarea{
-  border: 2px solid #6F309F;
+  border: 2px solid #6a6a6a;
 }
 
 button{
   border:none;
-  background-color: #6F309F;
+  background-color: #262944;
   color: white;
-  border-radius: 30px;
   padding: 0.5rem;
   width: 8rem;
+  font-weight: 800;
 }
 
 h2{
-  padding: 1rem;
-  max-width: 1100px;
-  font-weight: 600;
-  color: #02b0ef;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0572a1;
+  max-width: 700px;
 }
+
+label{
+  font-weight: 800;
+  color: #0572a1;
+
+}
+
+@media (max-width: 900px) {
+  h2{
+   font-size: 1.3rem;
+  }
+ }
