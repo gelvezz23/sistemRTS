@@ -6,40 +6,50 @@
   padding: 1rem;
   justify-content: center;
 }
-.disclaimer{
-  width: 20%;
-  font-size: 0.8rem;
-  padding: 1rem;
-  color: #6f309f;
-  background-color: white;
+.header-questions{
+  display: flex;
+  width: 100%;
+  gap: 1rem;
 }
+
 .disabled{
   color: #8e8e8e;
 }
 .container .info-container p {
-  color: #6f309f;
+  color: #0098DA;
   font-size: larger;
   font-weight: 500;
   line-height: 1.7rem;
   max-width:15rem;
 }
 .container .ques-container {
+  display: flex;
+
+  flex-direction: column;
   font-size: large;
   font-weight: 500;
+  gap: 1.5rem;
 }
 
 .container .ques-container .span {
-  color: #6f309f;
+  color: #0098DA;
   padding-right: 7rem;
+  font-weight: 800;
 }
 .container .ques-container div {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-bottom: 1.5rem;
+  label{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+
 }
 .container .ques-container input.input {
-  border: 2px solid #6f309f;
+  border: 1px solid #06698d;
   width: 13rem;
   height: 2rem;
   outline: none;
@@ -57,7 +67,7 @@
 h2{
   font-weight: 900;
     line-height: 2rem;
-    color: #02B0F0;
+    color: #06698d;
     font-size: 2rem;
     padding: 1rem;
 }
@@ -71,20 +81,73 @@ img{
   justify-content: flex-end;
   align-items: flex-end;
   padding: 1rem;
+  gap: 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  input[type=button]{
-    background-color: #02B0F0;
+  button{
+    background-color: #06698d;
     border: none ;
-    border-radius: 2rem ;
     color: white;
     padding: 0.5rem 1rem ;
+    font-weight: 800;
 
   }
 }
 
+.other-container{
+  display: flex;
+  gap:1.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.text-questions{
+  display: flex;
+}
+span{
+  color: #06698d;
+  font-size: 1rem;
+}
+@media (max-width: 321px) {
+  .bruto{
+    font-size: 0.5rem;
+  }
+}
 
-@media (max-width: 950px) {
+@media (max-width: 900px) {
+  h2{
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+  }
+  .ques-container{
+    display: flex;
+    flex-direction: column;
+  }
   .container{
     flex-direction: column;
+  }
+  .other-container{
+    flex-direction: column-reverse;
+  }
+
+
+  .container .ques-container div{
+    justify-content: center;
+    align-items: center;
+    label {
+      font-size: 1rem;
+      margin: 0px;
+      width: 100%;
+      justify-content: start;
+      align-items: center;
+    }
+    .bruto{
+      font-size: 0.7rem;
+    }
+  }
+
+  .container .ques-container .span{
+    padding: 0px;
   }
 }

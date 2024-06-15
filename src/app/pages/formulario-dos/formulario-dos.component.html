@@ -1,19 +1,14 @@
+<app-navbar-two/>
 <h2>
-  Sobre La actividad economica <br />
-  que desea formalizar :
+  Responda las siguientes<br />
+  preguntas con la <br>
+  información del negocio
 </h2>
 
 <section>
-  <app-disclaimer class="disclaimer" />
 
   <form class="container">
-    <div class="container_question">
-      <div class="question"></div>
-      <div class="answer">
-        <label>Si</label>
-        <label>No</label>
-      </div>
-    </div>
+
 
     <div class="container_question">
       <div class="question">
@@ -36,17 +31,22 @@
 
       </div>
       <div class="answer">
-        <input
-          (change)="getAnswer('si', 9)"
-          class="input-checkbox"
-          type="radio"
-          id="si"
-          name="{{ 9 }}"
-          value="si"
-          [checked]="questions[0].checkedYes"
-          [disabled]="questions[0].disabled"
-          [required]="questions[0].required"
-        />
+        <div>
+          <label>Sí</label>
+          <input
+            (change)="getAnswer('si', 9)"
+            class="input-checkbox"
+            type="radio"
+            id="si"
+            name="{{ 9 }}"
+            value="si"
+            [checked]="questions[0].checkedYes"
+            [disabled]="questions[0].disabled"
+            [required]="questions[0].required"
+          />
+      </div>
+      <div>
+        <label>No</label>
         <input
           (change)="getAnswer('no', 9)"
           class="input-checkbox"
@@ -59,6 +59,8 @@
           value="no"
         />
       </div>
+
+      </div>
     </div>
     @if(questions[0].error && questions[0].id === 9){
       <span class="error-inputs">Campo requerido *</span>
@@ -70,7 +72,7 @@
         @if(questions[1].disabled ){
           <h3 class="quest-10 disabled">¿Cual fue el monto de sus consignaciones bancarias, depositos o inversiones financieras en el año inmediatamente anterior?</h3>
         } @else {
-          <h3 class="quest-10">¿Cual fue el monto de sus consignaciones bancarias, depositos o inversiones financieras en el año inmediatamente anterior?</h3>
+          <h3 class="quest-10" style=" color: #186a88;">¿Cual fue el monto de sus consignaciones bancarias, depositos o inversiones financieras en el año inmediatamente anterior?</h3>
         }
       </div>
 
@@ -152,7 +154,9 @@
       </div>
 
       <div class="answer">
-        <input
+        <div>
+          <label>Sí</label>
+          <input
           (change)="getAnswer('si', 11)"
           class="input-checkbox"
           type="radio"
@@ -163,17 +167,21 @@
           [disabled]="questions[3].disabled"
           [required]="questions[3].required"
         />
-        <input
-          (change)="getAnswer('no',11)"
-          class="input-checkbox"
-          type="radio"
-          id="no"
-          name="{{ 11 }}"
-          [checked]="questions[3].checkedNo"
-          [disabled]="questions[3].disabled"
-          [required]="questions[3].required"
-          value="no"
-        />
+        </div>
+        <div>
+          <label>No</label>
+          <input
+            (change)="getAnswer('no',11)"
+            class="input-checkbox"
+            type="radio"
+            id="no"
+            name="{{ 11 }}"
+            [checked]="questions[3].checkedNo"
+            [disabled]="questions[3].disabled"
+            [required]="questions[3].required"
+            value="no"
+          />
+      </div>
       </div>
     </div>
     @if(questions[3].error ){
@@ -207,7 +215,9 @@
       </div>
 
       <div class="answer">
-        <input
+        <div>
+          <label>Sí</label>
+          <input
           (change)="getAnswer('si', 12)"
           class="input-checkbox"
           type="radio"
@@ -218,7 +228,10 @@
           [disabled]="questions[4].disabled"
           [required]="questions[4].required"
         />
-        <input
+        </div>
+        <div>
+          <label>No</label>
+          <input
           (change)="getAnswer('no',12)"
           class="input-checkbox"
           type="radio"
@@ -229,6 +242,8 @@
           [required]="questions[4].required"
           value="no"
         />
+        </div>
+
       </div>
     </div>
     @if(questions[4].error ){
@@ -248,7 +263,11 @@
 
 
     <div class="footer-form">
-      <input type="submit" value="Continuar" (click)="handleSubmit($event)" />
+     <label>Recuerda que las respuestas son anónimas</label> <input type="submit" value="Continuar" (click)="handleSubmit($event)" />
     </div>
   </form>
+
+  <div class="image">
+    <img  src="/assets/icons/recurso-9.png" alt="imagen" />
+  </div>
 </section>

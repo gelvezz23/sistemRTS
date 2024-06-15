@@ -1,7 +1,7 @@
 h2{
   font-weight: 900;
   line-height: 3rem;
-  color: #02B0F0;
+  color: #186a88;
   font-size: 3rem;
   padding: 1rem;
 }
@@ -11,8 +11,7 @@ h3{
 
 section{
   display: flex;
-  justify-content: space-between;
-
+  justify-content: center;
   width: 100%;
 }
 .disabled{
@@ -30,15 +29,19 @@ section{
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: center;
   padding: 1rem;
+  gap: 1rem;
+  label{
+    color: #186a88
+  }
 
   input[type=submit]{
-    background-color: #02B0F0;
+    background-color: #186a88;
     border: none;
-    border-radius: 2rem;
     color: white;
     padding: 0.5rem 1rem;
+    font-weight: 800;
 
   }
 }
@@ -46,8 +49,6 @@ section{
 
 .answer-inputs-text div{
   display: flex;
-
-
 }
 
 .answer-inputs-divs{
@@ -80,15 +81,23 @@ section{
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 20px;
-  width: 100%;
   flex-direction: column;
+  gap: 1.5rem;
 }
-
+.image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  img{
+    width: 10rem;
+  height: auto;
+  }
+}
 
 .container_question{
   display: flex;
-  gap: 1rem;
+
 
   align-items: center;
   width: 100%;
@@ -106,6 +115,15 @@ section{
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+
+    div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    label{
+        font-weight: 800;
+      }
+    }
 
     &-inputs-text{
       display: flex;
@@ -135,7 +153,7 @@ input[type=radio]:disabled {
 input[type=radio] {
   width: 32px;
   height: 32px;
-  border: 1px solid #6F309F;
+  border: 1px solid #186a88;
   appearance: none;
   -webkit-appearance: none;
   border-radius: 5px;
@@ -146,7 +164,7 @@ input[type=radio]:checked {
   background-image: url("./../../../assets/images/check-icon.svg"); /* Path to your checkmark image */
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #6F309F;
+  background-color: #186a88;
   color: white;
 }
 
@@ -161,24 +179,51 @@ input[type=radio]:focus {
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
+  h2{
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+  }
   section{
     flex-direction: column;
   }
-
-  .disclaimer{
+  .quest-10{
     width: 100%;
+  }
+  .container{
     padding: 1rem;
+    gap: 1rem;
+  }
+  .footer-form{
+    flex-direction: column;
   }
 
+
+
   .container_question{
+    flex-direction: column;
+    align-items: start;
+    gap:1rem;
+    .question{
+      width: 100%;
+    }
+
     .answer{
-      width: 200px;
+      width: 100%;
+    }
 
-      &-inputs-text{
-        width: 100%;
+    .answer-inputs-text{
+
+      width: 100%;
+      left: 1px;
+      div{
+        display: flex;
+        align-items: center;
+
+        label{
+          font-size: 0.8rem;
+        }
       }
-
     }
   }
 

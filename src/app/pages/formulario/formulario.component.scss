@@ -1,7 +1,7 @@
 h2{
   font-weight: 900;
   line-height: 2rem;
-  color: #02B0F0;
+  color: #0d6c8f;
   font-size: 2rem;
   padding: 1rem;
 }
@@ -37,12 +37,12 @@ section{
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  padding: 1rem;
+  padding: 3rem;
 
   input[type=submit]{
-    background-color: #02B0F0;
+    font-weight: 800;
+    background-color: #0d6c8f;
     border: none;
-    border-radius: 2rem;
     color: white;
     padding: 0.5rem 1rem;
 
@@ -50,10 +50,10 @@ section{
 }
 
 .container {
+  width: 70%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
   flex-direction: column;
 }
 
@@ -86,7 +86,7 @@ input[type=radio].disabled {
 input[type=radio] {
   width: 32px;
   height: 32px;
-  border: 1px solid #6F309F;
+  border: 1px solid #0d6c8f;
   appearance: none;
   -webkit-appearance: none;
   border-radius: 5px;
@@ -97,7 +97,7 @@ input[type=radio]:checked {
   background-image: url("./../../../assets/images/check-icon.svg"); /* Path to your checkmark image */
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #6F309F;
+  background-color: #0d6c8f;
   color: white;
 }
 
@@ -105,10 +105,26 @@ input[type=radio]:focus {
   outline-color: transparent;
 }
 
+.other-container{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  img{
+    width: 15rem;
+  }
+}
+ label{
+  font-weight: 800;
+ }
+span{
+  color: #0d6c8f;
+}
 
 
+@media (max-width: 900px) {
 
-@media (max-width: 600px) {
   section{
     flex-direction: column;
   }
@@ -123,5 +139,22 @@ input[type=radio]:focus {
       width: 200px;
     }
   }
-
+  .other-container{
+    flex-direction: column-reverse;
+  }
+  .container, .other-container{
+    gap: 1rem;
+    width: 100%;
+  }
+  h2{
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+  }
+  h3{
+    font-size: 0.8rem;
+  }
+  .footer-form{
+    justify-content: center;
+    align-items: center;
+  }
 }

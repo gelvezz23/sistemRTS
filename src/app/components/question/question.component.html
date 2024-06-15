@@ -3,23 +3,27 @@
   <h3 class="disabled">
     {{ quest.question }}
   </h3>
+  @if(quest.id !== 1){
   <img
     src="./assets/images/icon-disabled.svg"
     alt="?"
     [attr.data-bs-toggle]="'modal'"
     [attr.data-bs-target]="'#exampleModal-' + quest.id"
   />
-
+  }
   } @else {
   <h3>
     {{ quest.question }}
   </h3>
-  <img
+  @if(quest.id === 1 || quest.id === 4 || quest.id === 7 ){
+<div class="space"></div>
+  } @else {
+    <img
     src="./assets/images/icon.svg"
     alt="?"
     [attr.data-bs-toggle]="'modal'"
     [attr.data-bs-target]="'#exampleModal-' + quest.id"
   />
-
+  }
   }
 

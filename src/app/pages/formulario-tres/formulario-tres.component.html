@@ -1,21 +1,20 @@
+<app-navbar-two/>
 <h2>
-  Sobre La actividad economica <br />
-  que desea formalizar :
+  Responda las siguientes <br> preguntas con la <br> información del negocio
 </h2>
 <section class="container">
-  <app-disclaimer class="disclaimer" />
   <section class="ques-container">
-
       <div>
-        <label for="patirmonio_bruto"
-          >¿Cuál fue su patrimonio bruto el año anterior?</label
-        >
-        <img
-          src="./assets/images/icon.svg"
-          alt="?"
-          [attr.data-bs-toggle]="'modal'"
-          [attr.data-bs-target]="'#exampleModal-1'"
-        />
+        <label for="patirmonio_bruto" class="bruto">
+          ¿Cuál fue su patrimonio bruto el año anterior?
+          <img
+            src="./assets/images/icon.svg"
+            alt="?"
+            [attr.data-bs-toggle]="'modal'"
+            [attr.data-bs-target]="'#exampleModal-1'"
+          />
+      </label>
+
         <input
           class="input"
           type="text"
@@ -28,13 +27,15 @@
         />
       </div>
       <div>
-        <label for="text">¿Cuál es su patrimonio bruto del presente año?</label>
-        <img
-          src="./assets/images/icon.svg"
-          alt="?"
-          [attr.data-bs-toggle]="'modal'"
-          [attr.data-bs-target]="'#exampleModal-2'"
-        />
+        <label for="text" class="bruto">¿Cuál es su patrimonio bruto del presente año?
+          <img
+            src="./assets/images/icon.svg"
+            alt="?"
+            [attr.data-bs-toggle]="'modal'"
+            [attr.data-bs-target]="'#exampleModal-2'"
+          />
+        </label>
+
         <input
           class="input"
           type="text"
@@ -157,8 +158,13 @@
         ><input type="text" class="input"  (keydown)="(false)"
         [value]="cantidadDoce" />
       </div>
-      <div class="footer-form">
-        <input type="button" value="Ver la ruta de la formalizacion" (click)="handleClick()"/>
-      </div>
+
+  </section>
+  <section class="other-container">
+    <img src="/assets/icons/recurso-11.png" alt="image" />
+    <div class="footer-form">
+      <button type="button" value="" (click)="handleClick()">ver ruta de la <br> formalización</button>
+      <span>Recuerde que las respuestas son anónimas</span>
+    </div>
   </section>
 </section>

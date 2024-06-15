@@ -1,9 +1,10 @@
+<app-navbar-two/>
 <h2>
-  Sobre La actividad economica <br />
-  que desea formalizar :
+  Responda las siguientes <br>
+  preguntas con la <br>
+  información del negocio
 </h2>
 <section>
- <app-disclaimer class="disclaimer" />
 
   <form class="container" >
     <div class="container_question">
@@ -106,8 +107,19 @@
     }
 
     }
+
+
+    <div class="footer-form">
+      <span>Recuerde que las respuestas son anónimas</span>
+    </div>
+
+  </form>
+
+  <section class="other-container">
+    <img src="/assets/icons/recurso-8.png" alt="imagen"/>
+
     <div class="footer-form">
       <input type="submit" value="Continuar" (click)="handleSubmit($event)"  />
     </div>
-  </form>
+  </section>
 </section>

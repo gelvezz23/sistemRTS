@@ -3,13 +3,19 @@ import { ModalComponent } from '../../components/modal/modal.component';
 import { DisclaimerComponent } from '../../components/disclaimer/disclaimer.component';
 import { QuestionComponent } from '../../components/question/question.component';
 import { Router } from '@angular/router';
+import { NavbarTwoComponent } from '../../components/navbar-two/navbar-two.component';
 
 @Component({
   selector: 'app-formulario',
   standalone: true,
   templateUrl: './formulario.component.html',
   styleUrl: './formulario.component.scss',
-  imports: [ModalComponent, DisclaimerComponent, QuestionComponent],
+  imports: [
+    ModalComponent,
+    DisclaimerComponent,
+    QuestionComponent,
+    NavbarTwoComponent,
+  ],
 })
 export class FormularioComponent {
   isValid: boolean = false;

@@ -3,13 +3,14 @@ import { Component } from '@angular/core';
 import { DisclaimerComponent } from '../../components/disclaimer/disclaimer.component';
 import { CurrencyPipe } from '@angular/common';
 import { Router } from '@angular/router';
+import { NavbarTwoComponent } from '../../components/navbar-two/navbar-two.component';
 @Component({
   selector: 'app-formulario-tres',
   standalone: true,
   templateUrl: './formulario-tres.component.html',
   styleUrl: './formulario-tres.component.scss',
-  imports: [DisclaimerComponent],
   providers: [CurrencyPipe],
+  imports: [DisclaimerComponent, NavbarTwoComponent],
 })
 export class FormularioTresComponent {
   public cantidad!: string;

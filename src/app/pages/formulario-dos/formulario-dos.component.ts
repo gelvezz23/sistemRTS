@@ -3,14 +3,15 @@ import { ModalComponent } from '../../components/modal/modal.component';
 import { DisclaimerComponent } from '../../components/disclaimer/disclaimer.component';
 import { CurrencyPipe } from '@angular/common';
 import { Router } from '@angular/router';
+import { NavbarTwoComponent } from '../../components/navbar-two/navbar-two.component';
 
 @Component({
   selector: 'app-formulario-dos',
   standalone: true,
   templateUrl: './formulario-dos.component.html',
   styleUrl: './formulario-dos.component.scss',
-  imports: [ModalComponent, DisclaimerComponent],
   providers: [CurrencyPipe],
+  imports: [ModalComponent, DisclaimerComponent, NavbarTwoComponent],
 })
 export class FormularioDosComponent {
   public questions: {
