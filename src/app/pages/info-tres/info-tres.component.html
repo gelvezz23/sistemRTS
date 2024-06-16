@@ -1,15 +1,33 @@
     <section>
-        <h2>Determinemos la ruta de la formalización de su negocio</h2>
-        <p>Esta determinación la puedes hacer de dos formas:</p>
+      <app-navbar/>
+<div class="title-container">
+  <div>
+    <h2>Determine la ruta de la<br> formalización tributaria <br>de su negocio</h2>
+    <h3>Puede hacerlo de dos formas</h3>
+  </div>
+  <img src="/assets/icons/recurso-99.svg" alt="imagen" />
+</div>
+
         <div class="two-options">
-            <button (click)="redirectOthepath()">Introduciendo los datos económicos básicos del negocio que deseas
+            <button (click)="redirectOthepath()">Introduciendo los datos <br> económicos básicos del <br> negocio que deseas
                 simular</button>
-            <button (click)="redirectFormCuatro()">Utiliza un modelo, como si fuera su negocio</button>
+            <button (click)="redirectFormCuatro()">Utiliza un modelo, <br> como si fuera su negocio</button>
         </div>
         <div class="warning">
-            <p>Tenga en cuenta que este simulador asume que el contribuyente es residente a efectos fiscales</p>
-            <a href="dian.gov.co">www.dian.gov.co</a>
-            <p>Si el negocio no es de un residente en Colombia, este simulador no es adecuado.</p>
+          <img src="/assets/icons/warning.svg" alt="!"/>
+          <p>
+            Este simulador no reemplaza el análisis que deba hacer el contribuyente.<br>
+            Al final del simulardor encontraá el detalle de cómo cumplir con sus obligaciones tributarias. <br>
+            Oprima aquí para consultar la lista de negocios para las que este simulador aplica.<br>
+            Este simulador asume que el titular del negocio es residente a efectos fiscales. Oprima
+            <b>
+              <a  target="_blank" href="https://www.dian.gov.co/impuestos/personas/Renta-Personas-Naturales-AG-2020/Paginas/Eres-residente-en-Colombia-para-efectos-tributarios.aspx ">
+                aquí
+              </a>
+            </b> para <br>
+            conocer más sobre residencia fiscal.
+          </p>
+
         </div>
     </section>
 

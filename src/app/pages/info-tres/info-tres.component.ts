@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavbarComponent } from '../../components/navbar/navbar.component';
 
 @Component({
   selector: 'app-info-tres',
   standalone: true,
-  imports: [],
   templateUrl: './info-tres.component.html',
   styleUrl: './info-tres.component.scss',
+  imports: [NavbarComponent],
 })
 export class InfoTresComponent {
   constructor(private router: Router) {}

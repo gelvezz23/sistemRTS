@@ -1,44 +1,122 @@
 
 section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  gap: 3rem;
-  background-color: #6f309f;
-  color: #f0f8ff;
+  background-image: url('/assets/images/bg-desk.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: auto;
+  width: 100%;
 }
-section h2 {
+.title-container{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+  img{
+    width: 10rem;
+    color: white;
+  }
+}
+h2 {
+  color: white;
   font-weight: 800;
   font-size: 3rem;
-  text-align: center;
-  width: 40rem;
-  padding: 1rem;
+  padding: 6rem 0px 0px 7rem;
 
 }
+h3{
+  color: #272944;
+  font-weight: 600;
+  font-size: 2.3rem;
+  padding: 0rem 0px 0px 7rem;
+}
+
 section p {
   font-size: large;
 }
+
+.two-options{
+  padding: 3rem 0px;
+}
+
 section .two-options {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
 }
 section .two-options button {
   color: #f0f8ff;
-  background-color: #02b0ef;
+  background-color: #272944;
   border: none;
   width: 25rem;
+  height: 8rem;
   padding: 1rem;
   font-size: larger;
-  border-radius: 70px;
+  border-radius: 2rem;
 }
 section .two-options button:hover {
   background-color: #f0f8ff;
   color: #333333;
   font-weight: 500;
 }
+.warning{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+  color: white;
+}
+.warning p{
+font-size: 1rem;
+}
 section .warning a {
   text-decoration: none;
-  color: #02b0ef;
+  color: white;
+}
+@media (max-width:600px) {
+
+
+
+}
+
+@media (max-width:900px) {
+
+  section {
+    background-image: url('/assets/images/bg-mobile.png');
+    background-size: cover;
+
+
+
+  }
+h2{
+  font-size: 1.3rem;
+  padding: 6rem 0px 0px 1rem;
+}
+h3{
+  font-size: 1rem;
+  padding: 0rem 0px 0px 1rem;
+
+}
+.two-options{
+  flex-direction: column;
+  button{
+    width: auto !important;
+  }
+}
+
+.title-container{
+  img{
+display: none;
+}}
+.warning{
+  padding: 1.4rem;
+  width: 100%;
+  font-size: 0.8rem;
+  max-width: 350px;
+
+  img{
+    display: none;
+  }
+}
 }
