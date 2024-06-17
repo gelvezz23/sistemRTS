@@ -64,7 +64,8 @@
 
 @media (max-width: 900px) {
   .ng-select .ng-select-container{
-  width: 12rem !important;
+  width: 10rem !important;
+  padding: 8px 0px 8px 20px !important;
 
   }
 
@@ -88,6 +89,12 @@
 }
 .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
   padding: 8px 0px 8px 35px !important;
+}
+
+@media (max-width: 900px) {
+  .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
+    padding: 8px 0px 8px 20px !important;
+  }
 }
 [dir="rtl"]
   .ng-select.ng-select-single

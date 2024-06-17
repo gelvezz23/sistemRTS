@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { NavbarTwoComponent } from '../../components/navbar-two/navbar-two.component';
+import { ModalComponent } from '../../components/modal/modal.component';
 
 @Component({
   selector: 'app-form-seis',
   standalone: true,
   templateUrl: './form-seis.component.html',
   styleUrl: './form-seis.component.scss',
-  imports: [NavbarTwoComponent],
+  imports: [NavbarTwoComponent, ModalComponent],
 })
 export class FormSeisComponent {
   public questions: {
@@ -18,6 +19,7 @@ export class FormSeisComponent {
     disabled: boolean;
     error: boolean;
   }[] = [];
+  message: string = '';
   constructor(private router: Router) {
     this.questions = [
       {

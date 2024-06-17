@@ -1,12 +1,16 @@
 
+<app-navbar-two/>
     <section class="container">
+      <div>
+
         <section class="info-left-container">
-            <h2>Modelos hipotéticos</h2>
-            <p class="info-paragraph">A continuación encontrará varios rangos de ingresos y patrimonios que permitirán
-                simular las condiciones de su negocio.</p>
-            <p class="instructions-paragraph">Una vez seleccione un rango de ingresos y patrimonio en el que se ubique
-                su negocio, las preguntas del simulador se responderán automáticamente; de esa manera obtendrá la "ruta
-                de la formalización" para su negocio.</p>
+            <h2>Modelos</h2>
+            <p class="info-paragraph">
+              A continuación encontrará varios randos de ingresos y patrimonios que <br>
+              permitirán simular las condiciones de su negocio.</p>
+            <p class="instructions-paragraph">
+              Una vez seleccione un rango de ingresos y patrimonio en el que se ubique su <br>
+              negocio obtendrá la “ruta de la formalización” para su negocio.</p>
         </section>
         <section class="options-right-container">
             <div class="title-options-year">
@@ -62,10 +66,18 @@
               <label for="answer-seven"> Más de 30.000 UVT (Más de $ 1.411.950.000)</label>
             </div>
 
-            <div>
-              <button [disabled]="avalible === true" (click)="handleClickButton()">continuar</button>
-            </div>
+
 
         </section>
+      </div>
+      <div class="other-container">
+        <img src="/assets/icons/recurso-7.png" alt="imagen"/>
+
+        <div>
+          <span>Recuerde que las respuestas son anónimas</span>
+          <button [disabled]="avalible === true" (click)="handleClickButton()">continuar</button>
+        </div>
+
+      </div>
     </section>
 

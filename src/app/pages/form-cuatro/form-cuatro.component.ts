@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavbarTwoComponent } from '../../components/navbar-two/navbar-two.component';
 
 @Component({
   selector: 'app-form-cuatro',
   standalone: true,
-  imports: [],
   templateUrl: './form-cuatro.component.html',
   styleUrl: './form-cuatro.component.scss',
+  imports: [NavbarTwoComponent],
 })
 export class FormCuatroComponent {
   constructor(private router: Router) {}

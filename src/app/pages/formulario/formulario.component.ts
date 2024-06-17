@@ -81,7 +81,8 @@ export class FormularioComponent {
         checkedNo: false,
         checkedNose: false,
         error: false,
-        content: '',
+        content:
+          'Quiere decir que actividad está sujeta al Impuesto sobre el Valor Añadido (IVA). El IVA es un impuesto que se aplica sobre el consumo de bienes y servicios. En otras palabras, cuando una actividad comercial o económica está gravada con IVA, implica que se debe cobrar y pagar este impuesto en relación con la transacción realizada.',
       },
       {
         id: 5,
@@ -115,7 +116,8 @@ export class FormularioComponent {
         checkedNo: false,
         required: true,
         error: false,
-        content: '',
+        content:
+          'Cuando se realiza una prestación de servicios dentro del territorio nacional, significa que el proveedor presta del servicio desde Colombia y el cliente lo recibe en Colombia. Mientras que la prestación de servicios desde el exterior se refiere a cuando el proveedor de servicios está ubicado por fuera de Colombia pero el servicio es recibido por el cliente en Colombia.',
       },
       {
         id: 8,

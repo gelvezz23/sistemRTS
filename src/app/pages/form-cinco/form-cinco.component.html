@@ -1,27 +1,29 @@
 
     <section>
+      <app-navbar-two/>
         <div class="info-container">
-            <div class="info-left-container">
                 <h2>Esta es la ruta de la formalización de su negocio</h2>
-                <p>Para navegar por ella, selecciones el número de la obligación para conocer más información sobre cada
-                    paso para la formalización de su negocio.</p>
-            </div>
-            <div class="info-right-container">
                 <p>No olvide que esta es una aproximación de las obligaciones de su negocio y pueden existir otras
-                    obligaciones tributarias que se deban cumplir. <span>Para conocer más precione aquí.</span></p>
-            </div>
+                  obligaciones tributarias que se deban cumplir. <span>Para conocer más precione aquí.</span></p>
+
+
         </div>
-
-
-        <div class="stepper-wrapper">
+<div class="stepper-dos">
+<div>
+  <div class="empty-space"></div>
+  <div class="empty-space"></div>
+  <div class="step-uno">
+    <h2>Regístrese</h2>
+    <div class="container-step">
       @if(viewButtonOne()){
-      <div class="stepper-item completed">
-        <div class="stepper-container-item" style="top: -3.5rem;">
-          <div class="step-name" >Registro<br>Mercantil</div>
-          <div class="step-counter" >1</div>
+        <div class="stepper-item completed">
+          <div class="stepper-container-item" >
+            <div class="step-counter" >1</div>
+            <div class="step-name" >Registro<br>Mercantil</div>
+          </div>
         </div>
-      </div>
-    }
+      }
+
       <div class="stepper-item completed">
         <div class="stepper-container-item">
           <div class="step-counter">2</div>
@@ -30,67 +32,70 @@
       </div>
 
 
-      <div class="stepper-item completed">
-        <div class="stepper-container-item" style="top: -5rem;">
-
-          <div class="step-name">Registro de <br> información <br> tributaria</div>
+      <div class="stepper-item">
+        <div class="stepper-container-item" >
           <div class="step-counter">3</div>
+          <div class="step-name">Registro de <br> información <br> tributaria</div>
         </div>
       </div>
+    </div>
+  </div>
+
+</div>
+<div>
+  <div class="empty-space"></div>
+  <div class="step-uno">
+    <h2>Organice su <br> información</h2>
+    <div class="container-step">
       @if(viewButtonFour()){
-      <div class="stepper-item completed">
-        <div class="stepper-container-item">
-          <div class="step-counter">4</div>
-          <div class="step-name">Contabilidad</div>
-
-        </div>
-      </div>
-      }
-
-      @if(viewButtonFive()){
-      <div class="stepper-item completed">
-        @if(isPersonaNatural){
-          <div class="stepper-container-item" style="top: -5rem;">
-            <div class="step-name">Sistema de<br> facturación<br> electrónica</div>
-            <div class="step-counter">5</div>
-          </div>
-        } @else {
+        <div class="stepper-item">
           <div class="stepper-container-item">
+            <div class="step-counter">4</div>
+            <div class="step-name">Contabilidad</div>
+          </div>
+        </div>
+        }
 
-            <div class="step-counter">5</div>
-            <div class="step-name">Sistema de<br> facturación<br> electrónica</div>
+        @if(viewButtonFive()){
+          <div class="stepper-item completed">
+              <div class="stepper-container-item" >
+                <div class="step-counter">5</div>
+                <div class="step-name">Sistema de<br> facturación<br> electrónica</div>
+              </div>
           </div>
         }
 
-      </div>
-    }
-      <div class="stepper-item completed">
-        <div class="stepper-container-item" >
-          @if(isPersonaNatural){
-            <div class="stepper-container-item" style="top: -1.6rem;">
-              <div class="step-name">Informar</div>
-              <div class="step-counter">6</div>
 
-            </div>
-          } @else {
-            <div class="stepper-container-item">
-              <div class="step-counter">6</div>
-              <div class="step-name">Informar</div>
-            </div>
-          }
-
+        <div class="stepper-item">
+          <div class="stepper-container-item" >
+              <div class="stepper-container-item" >
+                <div class="step-counter">6</div>
+                <div class="step-name">Informar</div>
+              </div>
+          </div>
         </div>
-      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<div>
+
+  <div class="step-uno">
+    <h2>Pague sus <br> impuestos</h2>
+    <div class="container-step">
       @if(viewButtonSeven()){
-        <div class="stepper-item completed">
-          <div class="stepper-container-item"  style="top: -5rem;">
-            <div class="step-name">Impuesto <br> sobre la  <br>renta</div>
+        <div class="stepper-item">
+          <div class="stepper-container-item">
             <div class="step-counter">7</div>
+            <div class="step-name">Impuesto <br> sobre la  <br>renta</div>
           </div>
         </div>
       }
+
       @if(viewButtonEigth()){
-        <div class="stepper-item completed">
+        <div class="stepper-item">
           <div class="stepper-container-item" >
             <div class="step-counter">8</div>
             <div class="step-name">Impuesto <br/>
@@ -99,11 +104,13 @@
           </div>
         </div>
       }
+
+
       @if(viewButtonNine()){
         <div class="stepper-item completed">
-          <div class="stepper-container-item" style="top: -5rem;">
-            <div class="step-name">Impuesto <br> de industria  <br>y comercio</div>
+          <div class="stepper-container-item" >
             <div class="step-counter">9</div>
+            <div class="step-name">Impuesto <br> de industria  <br>y comercio</div>
           </div>
         </div>
       }
@@ -114,7 +121,21 @@
           <div class="step-name">Impuesto <br> al consumo</div>
         </div>
       </div>
-    }
+      }
     </div>
-        <div class="button"><button (click)="handleClick()">Continuar</button></div>
+  </div>
+
+</div>
+</div>
+        <div class="button">
+          <img class="img1" src="/assets/icons/recurso-12.png" alt="imagen" />
+          <div>
+            <p>Descargue el siguiente <br> archivo para consultar <br> cómo cumplir con sus<br> obligaciones tributaria</p>
+            <a href="/assets/Cartilla - publicaciones con comentarios aplicados (05-06-24).pdf" download="/assets/Cartilla - publicaciones con comentarios aplicados (05-06-24).pdf">
+            <img class="img2" src="/assets/icons/downloadfile.svg" alt="imagen" />
+          </a>
+
+
+          </div>
+          <button (click)="handleClick()">Continuar</button></div>
     </section>

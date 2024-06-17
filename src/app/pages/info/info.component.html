@@ -16,6 +16,7 @@
         [(ngModel)]="selectedSexo"
         labelForId="sexo">
       </ng-select>
+      <img src="/assets/icons/select/recurso-select-1.png" alt="icon" />
     </div>
     @if(answers[0].error){
       <div><p class="error">campo requerido *</p></div>
@@ -33,13 +34,15 @@
         [(ngModel)]="selectedEdad"
         labelForId="edad">
       </ng-select>
+      <img src="/assets/icons/select/recurso-select-2.png" alt="icon" />
+
       </div>
       @if(answers[1].error){
         <div><p class="error">campo requerido *</p></div>
       }
 
       <div>
-        <label>Selecciona el departamento <br> donde vives</label>
+        <label>Departamento <br> dónde vives</label>
         <ng-select
         (change)="getAnswer(3, $event)"
         (clear)="clearAnswer(3, {name: ''})"
@@ -50,6 +53,7 @@
           [(ngModel)]="selectedDepartamentos"
           labelForId="ciudades">
         </ng-select>
+        <img src="/assets/icons/select/recurso-select-3.png" alt="icon" />
 
       </div>
       @if(answers[2].error){
@@ -69,6 +73,8 @@
                 [(ngModel)]="selectedMunicipio"
                 labelForId="municipio">
               </ng-select>
+        <img src="/assets/icons/select/recurso-select-4.png" alt="icon" />
+
               </div>
               @if(answers[3].error){
                 <div><p class="error">campo requerido *</p></div>
@@ -95,6 +101,8 @@
                 [(ngModel)]="selectedZona"
                 labelForId="zona">
               </ng-select>
+        <img src="/assets/icons/select/recurso-select-5.png" alt="icon" />
+
             </div>
             @if(answers[4].error){
               <div><p class="error">campo requerido *</p></div>
@@ -111,6 +119,7 @@
               [(ngModel)]="selectedUso"
               labelForId="uso">
             </ng-select>
+            <img src="/assets/icons/select/recurso-select-6.png" alt="icon" />
 
 
             </div>

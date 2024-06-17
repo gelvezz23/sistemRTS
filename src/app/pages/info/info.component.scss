@@ -33,7 +33,6 @@ article p {
   color: rgb(130, 130, 130);
 }
 .ques-container {
-  width: 100%;
   max-width: 800px;
   display: flex;
   flex-direction: column;
@@ -45,8 +44,13 @@ article p {
 .ques-container div {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
   gap: 1rem;
+  width: 27rem;
+
+  img{
+    width: 3rem;
+  }
 }
 .button {
   display: flex;
@@ -62,18 +66,22 @@ button {
   font-weight: 600;
   padding: 0.5rem 1rem;
 }
+label{
+  text-align: right;
+}
 
-@media (max-width: 900px) {
+@media (max-width: 600px) {
   section{
     width: 100%;
     flex-direction: column;
   }
   label{
-    font-size: 1rem;
+    font-size:0.8rem;
+    text-align: right;
   }
 
   .ques-container, .ques-container div{
-    justify-content: space-between;
+    justify-content: end;
     width: 100%;
   }
 

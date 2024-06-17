@@ -11,8 +11,7 @@ import { NavbarTwoComponent } from '../../components/navbar-two/navbar-two.compo
   imports: [ModalComponent, FormsModule, NavbarTwoComponent],
 })
 export class InfoDosComponent {
-  mensaje: string =
-    'persona jurídica” cuando la actividad económica se desarrolle a través de una sociedad, por ejemplo, una Sociedad Anónima Simplificada (S.A.S) o seleccione “persona natural” cuando actúes directamente sin utilizar una sociedad';
+  mensaje: string = '';
   mensajeDos: string = `Comercial: cuando la actividad que se realiza tiene carácter comercial, porque constituye el ejercicio de un acto mercantil del artículo 20 del Código de Comercio. Seguramente será comercial tu actividad si desarrollas actividades de transporte de personas y cosas (como los servicios de transporte por plataformas, taxis, intermunicipal), de arrendamiento o comercialización de bienes, de prestación de servicios (como el expendio de comidas-restaurantes, panaderías y similares-), de depósito de bienes (como parqueaderos y bodegas), de transformación, peluquerías,
   manufactura y circulación de bienes (fábricas), compra y venta de bienes (tiendas, minimercados, puestos de venta
   de artesanías y similares), las empresas de construcción, reparación, compra y venta de vehículos para el transporte

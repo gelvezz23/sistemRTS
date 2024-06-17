@@ -1,23 +1,27 @@
 
-.container {
+.container{
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
 }
-.container .info-left-container {
-  width: 37%;
-  margin-right: 2rem;
-}
+
 .container .info-left-container h2 {
   font-weight: 800;
   font-size: xx-large;
-  color: #02b0ef;
-  margin-block: 1rem;
+  color: #09303e;
+}
+h3{
+  font-size: 1.3rem;
+  font-weight: 800;
+  color:#02b0ef;
 }
 .container .info-left-container p {
   font-weight: 500;
   margin-bottom: 1rem;
 }
-.container .info-left-container .instructions-paragraph {
-  color: #6f309f;
+.instructions-paragraph {
+  color: #919191;
 }
 .container .options-right-container {
   display: flex;
@@ -32,16 +36,14 @@
   align-items: center;
   gap: 1rem;
 }
-.container .options-right-container .title-options-year h3 {
-  margin-right: 1rem;
-}
+
 .container .options-right-container h3 {
   font-size: x-large;
 }
 .container .options-right-container input[type="radio"] {
   width: 24px;
   height: 24px;
-  border: 1px solid #6f309f;
+  border: 1px solid #2e6386;
   appearance: none;
   border-radius: 5px;
   color: white;
@@ -52,7 +54,7 @@
   background-image: url("./../../../assets/images/check-icon.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #6f309f;
+  background-color: #2e6386;
   color: white;
 }
 
@@ -62,21 +64,70 @@
 .container .options-right-container label {
   cursor: pointer;
 }
-.container .options-right-container button {
+button {
   height: 2rem;
   width: 8rem;
   font-size: medium;
   font-weight: 500;
   border: none;
-  border-radius: 17px;
-  background-color: #02b0ef;
+  background-color: #2e6386;
+  font-weight: 800;
   color: #f0f8ff;
   cursor: pointer;
   margin-top: 1rem;
 }
-
-.container .options-right-container button:disabled,
+button:disabled,
 button[disabled]{
   background-color: #cccccc;
   color: #666666;
+}
+
+.other-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+
+  img{
+    padding: 2rem;
+    width: 25rem;
+    height: auto;
+  }
+  span{
+    padding-top: 1rem;
+    color: #2e6386;
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    height: 3rem;
+  }
+}
+
+@media (max-width: 900px) {
+.container{
+  flex-direction: column;
+}
+.options-right-container{
+  gap: 2rem;
+}
+.container .options-right-container{
+  width: 100%;
+}
+.other-container{
+  height: 30rem;
+  img{
+    width: 10rem;
+  }
+  div{
+    height: auto;
+   gap: 2rem;
+    flex-direction: column;
+  }
+  flex-direction: column-reverse;
+}
 }

@@ -22,7 +22,7 @@
               src="./assets/images/icon.svg"
               alt="?"
               [attr.data-bs-toggle]="'modal'"
-              [attr.data-bs-target]="'#exampleModal-' + 1"
+              [attr.data-bs-target]="'#exampleModal-registro-unico-tributario'"
             />
             <input id="answer-one" name="check-one" type="radio" value="no" (change)="getAnswer('no', 1)">
             <input id="answer-one" name="check-one" type="radio" value="si" (change)="getAnswer('si', 1)">
@@ -31,7 +31,7 @@
               src="./assets/images/icon-disabled.svg"
               alt="?"
               [attr.data-bs-toggle]="'modal'"
-              [attr.data-bs-target]="'#exampleModal-' + 1"
+              [attr.data-bs-target]="'#exampleModal-registro-unico-tributario'"
             />
             <input id="answer-one" name="check-one" type="radio" value="no" [disabled]="true">
             <input id="answer-one" name="check-one" type="radio" value="si" [disabled]="true">
@@ -41,6 +41,11 @@
     @if(questions[0].error){
       <p class="error">campo requerido</p>
     }
+    <app-modal
+      [id]="'registro-unico-tributario'"
+      [modalTitle]="''"
+      [modalContent]="message"
+  />
 
     <div>
       @if(viewQuestTwo()){
@@ -54,7 +59,7 @@
             src="./assets/images/icon.svg"
             alt="?"
             [attr.data-bs-toggle]="'modal'"
-            [attr.data-bs-target]="'#exampleModal-' + 2"
+            [attr.data-bs-target]="'#exampleModal-tienes-registro-mercantil'"
           />
           <input id="answer-two" name="check-two" type="radio" value="no" [disabled]="handleCheckedTwo()" (change)="getAnswer('no', 2)">
           <input id="answer-two" name="check-two" type="radio" value="si" [checked]="handleCheckedTwo()" (change)="getAnswer('si', 2)">
@@ -63,7 +68,7 @@
               src="./assets/images/icon-disabled.svg"
               alt="?"
               [attr.data-bs-toggle]="'modal'"
-              [attr.data-bs-target]="'#exampleModal-' + 2"
+              [attr.data-bs-target]="'#exampleModal-tienes-registro-mercantil'"
             />
             <input id="answer-two" name="check-two" type="radio" value="no" [disabled]="true" (change)="getAnswer('no', 2)">
             <input id="answer-two" name="check-two" type="radio" value="si" [disabled]="true" (change)="getAnswer('si', 2)">
@@ -73,7 +78,11 @@
     @if(questions[1].error){
       <p class="error">campo requerido</p>
     }
-
+    <app-modal
+      [id]="'tienes-registro-mercantil'"
+      [modalTitle]="''"
+      [modalContent]="'Consiste en un sistema que recopila, registra y divulga información legal sobre los comerciantes. Funciona como un registro público administrado por las Cámaras de Comercio, donde se inscriben actos, documentos y contratos relacionados con la actividad comercial. Este registro es fundamental para la constitución, reconocimiento y operación legal de las empresas en Colombia, por lo que es obligatorio para todos los comerciantes y se debe renovar anualmente.'"
+/>
     <div>
       @if(viewQuestThree()){
         <label for="answer yes-no-three">¿Renueva el Registro Mercantil cada año?</label>
@@ -82,21 +91,11 @@
       }
         <div class="inputs-container">
           @if(viewQuestThree()){
-            <img
-              src="./assets/images/icon.svg"
-              alt="?"
-              [attr.data-bs-toggle]="'modal'"
-              [attr.data-bs-target]="'#exampleModal-' + 3"
-            />
+            <div style="padding: 1rem;"></div>
             <input id="answer-three" name="check-three" type="radio" value="no" (change)="getAnswer('no', 3)">
             <input id="answer-three" name="check-three" type="radio" value="si" (change)="getAnswer('si', 3)">
           } @else {
-            <img
-              src="./assets/images/icon-disabled.svg"
-              alt="?"
-              [attr.data-bs-toggle]="'modal'"
-              [attr.data-bs-target]="'#exampleModal-' + 3"
-            />
+            <div style="padding: 1rem;"></div>
             <input id="answer-three" name="check-three" type="radio" value="no" [disabled]="true">
             <input id="answer-three" name="check-three" type="radio" value="si" [disabled]="true">
           }
@@ -118,7 +117,7 @@
               src="./assets/images/icon.svg"
               alt="?"
               [attr.data-bs-toggle]="'modal'"
-              [attr.data-bs-target]="'#exampleModal-' + 4"
+              [attr.data-bs-target]="'#exampleModal-paga-salud-trabajadores'"
             />
             <input id="answer-four" name="check-four" type="radio" value="no" (change)="getAnswer('no', 4)">
             <input id="answer-four" name="check-four" type="radio" value="si" (change)="getAnswer('si', 4)">
@@ -127,7 +126,7 @@
               src="./assets/images/icon-disabled.svg"
               alt="?"
               [attr.data-bs-toggle]="'modal'"
-              [attr.data-bs-target]="'#exampleModal-' + 4"
+              [attr.data-bs-target]="'#exampleModal-paga-salud-trabajadores'"
             />
             <input id="answer-four" name="check-four" type="radio" value="no" [disabled]="true">
             <input id="answer-four" name="check-four" type="radio" value="si" [disabled]="true">
@@ -137,6 +136,11 @@
     @if(questions[3].error){
       <p class="error">campo requerido</p>
     }
+    <app-modal
+    [id]="'paga-salud-trabajadores'"
+    [modalTitle]="''"
+    [modalContent]="'Consisten en contribuciones obligatorias que se deben realizar para garantizar el bienestar y protección de los empleados en distintas áreas de su vida laboral y personal. Estos aportes no solo aseguran cobertura en casos de enfermedad, invalidez o vejez, sino que también fortalecen la seguridad laboral, promoviendo un entorno de trabajo más seguro y una red de seguridad social robusta para todos los empleados.'"
+/>
 
     <div>
       @if(viewQuestFive()){
@@ -150,7 +154,7 @@
             src="./assets/images/icon.svg"
             alt="?"
             [attr.data-bs-toggle]="'modal'"
-            [attr.data-bs-target]="'#exampleModal-' + 5"
+            [attr.data-bs-target]="'#exampleModal-paga-salud-laborales'"
           />
           <input id="answer-five" name="check-five" type="radio" value="no" (change)="getAnswer('no', 5)">
           <input id="answer-five" name="check-five" type="radio" value="si" (change)="getAnswer('si', 5)">
@@ -159,7 +163,7 @@
             src="./assets/images/icon-disabled.svg"
             alt="?"
             [attr.data-bs-toggle]="'modal'"
-            [attr.data-bs-target]="'#exampleModal-' + 5"
+            [attr.data-bs-target]="'#exampleModal-paga-salud-laborales'"
           />
           <input id="answer-five" name="check-five" type="radio" value="no" [disabled]="true">
           <input id="answer-five" name="check-five" type="radio" value="si" [disabled]="true">
@@ -170,15 +174,16 @@
       <p class="error">campo requerido</p>
     }
 
+    <app-modal
+    [id]="'paga-salud-laborales'"
+    [modalTitle]="''"
+    [modalContent]="'Consisten en contribuciones obligatorias que se liquidan sobre los ingresos que se reciben por las actividades que se realicen como independientes. Son esenciales para su bienestar, garantizando acceso a servicios médicos, seguridad económica en la jubilación y protección ante accidentes laborales.'"
+/>
+
                 <div>
                   <label for="answer yes-no-six">¿Conoce los requerimientos o permisos para desarrollar su actividad y cumple con estos?</label>
                     <div class="inputs-container">
-                      <img
-                        src="./assets/images/icon.svg"
-                        alt="?"
-                        [attr.data-bs-toggle]="'modal'"
-                        [attr.data-bs-target]="'#exampleModal-' + 6"
-                      />
+                      <div style="padding: 1rem;"></div>
                         <input id="answer-six" name="check-six" type="radio" value="no" (change)="getAnswer('no', 6)">
                         <input id="answer-six" name="check-six" type="radio" value="si" (change)="getAnswer('si', 6)">
                     </div>
@@ -191,12 +196,8 @@
                 <div>
                   <label for="answer yes-no-seven">¿Conoce los deberes y obligaciones tributarias de su actividad?</label>
                     <div class="inputs-container">
-                      <img
-                        src="./assets/images/icon.svg"
-                        alt="?"
-                        [attr.data-bs-toggle]="'modal'"
-                        [attr.data-bs-target]="'#exampleModal-' + 7"
-                      />
+                      <div style="padding: 1rem;"></div>
+
                         <input id="answer-seven" name="check-seven" type="radio" value="no" (change)="getAnswer('no', 7)">
                         <input id="answer-seven" name="check-seven" type="radio" value="si" (change)="getAnswer('si', 7)">
                     </div>

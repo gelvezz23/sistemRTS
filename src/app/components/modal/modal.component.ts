@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { SafePipe } from '../../safe.pipe';
 
 @Component({
   selector: 'app-modal',
   standalone: true,
-  imports: [],
+  imports: [SafePipe],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.scss',
 })
