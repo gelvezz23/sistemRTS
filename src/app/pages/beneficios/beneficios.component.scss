@@ -27,6 +27,8 @@ align-items: center;
 
   img{
     width: 15rem;
+  background-color: #0098da;
+
   }
 }
 h2{
@@ -68,11 +70,13 @@ li:before {
 
 }
 h3{
+  background-color: #0098da;
   font-size: 1.2rem;
   max-width: 48rem;
   color: white;
 }
-span{
+span, a{
+  text-decoration: none;
   color: #272944; }
 
 button{

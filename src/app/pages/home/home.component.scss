@@ -81,12 +81,14 @@ button {
   gap: 10rem;
   height: 20vh;
   padding: 1rem;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 .home-footer div{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
 }
 
