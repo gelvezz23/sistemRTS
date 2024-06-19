@@ -57,6 +57,7 @@ export class EncuestaComponent {
     }
     console.log(this.questions);
   }
+
   public handleClick() {
     window.localStorage.setItem('encuesta', JSON.stringify(this.questions));
     this.router.navigate(['descubre']);
