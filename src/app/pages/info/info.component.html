@@ -9,7 +9,7 @@
       <ng-select
         (change)="getAnswer(1, $event)"
         (clear)="clearAnswer(1, {name: ''})"
-        [items]="[{name:'Mujer'}, {name:'Hombre'}, {name:'Otro'}]"
+        [items]="[{name:'Mujer'}, {name:'Hombre'}, {name:'Indeterminado'}]"
         bindLabel="name"
         bindValue="name"
         placeholder="- seleccione -"
@@ -101,14 +101,14 @@
                 [(ngModel)]="selectedZona"
                 labelForId="zona">
               </ng-select>
-        <img src="/assets/icons/select/recurso-select-5.png" alt="icon" />
+              <img src="/assets/icons/select/recurso-select-5.png" alt="icon" />
 
             </div>
             @if(answers[4].error){
               <div><p class="error">campo requerido *</p></div>
             }
             <div>
-              <label>Qué uso le dará <br> al simulador</label>
+              <label>¿Qué uso le dará <br> al simulador?</label>
               <ng-select
               (change)="getAnswer(6, $event)"
               (clear)="clearAnswer(6, {name: ''})"

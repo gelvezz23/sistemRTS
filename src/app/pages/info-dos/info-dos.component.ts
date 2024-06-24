@@ -12,11 +12,19 @@ import { NavbarTwoComponent } from '../../components/navbar-two/navbar-two.compo
 })
 export class InfoDosComponent {
   mensaje: string = '';
-  mensajeDos: string = `Comercial: cuando la actividad que se realiza tiene carácter comercial, porque constituye el ejercicio de un acto mercantil del artículo 20 del Código de Comercio. Seguramente será comercial tu actividad si desarrollas actividades de transporte de personas y cosas (como los servicios de transporte por plataformas, taxis, intermunicipal), de arrendamiento o comercialización de bienes, de prestación de servicios (como el expendio de comidas-restaurantes, panaderías y similares-), de depósito de bienes (como parqueaderos y bodegas), de transformación, peluquerías,
-  manufactura y circulación de bienes (fábricas), compra y venta de bienes (tiendas, minimercados, puestos de venta
-  de artesanías y similares), las empresas de construcción, reparación, compra y venta de vehículos para el transporte
-  por tierra, agua y aire, y sus accesorios (como los talleres mecánicos). Todas las actividades desarrolladas a través
-  de personas jurídicas serán comerciales a efectos de esta encuesta`;
+  mensajeDos: string = `Marque “actividad comercial” cuando la actividad que se realiza constituye el
+ejercicio de un acto mercantil del artículo 20 del Código de Comercio. Son
+comerciales las actividades de transporte de personas y cosas (como los
+
+servicios de transporte por plataformas, taxis, intermunicipal, etc); de
+arrendamiento o comercialización e bienes, como las tiendas, minimercados,
+puestos de venta y similares; las de prestación de servicios como el expendio de
+comidas (restaurantes, panaderías y simulares), de depósito de bienes (como
+parqueaderos y bodegas), de transformación o manufactura de bienes, las
+peluquerías, las empresas de construcción, reparación, compra y venta de
+vehículos para el transporte, como los talleres mecánicos. Todas las actividades
+realizas a través de personas jurídicas como sociedades anónimas se consideran
+comerciales.`;
 
   titular: { value: string; error: boolean; quest: string } = {
     value: '',
