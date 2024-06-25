@@ -14,11 +14,11 @@
             [attr.data-bs-target]="'#exampleModal-1'"
           />
       </label>
-
         <input
           class="input"
           type="text"
           pattern="[0-9]"
+          (keypress)="soloNumeros($event)"
           (input)="updateValue($event.target || '', 20)"
           (keydown)="filtrarNumero($event)"
           [value]="cantidad"
@@ -40,6 +40,8 @@
         <input
           class="input"
           type="text"
+          pattern="[0-9]"
+          (keypress)="soloNumeros($event)"
           (input)="updateValue($event.target || '', 21)"
           [value]="cantidadDos"
           (keydown)="filtrarNumero($event)"
@@ -47,13 +49,15 @@
         />
       </div>
       <div class="span">
-        <span>¿Cuáles fueron todos sus ingresos brutos del <b>año anterior</b>?</span>
+        <span>¿Cuáles fueron todos sus ingresos brutos del <b>año anterior</b> ?</span>
       </div>
       <div>
         <label for="text">¿Ingresos de actividades gravadas con IVA?</label
         ><input
           class="input"
           type="text"
+          pattern="[0-9]"
+          (keypress)="soloNumeros($event)"
           (input)="updateValue($event.target || '', 22)"
           [value]="cantidadTres"
           (keydown)="filtrarNumero($event)"
@@ -67,6 +71,8 @@
         ><input
           class="input"
           type="text"
+          pattern="[0-9]"
+          (keypress)="soloNumeros($event)"
           (input)="updateValue($event.target || '', 23)"
           [value]="cantidadCuatro"
           (keydown)="filtrarNumero($event)"
@@ -78,6 +84,8 @@
         ><input
           class="input"
           type="text"
+          pattern="[0-9]"
+          (keypress)="soloNumeros($event)"
           (input)="updateValue($event.target || '', 24)"
           [value]="cantidadCinco"
           (keydown)="filtrarNumero($event)"
@@ -89,6 +97,8 @@
         ><input
           class="input"
           type="text"
+          pattern="[0-9]"
+          (keypress)="soloNumeros($event)"
           (input)="updateValue($event.target || '', 25)"
           [value]="cantidadSeis"
           (keydown)="filtrarNumero($event)"
@@ -106,12 +116,14 @@
         />
       </div>
       <div class="span">
-        <span>¿Cuáles son sus ingresos brutos del año curso?</span>
+        <span>¿Cuáles son sus ingresos brutos del <b>año en curso </b> ?</span>
       </div>
       <div>
         <label for="text">¿Ingresos de actividades gravadas con IVA?</label
         ><input
           type="text"
+          pattern="[0-9]"
+          (keypress)="soloNumeros($event)"
           class="input"
           (input)="updateValue($event.target || '', 28)"
           [value]="cantidadOcho"
@@ -125,6 +137,8 @@
           bares y similares</label
         ><input
           type="text"
+          pattern="[0-9]"
+          (keypress)="soloNumeros($event)"
           class="input"
           (input)="updateValue($event.target || '', 29)"
           [value]="cantidadNueve"
@@ -136,6 +150,8 @@
         <label for="text">Ingresos Laborales</label
         ><input
           type="text"
+          pattern="[0-9]"
+          (keypress)="soloNumeros($event)"
           class="input"
           (input)="updateValue($event.target || '', 30)"
           [value]="cantidadDiez"
@@ -147,6 +163,8 @@
         <label for="text">Otros ingresos</label
         ><input
           type="text"
+          pattern="[0-9]"
+          (keypress)="soloNumeros($event)"
           class="input"
           (input)="updateValue($event.target || '', 31)"
           [value]="cantidadOnce"

@@ -89,6 +89,13 @@ export class FormularioTresComponent {
     localStorage.setItem('response-Three', JSON.stringify(this.answers));
   }
 
+  soloNumeros(event: KeyboardEvent) {
+    const regex = /[0-9]/;
+    if (!regex.test(event.key)) {
+      event.preventDefault();
+    }
+  }
+
   public getAnswer(value: string, id: number): void {
     const questionIndex = this.answers.findIndex(
       (question) => question.id === id
