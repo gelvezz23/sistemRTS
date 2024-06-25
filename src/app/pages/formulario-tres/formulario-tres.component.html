@@ -18,6 +18,7 @@
         <input
           class="input"
           type="text"
+          pattern="[0-9]"
           (input)="updateValue($event.target || '', 20)"
           (keydown)="filtrarNumero($event)"
           [value]="cantidad"
@@ -46,7 +47,7 @@
         />
       </div>
       <div class="span">
-        <span>¿Cuáles fueron todos sus ingresos brutos del año anterior?</span>
+        <span>¿Cuáles fueron todos sus ingresos brutos del <b>año anterior</b>?</span>
       </div>
       <div>
         <label for="text">¿Ingresos de actividades gravadas con IVA?</label
@@ -168,3 +169,15 @@
     </div>
   </section>
 </section>
+
+<app-modal
+[id]="'1'"
+[modalTitle]="''"
+[modalContent]="'Es la suma de todos los bienes y activos como inventarios, maquinarias y equipos, vehículos, casas, locales, dinero de cuentas, pagarés a su favor, entre otros, que su negocio tuvo al 31 del año pasado. A esa suma no le puede restar deudas.'"
+/>
+
+<app-modal
+[id]="'2'"
+[modalTitle]="''"
+[modalContent]="'Es la suma de todos los bienes y activos como inventarios, maquinarias y equipos, vehículos, casas, locales, dinero de cuentas, pagarés a su favor, entre otros, que su negocio tiene actualmente. A esa suma no le puede restar deudas.'"
+/>

@@ -1,16 +1,24 @@
-import { formatCurrency, getCurrencySymbol } from '@angular/common';
 import { Component } from '@angular/core';
 import { DisclaimerComponent } from '../../components/disclaimer/disclaimer.component';
 import { CurrencyPipe } from '@angular/common';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { NavbarTwoComponent } from '../../components/navbar-two/navbar-two.component';
+import { CommonModule } from '@angular/common';
+import { ModalComponent } from '../../components/modal/modal.component';
 @Component({
   selector: 'app-formulario-tres',
   standalone: true,
   templateUrl: './formulario-tres.component.html',
   styleUrl: './formulario-tres.component.scss',
   providers: [CurrencyPipe],
-  imports: [DisclaimerComponent, NavbarTwoComponent],
+  imports: [
+    DisclaimerComponent,
+    NavbarTwoComponent,
+    FormsModule,
+    CommonModule,
+    ModalComponent,
+  ],
 })
 export class FormularioTresComponent {
   public cantidad!: string;
@@ -45,7 +53,6 @@ export class FormularioTresComponent {
     this.cantidadDoce = '';
     this.total = 0;
     this.totalDos = 0;
-
     this.answers = [
       {
         id: 20,
@@ -94,27 +101,30 @@ export class FormularioTresComponent {
   }
 
   public updateValue(event: any, id: number) {
-    let input = event.value || '';
-    let val = parseInt(input || '', 10);
-    if (Number.isNaN(val)) {
-      val = 0;
-    }
+    let input = event.value || 0;
 
     if (id === 20) {
       this.cantidad =
         this.currencyPipe.transform(
-          input.replace(/\D/g, '').replace(/^0/),
+          input
+            .replace(/^\$|\$/, '')
+            .replace(/\D/g, '')
+            .replace(/^0/)
+            .replace(/[^0-9]/, ''),
           'USD',
           'symbol',
           '1.0-0'
         ) || '';
-
+      this.cantidad.replace(/^\$|\$/, '');
       this.getAnswer(this.cantidad, id);
     }
     if (id === 21) {
       this.cantidadDos =
         this.currencyPipe.transform(
-          input.replace(/\D/g, '').replace(/^0+/),
+          input
+            .replace(/\D/g, '')
+            .replace(/^0+/)
+            .replace(/[^0-9\-+\.]/g, ''),
           'USD',
           'symbol',
           '1.0-0'
@@ -125,7 +135,10 @@ export class FormularioTresComponent {
     if (id === 22) {
       this.cantidadTres =
         this.currencyPipe.transform(
-          input.replace(/\D/g, '').replace(/^0+/),
+          input
+            .replace(/\D/g, '')
+            .replace(/^0+/)
+            .replace(/[^0-9\-+\.]/g, ''),
           'USD',
           'symbol',
           '1.0-0'
@@ -136,7 +149,10 @@ export class FormularioTresComponent {
     if (id === 23) {
       this.cantidadCuatro =
         this.currencyPipe.transform(
-          input.replace(/\D/g, '').replace(/^0+/),
+          input
+            .replace(/\D/g, '')
+            .replace(/^0+/)
+            .replace(/[^0-9\-+\.]/g, ''),
           'USD',
           'symbol',
           '1.0-0'
@@ -147,7 +163,10 @@ export class FormularioTresComponent {
     if (id === 24) {
       this.cantidadCinco =
         this.currencyPipe.transform(
-          input.replace(/\D/g, '').replace(/^0+/),
+          input
+            .replace(/\D/g, '')
+            .replace(/^0+/)
+            .replace(/[^0-9\-+\.]/g, ''),
           'USD',
           'symbol',
           '1.0-0'
@@ -157,7 +176,10 @@ export class FormularioTresComponent {
     if (id === 25) {
       this.cantidadSeis =
         this.currencyPipe.transform(
-          input.replace(/\D/g, '').replace(/^0+/),
+          input
+            .replace(/\D/g, '')
+            .replace(/^0+/)
+            .replace(/[^0-9\-+\.]/g, ''),
           'USD',
           'symbol',
           '1.0-0'
@@ -179,7 +201,10 @@ export class FormularioTresComponent {
     if (id === 28) {
       this.cantidadOcho =
         this.currencyPipe.transform(
-          input.replace(/\D/g, '').replace(/^0+/),
+          input
+            .replace(/\D/g, '')
+            .replace(/^0+/)
+            .replace(/[^0-9\-+\.]/g, ''),
           'USD',
           'symbol',
           '1.0-0'
@@ -189,7 +214,10 @@ export class FormularioTresComponent {
     if (id === 29) {
       this.cantidadNueve =
         this.currencyPipe.transform(
-          input.replace(/\D/g, '').replace(/^0+/),
+          input
+            .replace(/\D/g, '')
+            .replace(/^0+/)
+            .replace(/[^0-9\-+\.]/g, ''),
           'USD',
           'symbol',
           '1.0-0'
@@ -199,7 +227,10 @@ export class FormularioTresComponent {
     if (id === 30) {
       this.cantidadDiez =
         this.currencyPipe.transform(
-          input.replace(/\D/g, '').replace(/^0+/),
+          input
+            .replace(/\D/g, '')
+            .replace(/^0+/)
+            .replace(/[^0-9\-+\.]/g, ''),
           'USD',
           'symbol',
           '1.0-0'
@@ -209,7 +240,10 @@ export class FormularioTresComponent {
     if (id === 31) {
       this.cantidadOnce =
         this.currencyPipe.transform(
-          input.replace(/\D/g, '').replace(/^0+/),
+          input
+            .replace(/\D/g, '')
+            .replace(/^0+/)
+            .replace(/[^0-9\-+\.]/g, ''),
           'USD',
           'symbol',
           '1.0-0'
@@ -230,7 +264,6 @@ export class FormularioTresComponent {
   }
 
   public filtrarNumero(event: KeyboardEvent) {
-    console.log(event.key);
     const allowedKeys =
       /[0-9]|\bDelete\b|\bBackspace\b|[\u2190-\u2193]|\bArrowLeft\b|\bArrowRight\b|\bDelete\b/g;
 
