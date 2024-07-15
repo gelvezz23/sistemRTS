@@ -1,0 +1,40 @@
+nav {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  height: 4rem;
+  width: 100%;
+  padding: 7rem 4rem 0px 0px;
+  background-color: transparent;
+  position: sticky;
+  gap: 0.8rem;
+  width: 100%;
+}
+nav h2 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0098DA;
+  padding: 0px;
+  margin: 0px;
+  padding: 0px 10px;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid rgb(108, 108, 108);
+}
+
+nav img {
+  height: 1.5rem;
+
+}
+
+@media (max-width:900px) {
+  nav{
+    padding:1rem;
+  }
+  nav h2{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    font-size: 0.8rem;
+  }
+}

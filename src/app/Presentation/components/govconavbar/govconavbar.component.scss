@@ -1,0 +1,17 @@
+nav{
+  position: relative;
+  z-index: 9999;
+  display: flex;
+  width: 100%;
+  padding: .5rem 1rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3666CC;
+  height: 3rem;
+}
+
+a{
+  content: url(https://cdn.www.gov.co/assets/images/logo.svg);
+    height: 2rem;
+    width: 8.5rem;
+}

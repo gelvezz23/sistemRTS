@@ -1,4 +1,40 @@
 
-
+<app-govconavbar/>
 <router-outlet />
 <app-footer />
+
+
+<div class="block block--gov-accessibility">
+  <div class="block-options navbar-expanded">
+    <a class="contrast-ref" rel="noopener" tabindex="0" aria-label="Cambiar contraste" title="Cambiar contraste" (click)="toggleHighContrast()">
+      <span class="govco-icon govco-icon-contrast-n"></span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-contrast" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+        <path d="M12 17a5 5 0 0 0 0 -10v10" />
+      </svg>
+      <label> Contraste </label>
+    </a>
+    <a class="min-fontsize" rel="noopener" tabindex="0" aria-label="Reducir letra" title="Reducir letra" (click)="decreaseFontSize()">
+      <span class="govco-icon govco-icon-less-size-n"></span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-text-decrease" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M4 19v-10.5a3.5 3.5 0 1 1 7 0v10.5" />
+        <path d="M4 13h7" />
+        <path d="M21 12h-6" />
+      </svg>
+      <label class="align-middle"> Reducir letra </label>
+    </a>
+    <a class="max-fontsize" rel="noopener" tabindex="0" aria-label="Aumentar letra" title="Aumentar letra" (click)="increaseFontSize()">
+      <span class="govco-icon govco-icon-more-size-n"></span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-text-increase" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M4 19v-10.5a3.5 3.5 0 1 1 7 0v10.5" />
+        <path d="M4 13h7" />
+        <path d="M18 9v6" />
+        <path d="M21 12h-6" />
+      </svg>
+      <label class="align-middle"> Aumentar letra </label>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,212 @@
+<app-navbar-two/>
+<h2>
+  Responda las siguientes <br> preguntas con la <br> información del negocio
+</h2>
+<section class="container">
+  <section class="ques-container">
+      <div>
+        <label for="patirmonio_bruto" class="bruto">
+          ¿Cuál fue su patrimonio bruto el año anterior?
+          <img
+            src="./assets/images/icon.svg"
+            alt="?"
+            [attr.data-bs-toggle]="'modal'"
+            [attr.data-bs-target]="'#exampleModal-1'"
+          />
+      </label>
+        <input
+          class="input"
+          type="text"
+          pattern="[0-9]"
+          (keypress)="soloNumeros($event)"
+          (input)="updateValue($event.target || '', 30)"
+          (keydown)="filtrarNumero($event)"
+          [value]="cantidad"
+          (change)="updateValue($event.target || '', 30)"
+          name="patirmonio_bruto"
+          id="patirmonio_bruto"
+          required
+        />
+      </div>
+      <div>
+        <label for="text" class="bruto">¿Cuál es su patrimonio bruto del presente año?
+          <img
+            src="./assets/images/icon.svg"
+            alt="?"
+            [attr.data-bs-toggle]="'modal'"
+            [attr.data-bs-target]="'#exampleModal-2'"
+          />
+        </label>
+
+        <input
+          class="input"
+          type="text"
+          pattern="[0-9]"
+          (keypress)="soloNumeros($event)"
+          (input)="updateValue($event.target || '', 31)"
+          [value]="cantidadDos"
+          (keydown)="filtrarNumero($event)"
+          required
+        />
+      </div>
+      <div class="span">
+        <span>¿Cuáles fueron todos sus ingresos brutos del <b>año anterior</b> ?</span>
+      </div>
+      <div>
+        <label for="text">¿Ingresos de actividades gravadas con IVA?</label
+        ><input
+          class="input"
+          type="text"
+          pattern="[0-9]"
+          (keypress)="soloNumeros($event)"
+          (input)="updateValue($event.target || '', 32)"
+          (change)="updateValue($event.target || '', 32)"
+          [value]="cantidadTres"
+          (keydown)="filtrarNumero($event)"
+          required
+        />
+      </div>
+      <div>
+        <label for="text" class="large-ques"
+          >Ingresos de actividades de restaurante, cafeterías, autoservicio,
+          bares y similares</label
+        ><input
+          class="input"
+          type="text"
+          pattern="[0-9]"
+          (keypress)="soloNumeros($event)"
+          (input)="updateValue($event.target || '', 33)"
+          [value]="cantidadCuatro"
+          (keydown)="filtrarNumero($event)"
+          required
+        />
+      </div>
+      <div>
+        <label for="text">Ingresos Laborales</label
+        ><input
+          class="input"
+          type="text"
+          pattern="[0-9]"
+          (keypress)="soloNumeros($event)"
+          (input)="updateValue($event.target || '', 34)"
+          [value]="cantidadCinco"
+          (keydown)="filtrarNumero($event)"
+          required
+        />
+      </div>
+      <div>
+        <label for="text">Otros ingresos</label
+        ><input
+          class="input"
+          type="text"
+          pattern="[0-9]"
+          (keypress)="soloNumeros($event)"
+          (input)="updateValue($event.target || '', 35)"
+          [value]="cantidadSeis"
+          (keydown)="filtrarNumero($event)"
+          required
+        />
+      </div>
+      <div>
+        <label for="text">Total de ingresos brutos</label
+        ><input
+          class="input"
+          type="text"
+          (keydown)="(false)"
+          [value]="cantidadSiete"
+          required
+        />
+      </div>
+      <div class="span">
+        <span>¿Cuáles son sus ingresos brutos del <b>año en curso </b> ?</span>
+      </div>
+      <div>
+        <label for="text">¿Ingresos de actividades gravadas con IVA?</label
+        ><input
+          type="text"
+          pattern="[0-9]"
+          (keypress)="soloNumeros($event)"
+          class="input"
+          (input)="updateValue($event.target || '', 37)"
+          [value]="cantidadOcho"
+          (keydown)="filtrarNumero($event)"
+          required
+        />
+      </div>
+      <div>
+        <label for="text"
+          >Ingresos de actividades de restaurante, cafeterías, autoservicio,
+          bares y similares</label
+        ><input
+          type="text"
+          pattern="[0-9]"
+          (keypress)="soloNumeros($event)"
+          class="input"
+          (input)="updateValue($event.target || '', 38)"
+          [value]="cantidadNueve"
+          (keydown)="filtrarNumero($event)"
+          required
+        />
+      </div>
+      <div>
+        <label for="text">Ingresos Laborales</label
+        ><input
+          type="text"
+          pattern="[0-9]"
+          (keypress)="soloNumeros($event)"
+          class="input"
+          (input)="updateValue($event.target || '', 39)"
+          [value]="cantidadDiez"
+          (keydown)="filtrarNumero($event)"
+          required
+        />
+      </div>
+      <div>
+        <label for="text">Otros ingresos</label
+        ><input
+          type="text"
+          pattern="[0-9]"
+          (keypress)="soloNumeros($event)"
+          class="input"
+          (input)="updateValue($event.target || '', 40)"
+          [value]="cantidadOnce"
+          (keydown)="filtrarNumero($event)"
+          required
+        />
+      </div>
+      <div>
+        <label for="text">Total de ingresos brutos</label
+        ><input type="text" class="input"  (keydown)="(false)"
+        [value]="cantidadDoce" />
+      </div>
+
+  </section>
+  <section class="other-container">
+    <img src="/assets/icons/recurso-11.png" alt="image" />
+    <div class="footer-form">
+      <button type="button" value="" (click)="handleClick()">
+        Ver ruta de la <br> formalización
+      </button>
+      <app-loading [loading]="loading"/>
+
+      <span>Recuerde que las respuestas son anónimas</span>
+      @if(error){
+        <div class="alert alert-danger" role="alert">
+          {{error}}
+        </div>
+      }
+    </div>
+  </section>
+</section>
+
+<app-modal
+[id]="'1'"
+[modalTitle]="''"
+[modalContent]="'Es la suma de todos los bienes y activos como inventarios, maquinarias y equipos, vehículos, casas, locales, dinero de cuentas, pagarés a su favor, entre otros, que su negocio tuvo al 31 del año pasado. A esa suma no le puede restar deudas.'"
+/>
+
+<app-modal
+[id]="'2'"
+[modalTitle]="''"
+[modalContent]="'Es la suma de todos los bienes y activos como inventarios, maquinarias y equipos, vehículos, casas, locales, dinero de cuentas, pagarés a su favor, entre otros, que su negocio tiene actualmente. A esa suma no le puede restar deudas.'"
+/>

@@ -1,0 +1,18 @@
+interface AdaptedAnswer {
+  userId: string;
+  questionId: string;
+  question: string;
+  userAnswer: string;
+}
+
+export const AdapterFormCuatro = (
+  answers: { id: number; value: boolean; quest: string }[],
+  token: string
+): AdaptedAnswer[] => {
+  return answers.map((answer) => ({
+    userId: token,
+    questionId: answer.id.toString(),
+    question: answer.quest,
+    userAnswer: answer.value.toString(),
+  }));
+};

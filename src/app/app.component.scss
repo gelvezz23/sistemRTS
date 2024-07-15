@@ -33,3 +33,94 @@ body {
 :focus {
   outline: 0;
 }
+
+.block--gov-accessibility {
+  position: fixed;
+  right: -0.1em;
+  bottom: 0;
+  top: 30vh;
+  width: 3.2em !important;
+  border-radius: 5px 0 0 5px;
+  z-index: 4;
+  background: transparent !important;
+}
+
+.block--gov-accessibility .block-options {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 8px 0 !important;
+  background-color: #004884;
+  border-radius: 12px;
+  border: 1px solid #ffffff47;
+}
+
+.block--gov-accessibility .block-options a {
+  cursor: pointer;
+  text-align: center;
+  padding: 3px 2px;
+}
+.block--gov-accessibility .block-options a .govco-icon {
+  color: white !important;
+  font-size: 1.5rem;
+}
+.block--gov-accessibility .block-options a:hover {
+  transform: translateX(-9em);
+  -webkit-transform: translateX(-8em);
+  background-color: #3772FF;
+  width: 11em;
+  text-align: left;
+  border-radius: 10px 0px 0px 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.block--gov-accessibility .block-options a:hover label {
+  cursor: pointer;
+  display: inline-block !important;
+  margin-bottom: 0;
+  margin-left: 0;
+  font-size: 0.8rem;
+}
+
+.block--gov-accessibility .block-options a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+.block--gov-accessibility .block-options a:hover {
+  transform: translateX(-9em);
+  -webkit-transform: translateX(-8em);
+  background-color: #3772FF;
+  width: 11em;
+  text-align: left;
+  border-radius: 10px 0px 0px 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.block--gov-accessibility .block-options a label {
+  cursor: pointer;
+  display: none;
+  color: white;
+  font-size: 1em;
+  margin-left: 2.5em;
+}
+
+@media (max-width: 700px) {
+  .block--gov-accessibility{
+    display: none;
+  }
+}

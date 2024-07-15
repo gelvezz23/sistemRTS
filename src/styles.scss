@@ -3,3 +3,10 @@
 *{
   font-family: "Poppins", sans-serif;
 }
+
+.altoContraste {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+  background-color: #fff;
+}
+

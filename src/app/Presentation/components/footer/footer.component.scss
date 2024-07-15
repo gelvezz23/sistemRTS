@@ -1,0 +1,64 @@
+
+nav{
+  display: flex;
+  width: 100%;
+  padding: 3rem 1rem;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #3666CC;
+  height: auto;
+}
+.img-footer{
+  border-left: 1px solid white;
+  padding-left: 0.5rem;
+}
+a{
+  content: url(https://cdn.www.gov.co/assets/images/logo.svg);
+    height: 2rem;
+    width: 8.5rem;
+}
+.column-1, .column-2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid white;
+  height: 15rem;
+  color: white;
+  font-size: .8rem;
+ul{
+  list-style: none;
+}
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+
+@media (max-width:900px) {
+  .img-content{
+    padding: 1rem;
+  }
+  nav{
+    padding: 1rem;
+    height: auto;
+    flex-direction: column;
+    align-items: start;
+  justify-content: start;
+  }
+  .column-1, .column-2{
+    width: 100%;
+    height: auto;
+    border: none;
+    align-items: start;
+  justify-content: start;
+  }
+}

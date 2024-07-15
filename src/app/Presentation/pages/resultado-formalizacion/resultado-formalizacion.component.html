@@ -1,0 +1,83 @@
+<section>
+  <app-navbar-two />
+
+  <div class="congrats-container">
+
+    <div>
+      <h1>Resultado:</h1>
+      @if(count === 7){
+      <p class="title">El negocio está formalizado, lo que le permite acceder a muchos beneficios y disminuir riesgos.
+      </p>
+      }
+
+      @if(count === 5 || count === 6){
+      <p class="title">El negocio tiene un grado de formalización alto pero aún tiene que trabajar para disminuir los
+        riesgos a los que está expuesto.</p>
+      }
+
+      @if(count === 4 || count === 3 || count === 2){
+      <p class="title">El negocio tiene un grado medio de formalización. Existen riesgos importantes a los que está
+        expuesto.</p>
+      }
+      @if(count === 1 || count === 0){
+      <p class="title">El negocio tiene un grado bajo de formalización. Existen muchos riesgos importantes a los que
+        está expuesto.</p>
+
+      }
+
+
+      <div class="text-options">
+        <p class="text-result-titulo">
+          Estar formalizado implica cumplir con las condiciones exigidas<br>
+          por el Estado para el correcto funcionamiento de un negocio, <br>
+          abarcando las siguientes cuatro dimensiones. </p>
+        <ul>
+          <li>
+            <p class="text-result">
+              <b>Entrada:</b> lo que se requiere para crear legalmente su negocio, <br>
+              como el RUT.
+            </p>
+          </li>
+          <li>
+            <p class="text-result">
+              <b>Insumos:</b> lo que se requiere para tener el material de trabajo y a <br>
+              los trabajadores en orden, como los aportes a seguridad social.
+            </p>
+          </li>
+          <li>
+            <p class="text-result">
+              <b>Producción:</b> lo que se requiere para llevar a cabo la operación, <br>
+              como el registro INVIMA.
+            </p>
+          </li>
+          <li>
+            <p class="text-result"><b>Tributaria:</b> lo que se requiere para estar al día con los <br> impuestos y
+              deberes asociados.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="text">
+
+
+      <h2>Beneficios de la formalización para los negocios</h2>
+
+      <div class="text-options">
+
+        <p class="text-result-2">
+          Permite ampliar el portafolio de posibles clientes,<br>
+          contratar con el estado, exportar y tener mejores <br>
+          proveedores.</p>
+        <p class="text-result-2">
+          Más posibilidades y mejores condiciones para acceder a <br>
+          créditos y otras fuentes de financiación.</p>
+        <p class="text-result-2">Tener mejor personal y cubrir los riesgos laborales.</p>
+        <p class="text-result-2">Evitar sanciones grandes y demandas.</p>
+        <p class="text-result-2">Acceder a programas de fortalecimiento empresarial.</p>
+        <p class="text-result-2">En fin, tener un negocio sostenible.</p>
+      </div>
+      <button (click)="handleClick()">Continuar</button>
+    </div>
+  </div>
+</section>

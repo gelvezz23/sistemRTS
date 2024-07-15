@@ -1,0 +1,277 @@
+<app-navbar-two/>
+<h2>
+  Responda las siguientes<br />
+  preguntas con la <br>
+  información del negocio
+</h2>
+
+<section>
+
+  <form class="container">
+
+
+    <div class="container_question">
+      <div class="question">
+       @if(questions[0].disabled ){
+          <h3 class="quest-10 disabled">¿Tiene más de un establecimiento de comercio?</h3>
+          <img
+          src="./assets/images/icon-disabled.svg"
+          alt="?"
+          [attr.data-bs-toggle]="'modal'"
+          [attr.data-bs-target]="'#exampleModal-' + questions[0].id"/>
+        } @else {
+          <h3 class="quest-10">¿Tiene más de un establecimiento de comercio?</h3>
+          <img
+          src="./assets/images/icon.svg"
+          alt="?"
+          [attr.data-bs-toggle]="'modal'"
+          [attr.data-bs-target]="'#exampleModal-' + questions[0].id"/>
+        }
+
+
+      </div>
+      <div class="answer">
+        <div>
+          <label>Sí</label>
+          <input
+            (change)="getAnswer('si', questions[0].id)"
+            class="input-checkbox"
+            type="radio"
+            id="si"
+            name="{{ questions[0].id }}"
+            value="si"
+            [checked]="questions[0].checkedYes"
+            [disabled]="questions[0].disabled"
+            [required]="questions[0].required"
+          />
+      </div>
+      <div>
+        <label>No</label>
+        <input
+          (change)="getAnswer('no', questions[0].id)"
+          class="input-checkbox"
+          type="radio"
+          id="no"
+          name="{{ questions[0].id }}"
+          [checked]="questions[0].checkedNo"
+          [disabled]="questions[0].disabled"
+          [required]="questions[0].required"
+          value="no"
+        />
+      </div>
+
+      </div>
+    </div>
+    @if(questions[0].error && questions[0].id === 25){
+      <span class="error-inputs">Campo requerido *</span>
+    }
+
+    <div class="container_question">
+      <div class="question">
+
+        @if(questions[1].disabled ){
+          <h3 class="quest-10 disabled">¿Cuál fue el monto de sus consignaciones bancarias, depósitos o inversiones financieras en el año inmediatamente anterior?</h3>
+        } @else {
+          <h3 class="quest-10" style=" color: #186a88;">¿Cuál fue el monto de sus consignaciones bancarias, depósitos o inversiones financieras en el año inmediatamente anterior?</h3>
+        }
+      </div>
+
+      <div class="answer-inputs-text">
+        <div>
+          @if(questions[1].disabled ){
+            <label for="gravada-con-iva" class="disabled spaceLabel">De la actividad gravada con IVA</label>
+
+          }@else {
+            <label for="gravada-con-iva">De la actividad gravada con IVA</label>
+
+          }
+          <div class="answer-inputs-divs">
+            <input
+              (input)="updateValue($event.target || '', questions[1].id)"
+              [value]="cantidad"
+              (keydown)="filtrarNumero($event)"
+              class="input-checkbox"
+              type="text"
+              id="gravada-con-iva"
+              name="gravada-con-iva"
+              [required]="questions[1].required"
+              [disabled]="questions[1].disabled"
+
+            />
+
+          </div>
+        </div>
+
+        <div>
+          @if(questions[1].disabled ){
+            <label class="disabled spaceLabel">Otras</label>
+
+          }@else {
+            <label class="spaceLabel">Otras</label>
+
+          }
+
+            <div class="answer-inputs-divs">
+              <input
+                (input)="updateValue($event.target || '', questions[2].id)"
+                (keydown)="filtrarNumero($event)"
+                [value]="cantidadDos.trim()"
+                class="input-checkbox"
+                type="text"
+                id="nose"
+                min="0"
+                name="gravada-con-iva"
+                [required]="questions[2].required"
+                [disabled]="questions[2].disabled"
+              />
+            </div>
+        </div>
+
+      </div>
+    </div>
+    @if(questions[1].error || questions[2].error){
+      <p class="error-inputs">Campo requerido *</p>
+    }
+
+    <div class="container_question">
+      <div class="question">
+        @if(questions[3].disabled){
+          <h3 class="quest-10 disabled">¿Realizó compras y consumos totales superiores a $65.891.000 (equivalentes a 1.400 UVT) durante el año inmediatamente anterior?</h3>
+          <img
+          src="./assets/images/icon-disabled.svg"
+          alt="?"
+          [attr.data-bs-toggle]="'modal'"
+          [attr.data-bs-target]="'#exampleModal-'+ questions[3].id"/>
+        } @else {
+          <h3 class="quest-10">¿Realizó compras y consumos totales superiores a $65.891.000 (equivalentes a 1.400 UVT) durante el año inmediatamente anterior?</h3>
+          <img
+          src="./assets/images/icon.svg"
+          alt="?"
+          [attr.data-bs-toggle]="'modal'"
+          [attr.data-bs-target]="'#exampleModal-' + questions[3].id"/>
+        }
+
+      </div>
+
+      <div class="answer">
+        <div>
+          <label>Sí</label>
+          <input
+          (change)="getAnswer('si', questions[3].id)"
+          class="input-checkbox"
+          type="radio"
+          id="si"
+          name="{{ questions[3].id }}"
+          value="si"
+          [checked]="questions[3].checkedYes"
+          [disabled]="questions[3].disabled"
+          [required]="questions[3].required"
+        />
+        </div>
+        <div>
+          <label>No</label>
+          <input
+            (change)="getAnswer('no',questions[3].id)"
+            class="input-checkbox"
+            type="radio"
+            id="no"
+            name="{{ questions[3].id }}"
+            [checked]="questions[3].checkedNo"
+            [disabled]="questions[3].disabled"
+            [required]="questions[3].required"
+            value="no"
+          />
+      </div>
+      </div>
+    </div>
+    @if(questions[3].error ){
+      <p class="error-inputs">Campo requerido *</p>
+    }
+
+    <div class="container_question">
+      <div class="question">
+
+        @if(questions[4].disabled){
+          <h3 class="quest-10 disabled">¿La actividad económica se realiza bajo un sistema que implique la explotación de
+            intangibles (por ejemplo, franquicia, concesión, regalía o similar)?</h3>
+          <img
+          src="./assets/images/icon-disabled.svg"
+          alt="?"
+          [attr.data-bs-toggle]="'modal'"
+          [attr.data-bs-target]="'#exampleModal-'+ questions[4].id"/>
+        } @else {
+          <h3 class="quest-10">¿La actividad económica se realiza bajo un sistema que implique la explotación de
+            intangibles (por ejemplo, franquicia, concesión, regalía o similar)?</h3>
+          <img
+          src="./assets/images/icon.svg"
+          alt="?"
+          [attr.data-bs-toggle]="'modal'"
+          [attr.data-bs-target]="'#exampleModal-'+ questions[4].id"/>
+        }
+
+
+
+
+      </div>
+
+      <div class="answer">
+        <div>
+          <label>Sí</label>
+          <input
+          (change)="getAnswer('si', questions[4].id)"
+          class="input-checkbox"
+          type="radio"
+          id="si"
+          name="{{ questions[4].id }}"
+          value="si"
+          [checked]="questions[4].checkedYes"
+          [disabled]="questions[4].disabled"
+          [required]="questions[4].required"
+        />
+        </div>
+        <div>
+          <label>No</label>
+          <input
+          (change)="getAnswer('no',questions[4].id)"
+          class="input-checkbox"
+          type="radio"
+          id="no"
+          name="{{ questions[4].id }}"
+          [checked]="questions[4].checkedNo"
+          [disabled]="questions[4].disabled"
+          [required]="questions[4].required"
+          value="no"
+        />
+        </div>
+
+      </div>
+    </div>
+    @if(questions[4].error ){
+      <p class="error-inputs">Campo requerido *</p>
+    }
+
+
+    <div class="footer-form">
+     <label>Recuerda que las respuestas son anónimas</label>
+     <input type="submit" value="Continuar" (click)="handleSubmit($event)" />
+     <app-loading [loading]="loading"/>
+    </div>
+    @if(error){
+      <div class="alert alert-danger" role="alert">
+        {{error}}
+      </div>
+    }
+    @for( quest of questions; track questions){
+      <app-modal
+        [id]="quest.id"
+        [modalTitle]="quest.question"
+        [modalContent]="quest.content"
+      />
+
+    }
+  </form>
+
+  <div class="image">
+    <img  src="/assets/icons/recurso-9.png" alt="imagen" />
+  </div>
+</section>

@@ -1,0 +1,50 @@
+    <section>
+      <app-navbar/>
+<div class="title-container">
+  <div>
+    <h2>Determine la ruta de la<br> formalización tributaria <br>de su negocio</h2>
+    <h3>Puede hacerlo de dos formas</h3>
+  </div>
+  <img src="/assets/icons/recurso-20.png" alt="imagen" />
+</div>
+
+        <div class="two-options">
+            <button (click)="redirectOthepath()">Introduciendo los datos <br> económicos básicos del <br> negocio que deseas
+                simular</button>
+            <button (click)="redirectFormCuatro()">Utilice un modelo, <br> como si fuera su negocio</button>
+        </div>
+        <div class="warning">
+          <img src="/assets/images/warning-img.png" alt="!"/>
+         
+              
+                <ul>
+                  
+                  <li>Este simulador no reemplaza el análisis que deba hacer el contribuyente.<br></li>
+                  <li>Al final del simulardor encontrará el detalle de cómo cumplir con sus obligaciones tributarias. <br></li>
+                  <li>Oprima
+                <b
+                [attr.data-bs-toggle]="'modal'"
+                [attr.data-bs-target]="'#exampleModal-oprima-aqui'">
+                aquí
+              </b> 
+                para consultar la lista de negocios para las que este simulador no aplica.<br></li>
+                <li> simulador asume que el titular del negocio es residente a efectos fiscales. Oprima
+                <b>
+                  <a  target="_blank" href="https://www.dian.gov.co/impuestos/personas/Renta-Personas-Naturales-AG-2020/Paginas/Eres-residente-en-Colombia-para-efectos-tributarios.aspx ">
+                    aquí
+                  </a>
+                </b> para <br>
+                conocer más sobre residencia fiscal.</li>
+              </ul>
+             
+            
+             
+        </div>
+    </section>
+
+
+    <app-modal
+      [id]="'oprima-aqui'"
+      [modalTitle]="''"
+      [modalContent]="'Este simulador no aplica para empresas que sean exportadoras, importadoras, operadores de juegos de suerte y azar, usuarios aduaneros, entidades financieras, prestadores de servicios de telefonía móvil, datos y/o internet y navegación móvil, empresas que contratan con personas o entidades sin residencia o domicilio en Colombia para la prestación de servicios en el territorio nacional.'"
+    />
