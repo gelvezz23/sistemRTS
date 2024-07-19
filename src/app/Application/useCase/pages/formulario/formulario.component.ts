@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { QuestionComponent } from '../../../../Presentation/components/question/question.component';
+import { QuestionComponent } from '../../components/question';
 import { ModalComponent } from '../../components/modal';
 import { DisclaimerComponent } from '../../components/disclaimer';
-import { NavbarTwoComponent } from '../../components/navbar-two';
 import { QuestionType } from '../../../../Domain/pages/formulario';
 import { questions } from './question';
 import { LoadingComponent } from '../../components/loading/loading.component';
@@ -11,6 +10,7 @@ import { SaveDataService } from '../../../../Infraestructure/saveData/save-data.
 import { adapterToken } from '../../../adapters/adapterToken';
 import { HttpClientModule } from '@angular/common/http';
 import { AdapterFormAnswer } from '../../../adapters/formAdapter';
+import { NavbarBgBlackComponent } from '../../components/navbar-bg-black/navbar-bg-black.component';
 
 @Component({
   selector: 'app-formulario',
@@ -23,9 +23,9 @@ import { AdapterFormAnswer } from '../../../adapters/formAdapter';
     ModalComponent,
     DisclaimerComponent,
     QuestionComponent,
-    NavbarTwoComponent,
     LoadingComponent,
     HttpClientModule,
+    NavbarBgBlackComponent,
   ],
 })
 class FormularioComponent {
@@ -45,6 +45,7 @@ class FormularioComponent {
   }
 
   public getValidateAnswer(id: number, value: string): void {
+    console.log(this.questions);
     if (id === 17 && value === 'si') {
       this.questions[1].disabled = false;
       this.questions[2].disabled = false;
@@ -70,12 +71,14 @@ class FormularioComponent {
       this.questions[4].disabled = true;
       this.questions[5].disabled = true;
       this.questions[6].disabled = true;
+      this.questions[7].disabled = true;
     }
 
     if (id === 20 && value === 'no') {
       this.questions[4].disabled = true;
       this.questions[5].disabled = true;
       this.questions[6].disabled = true;
+      this.questions[7].disabled = true;
       this.questions[3].checkedYes = false;
     }
 
@@ -95,21 +98,30 @@ class FormularioComponent {
       this.questions[5].disabled = true;
       this.questions[7].disabled = true;
 
-      this.getAnswer('si', 4);
+      this.getAnswer('si', 20);
     }
 
     if (id === 22 && value === 'si') {
       this.questions[7].disabled = true;
       this.questions[3].checkedYes = false;
-      this.getAnswer('nose', 4);
+      this.getAnswer('nose', 20);
     }
-    console.log(id, value);
     if (id === 23 && value === 'si') {
       this.questions[7].disabled = false;
     }
 
     if (id === 23 && value === 'no') {
       this.questions[7].disabled = true;
+    }
+
+    if (id === 24 && value === 'no') {
+      this.questions[4].disabled = true;
+      this.questions[5].disabled = true;
+      this.questions[6].disabled = true;
+      this.questions[7].disabled = true;
+      this.questions[3].checkedYes = true;
+
+      this.getAnswer('si', 20);
     }
   }
 
@@ -127,7 +139,8 @@ class FormularioComponent {
 
   public handleSubmit($event: any): void {
     $event.preventDefault();
-
+    const token = adapterToken(localStorage.getItem('token') || '');
+    const dataAdapted = AdapterFormAnswer(this.questions, token);
     let isValid = true;
     this.questions.forEach((item) => {
       if (item.value === '' && !item.disabled) {
@@ -140,8 +153,6 @@ class FormularioComponent {
 
     if (isValid) {
       this.loading = true;
-      const token = adapterToken(localStorage.getItem('token') || '');
-      const dataAdapted = AdapterFormAnswer(this.questions, token);
 
       this.serviceSaveDa.getSaveQuestions(dataAdapted).subscribe({
         next: (response) => {

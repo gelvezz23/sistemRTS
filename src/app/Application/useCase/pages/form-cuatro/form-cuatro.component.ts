@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalComponent } from '../../components/modal';
-import { NavbarTwoComponent } from '../../components/navbar-two';
 import { adapterToken } from '../../../adapters/adapterToken';
 import { AdapterFormCuatro } from '../../../adapters/adapterFormCuatro';
 import { SaveDataService } from '../../../../Infraestructure/saveData/save-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoadingComponent } from '../../components/loading/loading.component';
+import { NavbarBgBlackComponent } from '../../components/navbar-bg-black/navbar-bg-black.component';
 
 @Component({
   selector: 'app-form-cuatro',
@@ -16,10 +16,10 @@ import { LoadingComponent } from '../../components/loading/loading.component';
   styleUrl:
     './../../../../Presentation/pages/form-cuatro/form-cuatro.component.scss',
   imports: [
-    NavbarTwoComponent,
     ModalComponent,
     HttpClientModule,
     LoadingComponent,
+    NavbarBgBlackComponent,
   ],
 })
 class FormCuatroComponent {

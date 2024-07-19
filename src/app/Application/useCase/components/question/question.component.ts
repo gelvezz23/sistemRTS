@@ -4,10 +4,12 @@ import { Component, Input } from '@angular/core';
   selector: 'app-quest',
   standalone: true,
   imports: [],
-  templateUrl: './question.component.html',
-  styleUrl: './question.component.scss',
+  templateUrl:
+    './../../../../Presentation/components/question/question.component.html',
+  styleUrl:
+    './../../../../Presentation/components/question/question.component.scss',
 })
-export class QuestionComponent {
+class QuestionComponent {
   @Input({ required: true }) quest!: any;
 
   public viewimage() {
@@ -32,3 +34,5 @@ export class QuestionComponent {
     return false;
   }
 }
+
+export default QuestionComponent;

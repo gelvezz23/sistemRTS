@@ -29,6 +29,7 @@ h3{
   justify-content: space-around;
   height: 85vh;
   width: 32rem;
+  padding-bottom: 1rem;
 }
 
 .container .options-right-container div {
@@ -117,6 +118,8 @@ button[disabled]{
 }
 .container .options-right-container{
   width: 100%;
+  height: auto;
+
 }
 .other-container{
   height: 30rem;

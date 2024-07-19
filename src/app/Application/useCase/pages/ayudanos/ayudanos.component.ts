@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavbarTwoComponent } from '../../components/navbar-two';
+import { NavbarBgBlackComponent } from '../../components/navbar-bg-black/navbar-bg-black.component';
 
 @Component({
   selector: 'app-ayudanos',
@@ -8,7 +8,7 @@ import { NavbarTwoComponent } from '../../components/navbar-two';
   templateUrl:
     './../../../../Presentation/pages/ayudanos/ayudanos.component.html',
   styleUrl: './../../../../Presentation/pages/ayudanos/ayudanos.component.scss',
-  imports: [NavbarTwoComponent],
+  imports: [NavbarBgBlackComponent],
 })
 class AyudanosComponent {
   constructor(private router: Router) {}

@@ -19,6 +19,7 @@ import { FormularioComponent } from './Application/useCase/pages/formulario';
 import { FormularioTresComponent } from './Application/useCase/pages/formulario-tres';
 
 export const routes: Routes = [
+  { path: 'rst', component: HomeComponent },
   { path: '', component: HomeComponent },
   { path: 'form', component: FormularioComponent },
   { path: 'form2', component: FormularioDosComponent },

@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ModalComponent } from '../../components/modal';
-import { NavbarTwoComponent } from '../../components/navbar-two';
 import { AnswersInfoDos } from '../../../../Domain/pages/info-dos';
 import { adapterToken } from '../../../adapters/adapterToken';
 import { InfoDosAdapter } from '../../../adapters/infoDosAnswer';
 import { SaveDataService } from '../../../../Infraestructure/saveData/save-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoadingComponent } from '../../components/loading/loading.component';
+import { NavbarBgBlackComponent } from '../../components/navbar-bg-black/navbar-bg-black.component';
 @Component({
   selector: 'app-info-dos',
   standalone: true,
@@ -18,9 +18,9 @@ import { LoadingComponent } from '../../components/loading/loading.component';
   imports: [
     ModalComponent,
     FormsModule,
-    NavbarTwoComponent,
     HttpClientModule,
     LoadingComponent,
+    NavbarBgBlackComponent,
   ],
 })
 class InfoDosComponent {
@@ -86,7 +86,6 @@ comerciales.`;
         next: (response) => {
           this.loading = false;
           if (response) {
-            console.log(response);
             setTimeout(() => this.router.navigate(['form6']), 1000);
             this.saveLocalStorage();
           }

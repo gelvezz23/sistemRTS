@@ -11,9 +11,9 @@ import { NavbarTwoComponent } from '../../components/navbar-two';
   imports: [NavbarTwoComponent],
 })
 class ResultadoFormalizacionComponent {
-  formalizado = window.JSON.parse(
-    window.localStorage.getItem('negocio_esta_formalizado') || ''
-  );
+  storedData: string =
+    window.localStorage.getItem('negocio_esta_formalizado') || '';
+  formalizado = JSON.parse(this.storedData);
   count = 0;
   public getResultTotal() {
     this.formalizado.forEach((items: { value: string }) => {
@@ -25,8 +25,6 @@ class ResultadoFormalizacionComponent {
 
   constructor(private router: Router) {
     this.getResultTotal();
-    console.log(this.count);
-    console.log(this.formalizado);
   }
 
   public handleClick() {

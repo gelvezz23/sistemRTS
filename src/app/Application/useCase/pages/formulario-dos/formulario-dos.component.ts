@@ -3,13 +3,14 @@ import { CurrencyPipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { ModalComponent } from '../../components/modal';
 import { DisclaimerComponent } from '../../components/disclaimer';
-import { NavbarTwoComponent } from '../../components/navbar-two';
 import { LoadingComponent } from '../../components/loading/loading.component';
 import { questions } from './questions';
 import { adapterToken } from '../../../adapters/adapterToken';
 import { AdapterFormAnswer } from '../../../adapters/formAdapter';
 import { SaveDataService } from '../../../../Infraestructure/saveData/save-data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarBgBlackComponent } from '../../components/navbar-bg-black/navbar-bg-black.component';
+import { formatedResponse } from '../../utils/formatedResponse';
 
 @Component({
   selector: 'app-formulario-dos',
@@ -22,9 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     ModalComponent,
     DisclaimerComponent,
-    NavbarTwoComponent,
     LoadingComponent,
     HttpClientModule,
+    NavbarBgBlackComponent,
   ],
 })
 class FormularioDosComponent {
@@ -78,27 +79,24 @@ class FormularioDosComponent {
     this.saveLocalStorage();
   }
 
+  public formaterInput(input: any) {
+    const formattedInput = formatedResponse(input);
+    return (
+      this.currencyPipe.transform(formattedInput, 'USD', 'symbol', '1.0-0') ||
+      '0'
+    );
+  }
+
   public updateValue(event: any, id: number) {
     let input = event.value?.trim() || '';
     if (id === 26) {
-      this.cantidad =
-        this.currencyPipe.transform(
-          input.replace(/\D/g, ''),
-          'USD',
-          'symbol',
-          '1.0-0'
-        ) || '';
-      this.getAnswer(input.replace(/\D/g, ''), 26);
+      this.cantidad = this.formaterInput(input);
+
+      this.getAnswer(formatedResponse(input), 26);
     }
     if (id === 27) {
-      this.cantidadDos =
-        this.currencyPipe.transform(
-          input.replace(/\D/g, ''),
-          'USD',
-          'symbol',
-          '1.0-0'
-        ) || '';
-      this.getAnswer(input.replace(/\D/g, ''), 27);
+      this.cantidadDos = this.formaterInput(input);
+      this.getAnswer(formatedResponse(input), 27);
     }
   }
 
@@ -116,7 +114,8 @@ class FormularioDosComponent {
 
   public handleSubmit($event: any): void {
     $event.preventDefault();
-
+    const token = adapterToken(localStorage.getItem('token') || '');
+    const dataAdapted = AdapterFormAnswer(this.questions, token);
     let isValid = true;
     this.questions.forEach((item) => {
       if (item.value === '' && !item.disabled) {
@@ -129,8 +128,6 @@ class FormularioDosComponent {
 
     if (isValid) {
       this.loading = true;
-      const token = adapterToken(localStorage.getItem('token') || '');
-      const dataAdapted = AdapterFormAnswer(this.questions, token);
 
       this.serviceSaveDa.getSaveQuestions(dataAdapted).subscribe({
         next: (response) => {

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QuestionComponent } from './question.component';
+import { NavbarBgBlackComponent } from './navbar-bg-black.component';
 
-describe('QuestionComponent', () => {
-  let component: QuestionComponent;
-  let fixture: ComponentFixture<QuestionComponent>;
+describe('NavbarBgBlackComponent', () => {
+  let component: NavbarBgBlackComponent;
+  let fixture: ComponentFixture<NavbarBgBlackComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [QuestionComponent]
+      imports: [NavbarBgBlackComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(QuestionComponent);
+    fixture = TestBed.createComponent(NavbarBgBlackComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

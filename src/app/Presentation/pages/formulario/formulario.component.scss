@@ -62,7 +62,7 @@ section{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.5rem;
   width: 100%;
   .question{
     width: 80%;
@@ -70,6 +70,8 @@ section{
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    padding-right: 1rem;
+
   }
   .answer{
     width: 20%;

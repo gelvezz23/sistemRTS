@@ -5,12 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { DisclaimerComponent } from '../../components/disclaimer';
 import { ModalComponent } from '../../components/modal';
-import { NavbarTwoComponent } from '../../components/navbar-two';
 import { LoadingComponent } from '../../components/loading/loading.component';
 import { HttpClientModule } from '@angular/common/http';
 import { adapterToken } from '../../../adapters/adapterToken';
 import { AdapterFormTresAnswer } from '../../../adapters/adapterFormTresAnswer';
 import { SaveDataService } from '../../../../Infraestructure/saveData/save-data.service';
+import { NavbarBgBlackComponent } from '../../components/navbar-bg-black/navbar-bg-black.component';
+import { formatedResponse } from '../../utils/formatedResponse';
 @Component({
   selector: 'app-formulario-tres',
   standalone: true,
@@ -21,12 +22,12 @@ import { SaveDataService } from '../../../../Infraestructure/saveData/save-data.
   providers: [CurrencyPipe],
   imports: [
     DisclaimerComponent,
-    NavbarTwoComponent,
     FormsModule,
     CommonModule,
     ModalComponent,
     LoadingComponent,
     HttpClientModule,
+    NavbarBgBlackComponent,
   ],
 })
 class FormularioTresComponent {
@@ -105,7 +106,7 @@ class FormularioTresComponent {
   }
 
   soloNumeros(event: KeyboardEvent) {
-    const regex = /[0-9]/;
+    const regex: RegExp = /[0-9]/;
     if (!regex.test(event.key)) {
       event.preventDefault();
     }
@@ -123,17 +124,15 @@ class FormularioTresComponent {
   }
 
   public formaterInput(input: any) {
-    return input !== 0
-      ? this.currencyPipe.transform(
-          input
-            .replace(/\D/g, '')
-            .replace(/^0+/)
-            .replace(/[^0-9\-+\.]/g, ''),
-          'USD',
-          'symbol',
-          '1.0-0'
-        ) || '0'
-      : '';
+    if (input !== 0) {
+      let formattedInput = input.replace(/[^\d.\-+]/g, '');
+      formattedInput = formattedInput.replace(/^0+(?!$)/, '');
+      return (
+        this.currencyPipe.transform(formattedInput, 'USD', 'symbol', '1.0-0') ||
+        '0'
+      );
+    }
+    return '';
   }
 
   public updateValue(event: any, id: number) {
@@ -169,10 +168,10 @@ class FormularioTresComponent {
     }
 
     this.total =
-      Number(this.cantidadTres.replace(/\D/g, '')) +
-      Number(this.cantidadCuatro.replace(/\D/g, '')) +
-      Number(this.cantidadCinco.replace(/\D/g, '')) +
-      Number(this.cantidadSeis.replace(/\D/g, ''));
+      Number(formatedResponse(this.cantidadTres)) +
+      Number(formatedResponse(this.cantidadCuatro)) +
+      Number(formatedResponse(this.cantidadCinco)) +
+      Number(formatedResponse(this.cantidadSeis));
 
     this.cantidadSiete =
       this.currencyPipe.transform(this.total, 'USD', 'symbol', '1.0-0') || '';
@@ -197,10 +196,10 @@ class FormularioTresComponent {
     }
 
     this.totalDos =
-      Number(this.cantidadOcho.replace(/\D/g, '')) +
-      Number(this.cantidadNueve.replace(/\D/g, '')) +
-      Number(this.cantidadDiez.replace(/\D/g, '')) +
-      Number(this.cantidadOnce.replace(/\D/g, ''));
+      Number(formatedResponse(this.cantidadOcho)) +
+      Number(formatedResponse(this.cantidadNueve)) +
+      Number(formatedResponse(this.cantidadDiez)) +
+      Number(formatedResponse(this.cantidadOnce));
 
     this.cantidadDoce =
       this.currencyPipe.transform(this.totalDos, 'USD', 'symbol', '1.0-0') ||
@@ -209,7 +208,7 @@ class FormularioTresComponent {
   }
 
   public filtrarNumero(event: KeyboardEvent) {
-    const allowedKeys =
+    const allowedKeys: RegExp =
       /[0-9]|\bDelete\b|\bBackspace\b|[\u2190-\u2193]|\bArrowLeft\b|\bArrowRight\b|\bDelete\b/g;
 
     if (event.key.match(allowedKeys)) {
@@ -221,7 +220,6 @@ class FormularioTresComponent {
   }
 
   public handleClick() {
-    console.log(this.answers);
     this.loading = true;
     const token = adapterToken(localStorage.getItem('token') || '');
     const dataAdapted = AdapterFormTresAnswer(this.answers, token);

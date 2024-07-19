@@ -2,7 +2,7 @@ export type QuestionType = {
   id: number;
   question: string;
   value: string;
-  disabled: boolean;
+  disabled?: boolean;
   content: string;
   checkedYes: boolean | string;
   checkedNo: boolean | string;

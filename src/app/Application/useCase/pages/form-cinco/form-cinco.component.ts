@@ -107,9 +107,8 @@ class FormCincoComponent {
   }
 
   public viewButtonEigth() {
-    const { questCero } = getModeloHipotetico(
-      window.localStorage.getItem('modelos_hipoteticos') || ''
-    );
+    const data = window.localStorage.getItem('modelos_hipoteticos') || '';
+    const { questCero } = getModeloHipotetico(data);
 
     const { titular } = getCaracterizacion(
       window.localStorage.getItem('caracterizacion_de_negocio') || ''

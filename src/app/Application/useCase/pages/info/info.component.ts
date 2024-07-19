@@ -3,12 +3,14 @@ import { Router } from '@angular/router';
 import { NgSelectConfig, NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
 import { municipiosV2 } from './utils/municipios';
-import { NavbarTwoComponent } from '../../components/navbar-two';
 import { departamentosData } from './utils/departamentos';
 import { SaveDataService } from '../../../../Infraestructure/saveData/save-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { InfoAdapter } from '../../../adapters/infoAnswers';
 import { LoadingComponent } from '../../components/loading/loading.component';
+import { adapterToken } from 'app/Application/adapters/adapterToken';
+import { NavbarBgBlackComponent } from '../../components/navbar-bg-black/navbar-bg-black.component';
+import { answers } from './utils/answers';
 @Component({
   selector: 'app-info',
   standalone: true,
@@ -17,51 +19,13 @@ import { LoadingComponent } from '../../components/loading/loading.component';
   imports: [
     NgSelectModule,
     FormsModule,
-    NavbarTwoComponent,
     HttpClientModule,
     LoadingComponent,
+    NavbarBgBlackComponent,
   ],
 })
 class InfoComponent {
-  answers = [
-    {
-      id: 1,
-      quest: '¿Cuál es tu sexo?',
-      value: '',
-      error: false,
-    },
-
-    {
-      id: 2,
-      quest: '¿En qué rango de edad te encuentras?',
-      value: '',
-      error: false,
-    },
-    {
-      id: 3,
-      quest: 'Selecciona el departamento donde vives',
-      value: '',
-      error: false,
-    },
-    {
-      id: 4,
-      quest: 'Selecciona el municipio donde vives',
-      value: '',
-      error: false,
-    },
-    {
-      id: 5,
-      quest: '¿En qué tipo de zona vives?',
-      value: '',
-      error: false,
-    },
-    {
-      id: 6,
-      quest: '¿Qué uso le dará al simulador?',
-      value: '',
-      error: false,
-    },
-  ];
+  answers = answers;
   error = '';
   loading = false;
   selectedUso: any;
@@ -94,7 +58,7 @@ class InfoComponent {
   }
 
   public handleClick() {
-    const token = localStorage.getItem('token') || '';
+    const token = adapterToken(localStorage.getItem('token') || '');
     let isValid = true;
     this.answers.forEach((item) => {
       if (item.value === '') {
@@ -114,7 +78,6 @@ class InfoComponent {
         next: (response) => {
           this.loading = false;
           if (response) {
-            console.log(response);
             setTimeout(() => this.router.navigate(['info2']), 1000);
           }
         },

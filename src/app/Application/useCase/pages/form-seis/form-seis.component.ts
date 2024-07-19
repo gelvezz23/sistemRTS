@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalComponent } from '../../components/modal';
-import { NavbarTwoComponent } from '../../components/navbar-two';
 import { QuestionType } from '../../../../Domain/pages/form-seis';
 import { questions } from './question';
 import { getCaracterizacion } from '../form-cinco/utils/caracterizacionDeNegocio/getCaracterizacion';
@@ -10,6 +9,7 @@ import { adapterToken } from '../../../adapters/adapterToken';
 import { HttpClientModule } from '@angular/common/http';
 import { AdapterFormSeisAnswer } from '../../../adapters/formSeisAnswer';
 import { LoadingComponent } from '../../components/loading/loading.component';
+import { NavbarBgBlackComponent } from '../../components/navbar-bg-black/navbar-bg-black.component';
 
 @Component({
   selector: 'app-form-seis',
@@ -19,10 +19,10 @@ import { LoadingComponent } from '../../components/loading/loading.component';
   styleUrl:
     './../../../../Presentation/pages/form-seis/form-seis.component.scss',
   imports: [
-    NavbarTwoComponent,
     ModalComponent,
     HttpClientModule,
     LoadingComponent,
+    NavbarBgBlackComponent,
   ],
 })
 class FormSeisComponent {
@@ -58,7 +58,7 @@ class FormSeisComponent {
       window.localStorage.getItem('caracterizacion_de_negocio') || ''
     );
     if (titular === 'persona juridica') {
-      this.getAnswer('si', 2);
+      this.getAnswer('si', 11);
       return true;
     }
     return false;
@@ -126,6 +126,8 @@ class FormSeisComponent {
   public handleSubmit($event: any): void {
     this.loading = true;
     $event.preventDefault();
+    const token = adapterToken(localStorage.getItem('token') || '');
+    const dataAdapted = AdapterFormSeisAnswer(this.questions, token);
 
     let isValid = true;
     this.questions.forEach((item) => {
@@ -138,9 +140,6 @@ class FormSeisComponent {
     });
 
     if (isValid) {
-      const token = adapterToken(localStorage.getItem('token') || '');
-      const dataAdapted = AdapterFormSeisAnswer(this.questions, token);
-
       this.serviceSaveDa.getSaveQuestions(dataAdapted).subscribe({
         next: (response) => {
           this.loading = false;

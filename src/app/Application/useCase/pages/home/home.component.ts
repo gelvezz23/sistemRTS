@@ -3,10 +3,11 @@ import { Router } from '@angular/router';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { FormularioComponent } from '../formulario';
 import { NavbarComponent } from '../../components/navbar';
-import { RecaptchaService } from '../../../../Infraestructure/recaptcha/recaptcha.service';
+//import { RecaptchaService } from '../../../../Infraestructure/recaptcha/recaptcha.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoadingComponent } from '../../components/loading/loading.component';
-import { adapterToken } from '../../../adapters/adapterToken';
+//import { adapterToken } from '../../../adapters/adapterToken';
+import { generateRandomString } from '../../utils/generateToken';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -28,16 +29,16 @@ class HomeComponent {
   // 6LdB5QAqAAAAAHYSYRSKHVYCSivYmz9WIDsIBVBU
   public readonly recaptcha = '6LfPTd8mAAAAAI8JTLzFdG0jOUfWe12EkX67xcAt';
   constructor(
-    private router: Router,
-    private recaptchaService: RecaptchaService
+    private router: Router // private recaptchaService: RecaptchaService
   ) {}
-
+  ngOnInit() {
+    localStorage.clear();
+  }
   resolved(captchaResponse: any) {
     this.loading = true;
     this.error = '';
 
     if (captchaResponse) {
-      setTimeout(() => this.router.navigate(['info']), 1000);
       /* this.recaptchaService.getVerificationCaptcha(captchaResponse).subscribe({
         next: (response: string) => {
           this.loading = false;
@@ -64,9 +65,10 @@ class HomeComponent {
   }
 
   public handleClick() {
-    const token = adapterToken(Math.random().toString(36).substr(2));
-    localStorage.setItem('token', token);
-    setTimeout(() => this.router.navigate(['info']), 1000);
+    const dataToken = generateRandomString(200);
+    //const token = adapterToken(dataToken);
+    localStorage.setItem('token', dataToken);
+    this.router.navigate(['info']);
 
     this.viewRecaptcha = true;
   }

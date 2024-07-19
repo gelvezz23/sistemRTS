@@ -7,6 +7,7 @@ import { getCaracterizacion } from '../form-cinco/utils/caracterizacionDeNegocio
 import { getActividadEconomica } from './utils/getActividadEconomica';
 import { getResponseThree } from './utils/getResponseThree';
 import { getActividadEconomicaAformalizar } from './utils/getActividadEconomicaAformalizar';
+import { formatedResponse } from '../../utils/formatedResponse';
 
 @Component({
   selector: 'app-form-siete',
@@ -24,7 +25,9 @@ class FormSieteComponent {
     const data =
       window.localStorage.getItem('caracterizacion_de_negocio') || '';
     const { titular, negocio } = getCaracterizacion(data);
-
+    if (negocio === 'agricultura o ganaderia') {
+      return true;
+    }
     if (
       titular !== 'persona natural' &&
       negocio !== 'profesion liberal o artistica'
@@ -35,18 +38,19 @@ class FormSieteComponent {
   }
 
   public viewButtonFive() {
-    const { titular } = getCaracterizacion(
-      window.localStorage.getItem('caracterizacion_de_negocio') || ''
-    );
+    const caracterizacion =
+      window.localStorage.getItem('caracterizacion_de_negocio') || '';
+    const actividadEconomica =
+      window.localStorage.getItem('formulario_sobre_actividad_economica') || '';
+
+    const responseThree = window.localStorage.getItem('response-Three') || '';
+    const { titular } = getCaracterizacion(caracterizacion);
     const { mas_de_un_establecimiento, la_actividad_economica } =
-      getActividadEconomica(
-        window.localStorage.getItem('formulario_sobre_actividad_economica') ||
-          ''
-      );
+      getActividadEconomica(actividadEconomica);
 
     const { gravadas_con_iva, total_ingresos_brutos_2, gravadas_con_iva_2 } =
-      getResponseThree(window.localStorage.getItem('response-Three') || '');
-    const tresmilquinientosuvt = Number('$164,727,500'.replace(/\$|,/g, ''));
+      getResponseThree(responseThree);
+    const tresmilquinientosuvt = Number(formatedResponse('$164,727,500'));
 
     if (titular === 'persona juridica') {
       return true;
@@ -61,23 +65,22 @@ class FormSieteComponent {
     }
     if (
       titular === 'persona natural' &&
-      Number(gravadas_con_iva.replace(/\$|,/g, '')) >= tresmilquinientosuvt
+      Number(formatedResponse(gravadas_con_iva)) >= tresmilquinientosuvt
     ) {
       return true;
     }
 
     if (
       titular === 'persona natural' &&
-      Number(total_ingresos_brutos_2.replace(/\$|,/g, '')) >=
-        tresmilquinientosuvt
+      Number(formatedResponse(total_ingresos_brutos_2)) >= tresmilquinientosuvt
     ) {
       return true;
     }
 
     if (
       titular === 'persona natural' &&
-      Number(gravadas_con_iva_2.replace(/\$|,/g, '')) >= tresmilquinientosuvt &&
-      Number(gravadas_con_iva.replace(/\$|,/g, '') >= tresmilquinientosuvt)
+      Number(formatedResponse(gravadas_con_iva_2)) >= tresmilquinientosuvt &&
+      Number(formatedResponse(gravadas_con_iva) >= tresmilquinientosuvt)
     ) {
       return true;
     }
@@ -101,31 +104,30 @@ class FormSieteComponent {
           ''
       );
 
-    const cuatromilquinientosuvt = Number('$211,792,500'.replace(/\$|,/g, ''));
-    const milcuatrocientosuvt = Number('$65,891,000'.replace(/\$|,/g, ''));
+    const cuatromilquinientosuvt = Number(formatedResponse('$211,792,500'));
+    const milcuatrocientosuvt = Number(formatedResponse('$65,891,000'));
 
     if (titular === 'persona juridica') {
       return true;
     }
 
     if (
-      Number(patrimonio_bruto_anterior.replace(/\$|,/g, '')) >=
+      Number(formatedResponse(patrimonio_bruto_anterior)) >=
       cuatromilquinientosuvt
     ) {
       return true;
     }
 
     if (
-      Number(patrimonio_bruto_presente.replace(/\$|,/g, '')) >=
+      Number(formatedResponse(patrimonio_bruto_presente)) >=
       cuatromilquinientosuvt
     ) {
       return true;
     }
 
     if (
-      Number(total_ingreso_uno.replace(/\$|,/g, '')) >= milcuatrocientosuvt ||
-      Number(total_ingresos_brutos_2.replace(/\$|,/g, '')) >=
-        milcuatrocientosuvt
+      Number(formatedResponse(total_ingreso_uno)) >= milcuatrocientosuvt ||
+      Number(formatedResponse(total_ingresos_brutos_2)) >= milcuatrocientosuvt
     ) {
       return true;
     }
@@ -164,7 +166,7 @@ class FormSieteComponent {
       window.localStorage.getItem('formulario_sobre_actividad_economica') || ''
     );
 
-    const tresmilquinientosuvt = Number('$164,727,500'.replace(/\$|,/g, ''));
+    const tresmilquinientosuvt = Number(formatedResponse('$164,727,500'));
 
     if (titular === 'persona juridica') {
       return true;
@@ -179,8 +181,8 @@ class FormSieteComponent {
 
     if (
       esta_con_iva === 'si' &&
-      (Number(gravadas_con_iva.replace(/\$|,/g, '')) >= tresmilquinientosuvt ||
-        Number(gravadas_con_iva_2.replace(/\$|,/g, '')) >= tresmilquinientosuvt)
+      (Number(formatedResponse(gravadas_con_iva)) >= tresmilquinientosuvt ||
+        Number(formatedResponse(gravadas_con_iva_2)) >= tresmilquinientosuvt)
     ) {
       return true;
     }
@@ -195,8 +197,8 @@ class FormSieteComponent {
     }
 
     if (
-      Number(gravadas_con_iva.replace(/\$|,/g, '')) >= tresmilquinientosuvt ||
-      Number(gravadas_con_iva_2.replace(/\$|,/g, '')) >= tresmilquinientosuvt ||
+      Number(formatedResponse(gravadas_con_iva)) >= tresmilquinientosuvt ||
+      Number(formatedResponse(gravadas_con_iva_2)) >= tresmilquinientosuvt ||
       la_actividad_economica === 'si'
     ) {
       return true;
@@ -206,18 +208,14 @@ class FormSieteComponent {
   }
 
   public viewButtonNine() {
-    const data = window.localStorage.getItem('caracterizacion_de_negocio');
-    const data2 = window.localStorage.getItem(
-      'actividad_economica_a_formalizar'
-    );
-
-    const profesion = JSON.parse(data || '').negocio.value;
-    const titular = JSON.parse(data || '').titular.value;
+    const data = localStorage.getItem('caracterizacion_de_negocio') || '';
+    const data2 = localStorage.getItem('actividad_economica_a_formalizar');
+    const { negocio, titular } = getCaracterizacion(data);
     const restaurante = JSON.parse(data2 || '')[0].value;
 
     if (
-      profesion === 'profesion liberal o artistica' ||
-      profesion === 'comercial'
+      negocio === 'profesion liberal o artistica' ||
+      negocio === 'comercial'
     ) {
       return true;
     }
@@ -245,7 +243,7 @@ class FormSieteComponent {
     const otros_uno = JSON.parse(data3 || '')[6].value;
     const otros_dos = JSON.parse(data3 || '')[11].value;
 
-    const tresmilquinientosuvt = Number('$164,727,500'.replace(/\$|,/g, ''));
+    const tresmilquinientosuvt = Number(formatedResponse('$164,727,500'));
 
     if (restaurante === 'si' && marcas === 'si') {
       return true;
@@ -256,14 +254,14 @@ class FormSieteComponent {
 
     if (
       restaurante === 'si' &&
-      Number(otros_uno.replace(/\$|,/g, '')) >= tresmilquinientosuvt
+      Number(formatedResponse(otros_uno)) >= tresmilquinientosuvt
     ) {
       return true;
     }
 
     if (
       restaurante === 'si' &&
-      Number(otros_dos.replace(/\$|,/g, '')) >= tresmilquinientosuvt
+      Number(formatedResponse(otros_dos)) >= tresmilquinientosuvt
     ) {
       return true;
     }
@@ -279,7 +277,7 @@ class FormSieteComponent {
     const DATA: any = document.getElementById('stepper-dos');
     DATA.style.backgroundColor = '#272944';
 
-    const doc = new jsPDF('p', 'pt', 'a4');
+    const doc = new jsPDF('l', 'pt', 'a4');
     const options = {
       background: '#272944',
       scale: 3,

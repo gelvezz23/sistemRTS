@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, RouterModule } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './Application/useCase/components/footer';
 import { GovconavbarComponent } from './Application/useCase/components/govconavbar';
 import { NavbarComponent } from './Application/useCase/components/navbar';

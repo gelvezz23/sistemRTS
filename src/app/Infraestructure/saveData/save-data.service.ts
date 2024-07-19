@@ -1,10 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, map, throwError } from 'rxjs';
-import {
-  QuestionsProps,
-  SaveDataResponse,
-} from '../../Domain/services/saveData';
+import { QuestionsProps } from '../../Domain/services/saveData';
 
 @Injectable({
   providedIn: 'any',
@@ -15,13 +12,14 @@ export class SaveDataService {
   constructor(private http: HttpClient) {}
 
   getSaveQuestions(questions: QuestionsProps[]): Observable<any> {
-    const body = JSON.stringify(questions);
+    const body = window.JSON.stringify(questions);
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Cache-Control': 'no-cache',
       'Postman-Token': '<calculated when request is sent>',
       'Custom-Header': 'CustomHeaderValue',
     });
+
     return this.http
       .post(this.configUrl, body, {
         headers: headers,

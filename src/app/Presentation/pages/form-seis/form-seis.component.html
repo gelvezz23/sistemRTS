@@ -1,5 +1,4 @@
-<app-navbar-two/>
-
+<app-navbar-bg-black/>
 <section class="formalized-business-container">
 
   <div class="ques-container">
@@ -33,8 +32,8 @@
               [attr.data-bs-toggle]="'modal'"
               [attr.data-bs-target]="'#exampleModal-registro-unico-tributario'"
             />
-            <input id="answer-one" name="check-one" type="radio" value="no" [disabled]="true">
-            <input id="answer-one" name="check-one" type="radio" value="si" [disabled]="true">
+            <input id="answer-one" name="check-one" type="radio" value="no" [disabled]="handleCheckedTwo()" (change)="getAnswer('no', 10)">
+            <input id="answer-one" name="check-one" type="radio" value="si" [checked]="handleCheckedTwo()" (change)="getAnswer('si', 10)">
           }
         </div>
     </div>

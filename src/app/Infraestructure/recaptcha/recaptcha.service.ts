@@ -3,17 +3,15 @@ import {
   HttpClient,
   HttpErrorResponse,
   HttpHeaders,
-  HttpResponse,
 } from '@angular/common/http';
 import { catchError, map, throwError } from 'rxjs';
 import { Observable } from 'rxjs';
-import { RecaptchaVerificationResponse } from '../../Domain/services/RecaptchaVerificationResponse';
 
 @Injectable({
   providedIn: 'any',
 })
 export class RecaptchaService {
-  private readonly configUrl =
+  readonly configUrl =
     'https://ca-rst-dev-01.prouddesert-f9ed053c.eastus2.azurecontainerapps.io/recaptcha/verify-recaptcha';
 
   constructor(private http: HttpClient) {}

@@ -2,7 +2,7 @@ export const questions = [
   {
     id: 17,
     question:
-      '¿Coresponde una actividad de restaurante, cafeterías, autoservicio, bares y similares?',
+      '¿Corresponde una actividad de restaurante, cafeterías, autoservicio, bares y similares?',
     value: '',
     disabled: false,
     required: true,

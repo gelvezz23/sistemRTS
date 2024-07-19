@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavbarTwoComponent } from '../../components/navbar-two';
 import { RatingComponent } from '../../components/rating';
 import { questionsData } from './questions';
 import { HttpClientModule } from '@angular/common/http';
@@ -8,6 +7,7 @@ import { LoadingComponent } from '../../components/loading/loading.component';
 import { SaveDataService } from '../../../../Infraestructure/saveData/save-data.service';
 import { adapterToken } from '../../../adapters/adapterToken';
 import { AdapterEncuesta } from '../../../adapters/adapterEncuesta';
+import { NavbarBgBlackComponent } from '../../components/navbar-bg-black/navbar-bg-black.component';
 
 @Component({
   selector: 'app-encuesta',
@@ -17,9 +17,9 @@ import { AdapterEncuesta } from '../../../adapters/adapterEncuesta';
   styleUrl: './../../../../Presentation/pages/encuesta/encuesta.component.scss',
   imports: [
     RatingComponent,
-    NavbarTwoComponent,
     HttpClientModule,
     LoadingComponent,
+    NavbarBgBlackComponent,
   ],
 })
 class EncuestaComponent {

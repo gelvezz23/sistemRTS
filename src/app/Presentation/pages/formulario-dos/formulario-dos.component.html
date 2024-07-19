@@ -1,4 +1,5 @@
-<app-navbar-two/>
+<app-navbar-bg-black/>
+
 <h2>
   Responda las siguientes<br />
   preguntas con la <br>
@@ -137,18 +138,10 @@
       <div class="question">
         @if(questions[3].disabled){
           <h3 class="quest-10 disabled">¿Realizó compras y consumos totales superiores a $65.891.000 (equivalentes a 1.400 UVT) durante el año inmediatamente anterior?</h3>
-          <img
-          src="./assets/images/icon-disabled.svg"
-          alt="?"
-          [attr.data-bs-toggle]="'modal'"
-          [attr.data-bs-target]="'#exampleModal-'+ questions[3].id"/>
+
         } @else {
           <h3 class="quest-10">¿Realizó compras y consumos totales superiores a $65.891.000 (equivalentes a 1.400 UVT) durante el año inmediatamente anterior?</h3>
-          <img
-          src="./assets/images/icon.svg"
-          alt="?"
-          [attr.data-bs-toggle]="'modal'"
-          [attr.data-bs-target]="'#exampleModal-' + questions[3].id"/>
+
         }
 
       </div>
