@@ -17,8 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "baseHref": "/rst/",
             "allowedCommonJsDependencies": ["lodash"],
-            "outputPath": "dist/system-rts",
+            "outputPath": "dist/rst",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],

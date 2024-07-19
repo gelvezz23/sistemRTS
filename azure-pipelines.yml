@@ -5,39 +5,40 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- develop
+  - develop
 
 pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '20.15'
-  displayName: 'Install Node.js'
-- task: AdvancedSecurity-Codeql-Init@1
-  inputs:
-    languages: 'javascript'
-    querysuite: 'security-extended'
+  - task: NodeTool@0
+    inputs:
+      versionSpec: "20.15"
+    displayName: "Install Node.js"
+  - task: AdvancedSecurity-Codeql-Init@1
+    inputs:
+      languages: "javascript"
+      querysuite: "security-extended"
 
-- script: |
-    npm install -g @angular/cli
-    npm install -f
-    npm audit fix
-    npm run build
-    
-  displayName: 'npm install and build'
+  - script: |
+      npm install -g @angular/cli
+      npm install -f
+      npm audit fix
+      npm run build --output-path=dist/rst/browser
+    displayName: "npm install and build"
 
-- task: AdvancedSecurity-Dependency-Scanning@1
-- task: AdvancedSecurity-Codeql-Analyze@1
+  - script: |
+      cp staticwebapp.config.json dist/rst/browser
+    displayName: "Copy staticwebapp.config.json to output directory"
 
-- task: AzureStaticWebApp@0
-  inputs:
-   
-    app_build_command: 'ng build'
-    app_location: 'dist/system-rts/browser/'
-    output_location: 'dist/out-tsc'
-    skip_app_build: true
-    skip_api_build: true
-    azure_static_web_apps_api_token: '$(token)'
-  
+  - task: AdvancedSecurity-Dependency-Scanning@1
+  - task: AdvancedSecurity-Codeql-Analyze@1
+
+  - task: AzureStaticWebApp@0
+    inputs:
+      app_build_command: "ng build"
+      app_location: "dist/system-rts/browser/"
+      output_location: "dist/out-tsc"
+      skip_app_build: false
+      skip_api_build: false
+      azure_static_web_apps_api_token: "$(token)"

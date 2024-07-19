@@ -1,0 +1,94 @@
+{
+  "routes": [
+    {
+      "route": "/",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/form",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/form2",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/form3",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/form4",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/form5",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/form6",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/form7",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/info",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/info2",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/info3",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/resultado1",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/felicitaciones",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/descubre",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/beneficio",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/encuesta",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/ayudanos",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    }
+  ]
+}
