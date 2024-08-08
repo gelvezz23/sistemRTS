@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class RecaptchaService {
   readonly configUrl =
-    'https://ca-rst-dev-02.prouddesert-f9ed053c.eastus2.azurecontainerapps.io/recaptcha/verify-recaptcha';
+    'https://ca-rst-dev-01.prouddesert-f9ed053c.eastus2.azurecontainerapps.io/recaptcha/verify-recaptcha';
 
   constructor(private http: HttpClient) {}
 
