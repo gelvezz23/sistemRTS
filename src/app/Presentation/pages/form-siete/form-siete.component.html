@@ -18,8 +18,8 @@
   @if(viewButtonOne()){
     <div class="stepper-item">
       <div class="stepper-container-item">
-        <div class="step-name" >Registro<br>Mercantil</div>
         <div class="step-counter" >1</div>
+        <div class="step-name" >Registro<br>Mercantil</div>
       </div>
     </div>
         }
@@ -133,16 +133,16 @@
   <article class="buttons-content">
     <div>
       <p>Descargue el siguiente <br> archivo para consultar <br> cómo cumplir con sus<br> obligaciones tributarias</p>
-      <a href="/assets/Cartilla - publicaciones con comentarios aplicados (05-06-24).pdf" download="/assets/Cartilla - publicaciones con comentarios aplicados (05-06-24).pdf">
+      <a id="boton_descarga_uno" href="/assets/Cartilla - publicaciones con comentarios aplicados (05-06-24).pdf" download="/assets/Cartilla - publicaciones con comentarios aplicados (05-06-24).pdf">
         <img class="img2" src="/assets/icons/downloadfile.svg" alt="imagen" />
       </a>
     </div>
     <div>
       <p>Mi resultado <br></p>
-        <img (click)="screenShot()"  class="img2" src="/assets/icons/downloadfile.svg" alt="imagen" />
+        <img (click)="screenShot()"  class="img2" src="/assets/icons/downloadfile.svg" alt="imagen" id="boton_descarga_dos"/>
     </div>
   </article>
-  <button (click)="handleClick()">Continuar</button>
+  <button (click)="handleClick()" id="boton_continuar" aria-label="Continuar" role="button">Continuar</button>
 </div>
 @if(loading){
   <div class="alert alert-warning" role="alert">

@@ -8,6 +8,7 @@ import { getActividadEconomica } from './utils/getActividadEconomica';
 import { getResponseThree } from './utils/getResponseThree';
 import { getActividadEconomicaAformalizar } from './utils/getActividadEconomicaAformalizar';
 import { formatedResponse } from '../../utils/formatedResponse';
+import { getNegocioEstaFormalizado } from './utils/getNegocioEstaFormalizado';
 
 @Component({
   selector: 'app-form-siete',
@@ -24,9 +25,30 @@ class FormSieteComponent {
   public viewButtonOne() {
     const data =
       window.localStorage.getItem('caracterizacion_de_negocio') || '';
+
+    const data2 = window.localStorage.getItem('negocio_esta_formalizado') || '';
+
     const { titular, negocio } = getCaracterizacion(data);
-    if (negocio === 'agricultura o ganaderia') {
+    const {
+      tiene_registro_mercantil,
+      renueva_el_registro_mercantil_cada_anio,
+    } = getNegocioEstaFormalizado(data2);
+
+    if (tiene_registro_mercantil === 'no') {
       return true;
+    }
+    if (
+      tiene_registro_mercantil === 'si' &&
+      renueva_el_registro_mercantil_cada_anio === 'no'
+    ) {
+      return true;
+    }
+
+    if (
+      titular === 'persona natural' &&
+      negocio === 'agricultura o ganaderia'
+    ) {
+      return false;
     }
     if (
       titular !== 'persona natural' &&
@@ -107,7 +129,7 @@ class FormSieteComponent {
     const cuatromilquinientosuvt = Number(formatedResponse('$211,792,500'));
     const milcuatrocientosuvt = Number(formatedResponse('$65,891,000'));
 
-    if (titular === 'persona juridica') {
+    if (titular === 'persona juridica' || titular === 'persona natural') {
       return true;
     }
 

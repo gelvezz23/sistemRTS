@@ -7,7 +7,7 @@ import { QuestionsProps } from '../../Domain/services/saveData';
   providedIn: 'any',
 })
 export class SaveDataService {
-  private readonly configUrl = `https://ca-rst-dev-01.prouddesert-f9ed053c.eastus2.azurecontainerapps.io/question/responses`;
+  private readonly configUrl = `https://ca-rst-dev-02.prouddesert-f9ed053c.eastus2.azurecontainerapps.io/question/responses`;
 
   constructor(private http: HttpClient) {}
 
@@ -17,6 +17,7 @@ export class SaveDataService {
       'Content-Type': 'application/json',
       'Cache-Control': 'no-cache',
       'Postman-Token': '<calculated when request is sent>',
+      'Access-Control-Allow-Origin': '*',
       'Custom-Header': 'CustomHeaderValue',
     });
 

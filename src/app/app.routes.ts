@@ -17,9 +17,14 @@ import { FormCincoComponent } from './Application/useCase/pages/form-cinco';
 import { InfoTresComponent } from './Application/useCase/pages/info-tres';
 import { FormularioComponent } from './Application/useCase/pages/formulario';
 import { FormularioTresComponent } from './Application/useCase/pages/formulario-tres';
+import { NotfoundComponent } from './Application/useCase/pages/notfound/notfound.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
+  {
+    path: 'home',
+    component: HomeComponent,
+    title: 'Simulador de formalización',
+  },
   { path: 'form', component: FormularioComponent },
   { path: 'form2', component: FormularioDosComponent },
   { path: 'form3', component: FormularioTresComponent },
@@ -36,4 +41,7 @@ export const routes: Routes = [
   { path: 'beneficio', component: BeneficiosComponent },
   { path: 'encuesta', component: EncuestaComponent },
   { path: 'ayudanos', component: AyudanosComponent },
+  { path: 'rst', component: HomeComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', component: NotfoundComponent },
 ];

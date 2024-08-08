@@ -15,6 +15,8 @@
         [items]="[{name:'Mujer'}, {name:'Hombre'}, {name:'Indeterminado'}]"
         bindLabel="name"
         bindValue="name"
+        id="select_genero"
+        name="select_genero"
         placeholder="- seleccione -"
         [(ngModel)]="selectedSexo"
         labelForId="sexo">
@@ -34,6 +36,8 @@
         [items]="[{name:'18 a 29'}, {name:'30 a 49'}, {name:'50 a más'}]"
         bindLabel="name"
         bindValue="name"
+        id="rango_de_edad"
+        name="rango_de_edad"
         placeholder="- seleccione -"
         [(ngModel)]="selectedEdad"
         labelForId="edad">
@@ -54,6 +58,8 @@
         [items]="[{name:'Proyectar un negocio'}, {id: 22, name:'Enseñar'} , {name:'Evaluar un negocio en curso'}, {name: 'Aprender'}]"
         bindLabel="name"
         bindValue="name"
+        id="uso_que_le_dara"
+        name="uso_que_le_dara"
         placeholder="- seleccione -"
         [(ngModel)]="selectedUso"
         labelForId="uso">
@@ -77,12 +83,13 @@
         [items]="departamentos"
         bindLabel="name"
         bindValue="name"
+        id="departamentos"
+        name="departamentos"
         placeholder="- seleccione -"
         [(ngModel)]="selectedDepartamentos"
         [loading]="loading"
         [virtualScroll]="true"
         labelForId="departamento"
-
         appendTo="body">
       </ng-select>
       <img src="/assets/icons/select/recurso-select-3.png" alt="icon" />
@@ -100,6 +107,8 @@
                 [items]="municipios"
                 bindLabel="name"
                 bindValue="name"
+                name="municipios"
+                id="municipios"
                 placeholder="- seleccione -"
                 [(ngModel)]="selectedMunicipio"
                 labelForId="municipio">
@@ -129,6 +138,8 @@
                 [items]="zone"
                 bindLabel="name"
                 bindValue="name"
+                id="zona"
+                name="zona"
                 placeholder="- seleccione -"
                 [(ngModel)]="selectedZona"
                 labelForId="zona">
@@ -145,8 +156,8 @@
         </div>
 
     </section>
-    <div class="button">
-      <button (click)="handleClick()">Continuar</button>
+    <div class="button" id="continuar">
+      <button (click)="handleClick()" aria-label="Continuar" role="button" id="boton_continuar">Continuar</button>
       <app-loading [loading]="loading"/>
     </div>
     @if(error){

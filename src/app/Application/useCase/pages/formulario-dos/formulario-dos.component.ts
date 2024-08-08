@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { ModalComponent } from '../../components/modal';
 import { DisclaimerComponent } from '../../components/disclaimer';
 import { LoadingComponent } from '../../components/loading/loading.component';
-import { questions } from './questions';
+import { questions } from './utils/questions';
 import { adapterToken } from '../../../adapters/adapterToken';
 import { AdapterFormAnswer } from '../../../adapters/formAdapter';
 import { SaveDataService } from '../../../../Infraestructure/saveData/save-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarBgBlackComponent } from '../../components/navbar-bg-black/navbar-bg-black.component';
 import { formatedResponse } from '../../utils/formatedResponse';
-
+import { ANSWER_EIGHT } from './constants';
+import { FormsttedValuesService } from 'app/Infraestructure/formatedValues/formstted-values.service';
 @Component({
   selector: 'app-formulario-dos',
   standalone: true,
@@ -28,7 +29,7 @@ import { formatedResponse } from '../../utils/formatedResponse';
     NavbarBgBlackComponent,
   ],
 })
-class FormularioDosComponent {
+class FormularioDosComponent implements OnInit {
   public questions: {
     id: number;
     question: string;
@@ -47,10 +48,12 @@ class FormularioDosComponent {
   public cantidad!: string;
   public test!: number;
   public cantidadDos!: string;
+  public ANSWER_EIGHT = ANSWER_EIGHT;
   constructor(
     private router: Router,
     private currencyPipe: CurrencyPipe,
-    private serviceSaveDa: SaveDataService
+    private serviceSaveDa: SaveDataService,
+    private serviceParametrization: FormsttedValuesService
   ) {
     this.constitucion = window.JSON.parse(
       localStorage.getItem('caracterizacion_de_negocio') || '{}'
@@ -58,6 +61,21 @@ class FormularioDosComponent {
     this.questions = questions(this.constitucion);
     this.cantidad = '';
     this.cantidadDos = '';
+  }
+
+  ngOnInit(): void {
+    this.serviceParametrization.getFormattedValues().subscribe({
+      next: (response) => {
+        if (response) {
+          const { Dato8 } = response;
+
+          this.ANSWER_EIGHT = Dato8;
+        }
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
 
   public saveLocalStorage(): void {

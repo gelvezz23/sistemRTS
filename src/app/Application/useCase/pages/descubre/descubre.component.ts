@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavbarTwoComponent } from '../../components/navbar-two';
+import { LastnavbarComponent } from '../../components/lastnavbar/lastnavbar.component';
 
 @Component({
   selector: 'app-descubre',
@@ -8,7 +8,7 @@ import { NavbarTwoComponent } from '../../components/navbar-two';
   templateUrl:
     './../../../../Presentation/pages/descubre/descubre.component.html',
   styleUrl: './../../../../Presentation/pages/descubre/descubre.component.scss',
-  imports: [NavbarTwoComponent],
+  imports: [LastnavbarComponent],
 })
 class DescubreComponent {
   constructor(private router: Router) {}

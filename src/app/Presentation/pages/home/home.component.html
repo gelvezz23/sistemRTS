@@ -1,5 +1,5 @@
     <section class="container_home">
-    <app-navbar/>
+    <app-firstnavbar/>
     <section class="container">
         <section class="content-container-left">
             <div class="introduction-container">
@@ -28,7 +28,7 @@
 
     <div class="home-footer">
       <div>
-      <button (click)="handleClick()">Iniciar</button>
+      <button (click)="handleClick()" id="boton_iniciar" aria-label="Iniciar" role="button">Iniciar</button>
       @if(viewRecaptcha){
         <div class="recaptcha">
           <re-captcha (resolved)="resolved($event)" [siteKey]="recaptcha"></re-captcha>

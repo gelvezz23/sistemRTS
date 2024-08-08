@@ -2,38 +2,35 @@
 <section class="formalized-business-container">
 
   <div class="ques-container">
-    <h2>Evalúe si su negocio está <br> formalizado respondiendo <br>estas preguntas</h2>
+    <h2>Responda estas preguntas <br> para saber si su negocio <br>está formalizado</h2>
     <div class="yes-no">
       <div>
-        <span>No</span><span>Sí</span>
+        <span>Sí</span><span>No</span>
       </div>
     </div>
 
     <div>
       @if(viewQuestOne()){
         <label for="answer yes-no-one">¿Tiene Registro Único Tributario (RUT)?</label>
+
       } @else{
         <label for="answer yes-no-one" class="disabled">¿Tiene Registro Único Tributario (RUT)?</label>
       }
         <div class="inputs-container">
+          <img
+          src="./assets/images/icon.svg"
+          alt="?"
+          [attr.data-bs-toggle]="'modal'"
+          [attr.data-bs-target]="'#exampleModal-registro-unico-tributario'"
+        />
           @if(viewQuestOne()){
-            <img
-              src="./assets/images/icon.svg"
-              alt="?"
-              [attr.data-bs-toggle]="'modal'"
-              [attr.data-bs-target]="'#exampleModal-registro-unico-tributario'"
-            />
-            <input id="answer-one" name="check-one" type="radio" value="no" (change)="getAnswer('no', 10)">
-            <input id="answer-one" name="check-one" type="radio" value="si" (change)="getAnswer('si', 10)">
+
+            <input id="rut" name="rut" type="radio" value="si" (change)="getAnswer('si', 10)">
+            <input id="rut" name="rut" type="radio" value="no" (change)="getAnswer('no', 10)">
           } @else{
-            <img
-              src="./assets/images/icon-disabled.svg"
-              alt="?"
-              [attr.data-bs-toggle]="'modal'"
-              [attr.data-bs-target]="'#exampleModal-registro-unico-tributario'"
-            />
-            <input id="answer-one" name="check-one" type="radio" value="no" [disabled]="handleCheckedTwo()" (change)="getAnswer('no', 10)">
-            <input id="answer-one" name="check-one" type="radio" value="si" [checked]="handleCheckedTwo()" (change)="getAnswer('si', 10)">
+
+            <input id="rut" name="rut" type="radio" value="si" [checked]="handleCheckedTwo()" (change)="getAnswer('si', 10)">
+            <input id="rut" name="rut" type="radio" value="no" [disabled]="handleCheckedTwo()" (change)="getAnswer('no', 10)">
           }
         </div>
     </div>
@@ -60,8 +57,8 @@
             [attr.data-bs-toggle]="'modal'"
             [attr.data-bs-target]="'#exampleModal-tienes-registro-mercantil'"
           />
-          <input id="answer-two" name="check-two" type="radio" value="no" [disabled]="handleCheckedTwo()" (change)="getAnswer('no', 11)">
-          <input id="answer-two" name="check-two" type="radio" value="si" [checked]="handleCheckedTwo()" (change)="getAnswer('si', 11)">
+          <input id="registro_mercantil" name="registro_mercantil" type="radio" value="si" [checked]="handleCheckedTwo()" (change)="getAnswer('si', 11)">
+          <input id="registro_mercantil" name="registro_mercantil" type="radio" value="no" [disabled]="handleCheckedTwo()" (change)="getAnswer('no', 11)">
           } @else{
             <img
               src="./assets/images/icon-disabled.svg"
@@ -69,8 +66,8 @@
               [attr.data-bs-toggle]="'modal'"
               [attr.data-bs-target]="'#exampleModal-tienes-registro-mercantil'"
             />
-            <input id="answer-two" name="check-two" type="radio" value="no" [disabled]="true" (change)="getAnswer('no', 11)">
-            <input id="answer-two" name="check-two" type="radio" value="si" [disabled]="true" (change)="getAnswer('si', 11)">
+            <input id="registro_mercantil" name="registro_mercantil" type="radio" value="si" [disabled]="true" (change)="getAnswer('si', 11)">
+            <input id="registro_mercantil" name="registro_mercantil" type="radio" value="no" [disabled]="true" (change)="getAnswer('no', 11)">
           }
       </div>
     </div>
@@ -91,12 +88,13 @@
         <div class="inputs-container">
           @if(viewQuestThree()){
             <div style="padding: 1.2rem;"></div>
-            <input id="answer-three" name="check-three" type="radio" value="no" (change)="getAnswer('no', 12)">
-            <input id="answer-three" name="check-three" type="radio" value="si" (change)="getAnswer('si', 12)">
+            <input id="registro_mercantil_cada_anio" name="registro_mercantil_cada_anio" type="radio" value="si" (change)="getAnswer('si', 12)">
+            <input id="registro_mercantil_cada_anio" name="registro_mercantil_cada_anio" type="radio" value="no" (change)="getAnswer('no', 12)">
           } @else {
             <div style="padding: 1.2rem;"></div>
-            <input id="answer-three" name="check-three" type="radio" value="no" [disabled]="true">
-            <input id="answer-three" name="check-three" type="radio" value="si" [disabled]="true">
+            <input id="registro_mercantil_cada_anio" name="registro_mercantil_cada_anio" type="radio" value="si" [disabled]="true">
+            <input id="registro_mercantil_cada_anio" name="registro_mercantil_cada_anio" type="radio" value="no" [disabled]="true">
+
           }
         </div>
     </div>
@@ -118,8 +116,8 @@
               [attr.data-bs-toggle]="'modal'"
               [attr.data-bs-target]="'#exampleModal-paga-salud-trabajadores'"
             />
-            <input id="answer-four" name="check-four" type="radio" value="no" (change)="getAnswer('no', 13)">
-            <input id="answer-four" name="check-four" type="radio" value="si" (change)="getAnswer('si', 13)">
+            <input id="paga_salud_trabajadores" name="paga_salud_trabajadores" type="radio" value="si" (change)="getAnswer('si', 13)">
+            <input id="paga_salud_trabajadores" name="paga_salud_trabajadores" type="radio" value="no" (change)="getAnswer('no', 13)">
           } @else{
             <img
               src="./assets/images/icon-disabled.svg"
@@ -127,8 +125,9 @@
               [attr.data-bs-toggle]="'modal'"
               [attr.data-bs-target]="'#exampleModal-paga-salud-trabajadores'"
             />
-            <input id="answer-four" name="check-four" type="radio" value="no" [disabled]="true">
-            <input id="answer-four" name="check-four" type="radio" value="si" [disabled]="true">
+            <input id="paga_salud_trabajadores" name="paga_salud_trabajadores" type="radio" value="si" [disabled]="true">
+            <input id="paga_salud_trabajadores" name="paga_salud_trabajadores" type="radio" value="no" [disabled]="true">
+
           }
         </div>
     </div>
@@ -155,8 +154,9 @@
             [attr.data-bs-toggle]="'modal'"
             [attr.data-bs-target]="'#exampleModal-paga-salud-laborales'"
           />
-          <input id="answer-five" name="check-five" type="radio" value="no" (change)="getAnswer('no', 14)">
-          <input id="answer-five" name="check-five" type="radio" value="si" (change)="getAnswer('si', 14)">
+          <input id="paga-salud-laborales" name="paga-salud-laborales" type="radio" value="si" (change)="getAnswer('si', 14)">
+          <input id="paga-salud-laborales" name="paga-salud-laborales" type="radio" value="no" (change)="getAnswer('no', 14)">
+
         } @else {
           <img
             src="./assets/images/icon-disabled.svg"
@@ -164,8 +164,9 @@
             [attr.data-bs-toggle]="'modal'"
             [attr.data-bs-target]="'#exampleModal-paga-salud-laborales'"
           />
-          <input id="answer-five" name="check-five" type="radio" value="no" [disabled]="true">
-          <input id="answer-five" name="check-five" type="radio" value="si" [disabled]="true">
+          <input id="paga-salud-laborales" name="paga-salud-laborales" type="radio" value="si" [disabled]="true">
+          <input id="paga-salud-laborales" name="paga-salud-laborales" type="radio" value="no" [disabled]="true">
+
         }
       </div>
     </div>
@@ -183,9 +184,10 @@
                   <label for="answer yes-no-six">¿Conoce los requerimientos o permisos para desarrollar su actividad y cumple con estos?</label>
                     <div class="inputs-container">
                       <div style="padding: 1.2rem;"></div>
-                        <input id="answer-six" name="check-six" type="radio" value="no" (change)="getAnswer('no', 15)">
-                        <input id="answer-six" name="check-six" type="radio" value="si" (change)="getAnswer('si', 15)">
-                    </div>
+                        <input id="requerimientos_permisos" name="requerimientos_permisos" type="radio" value="si" (change)="getAnswer('si', 15)">
+                        <input id="requerimientos_permisos" name="requerimientos_permisos" type="radio" value="no" (change)="getAnswer('no', 15)">
+
+                      </div>
                 </div>
                 @if(questions[5].error){
                   <p class="error">campo requerido</p>
@@ -194,9 +196,8 @@
                   <label for="answer yes-no-seven">¿Conoce los deberes y obligaciones tributarias de su actividad?</label>
                     <div class="inputs-container">
                       <div style="padding: 1.2rem;"></div>
-
-                        <input id="answer-seven" name="check-seven" type="radio" value="no" (change)="getAnswer('no', 16)">
                         <input id="answer-seven" name="check-seven" type="radio" value="si" (change)="getAnswer('si', 16)">
+                        <input id="answer-seven" name="check-seven" type="radio" value="no" (change)="getAnswer('no', 16)">
                     </div>
                 </div>
                 @if(questions[6].error){
@@ -209,14 +210,15 @@
   <div class="content-image">
     <img class="image" src="/assets/icons/recurso-3.png" alt="imagen">
     <div class="see-results-btn">
-      <button (click)="handleSubmit($event)">Ver <br> Resultados</button>
+      <button (click)="handleSubmit($event)" id="ver_resultado" aria-label="Ver <br> Resultados" role="button">Ver <br> Resultados</button>
     </div>
     <app-loading [loading]="loading"/>
 
   </div>
-  @if(error){
-    <div class="alert alert-danger" role="alert">
-      {{error}}
-    </div>
-  }
+
     </section>
+    @if(error){
+      <div class="alert alert-danger" role="alert">
+        {{error}}
+      </div>
+    }

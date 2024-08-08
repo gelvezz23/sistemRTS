@@ -47,14 +47,14 @@
   <div class="step-uno">
     <h2 style="color: #02b0ef;">Organice su <br> información</h2>
     <div class="container-step">
-      @if(viewButtonFour()){
+
         <div class="stepper-item">
           <div class="stepper-container-item">
             <div class="step-counter">4</div>
             <div class="step-name">Contabilidad o <br> libro fiscal</div>
           </div>
         </div>
-        }
+
 
         @if(viewButtonFive()){
           <div class="stepper-item completed">
@@ -132,16 +132,16 @@
           <article class="buttons-content">
             <div>
               <p>Descargue el siguiente <br> archivo para consultar <br> cómo cumplir con sus<br> obligaciones tributaria</p>
-              <a href="/assets/Cartilla - publicaciones con comentarios aplicados (05-06-24).pdf" download="/assets/Cartilla - publicaciones con comentarios aplicados (05-06-24).pdf">
+              <a id="boton_descarga_uno" href="/assets/Cartilla - publicaciones con comentarios aplicados (05-06-24).pdf" download="/assets/Cartilla - publicaciones con comentarios aplicados (05-06-24).pdf">
                 <img class="img2" src="/assets/icons/downloadfile.svg" alt="imagen" />
               </a>
             </div>
             <div>
                 <p>Mi resultado <br></p>
-                <img (click)="screenShot()"  class="img2" src="/assets/icons/downloadfile.svg" alt="imagen" />
+                <img (click)="screenShot()"  class="img2" src="/assets/icons/downloadfile.svg" alt="imagen" id="boton_descarga_dos"/>
             </div>
           </article>
-          <button (click)="handleClick()">Continuar</button>
+          <button (click)="handleClick()" aria-label="Continuar" role="button" id="boton_continuar">Continuar</button>
 
         </div>
         @if(loading){

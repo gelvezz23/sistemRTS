@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { serviciosExcluidos } from './serviciosExcluidos';
 import { bienesExcluidos } from './bienesExcluidos';
+
 @Component({
   selector: 'app-modal',
   standalone: true,
@@ -21,6 +22,7 @@ export class ModalComponent {
   @Input({ required: true }) modalTitle!: string;
   @Input({ required: true }) modalContent!: string;
   @Input({ required: true }) id!: number | string;
+  @Input({ required: false }) URL!: string;
 
   constructor() {
     this.serviciosExcluidos = serviciosExcluidos;

@@ -27,18 +27,16 @@ steps:
       npm run build --output-path=dist/rst/browser
     displayName: "npm install and build"
 
-  - script: |
-      cp staticwebapp.config.json dist/rst/browser
-    displayName: "Copy staticwebapp.config.json to output directory"
-
   - task: AdvancedSecurity-Dependency-Scanning@1
   - task: AdvancedSecurity-Codeql-Analyze@1
 
   - task: AzureStaticWebApp@0
     inputs:
-      app_build_command: "ng build"
-      app_location: "dist/system-rts/browser/"
+      app_build_command: "npm run build"
+      app_location: "dist/rst/browser/"
       output_location: "dist/out-tsc"
-      skip_app_build: false
-      skip_api_build: false
+      skip_app_build: true
+      skip_api_build: true
       azure_static_web_apps_api_token: "$(token)"
+    env:
+      NG_APP_RECAPTCHA: "6LfPTd8mAAAAAI8JTLzFdG0jOUfWe12EkX67xcAt"

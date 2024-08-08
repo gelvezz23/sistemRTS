@@ -5,7 +5,7 @@
 <section class="container">
   <section class="ques-container">
       <div>
-        <label for="patirmonio_bruto" class="bruto">
+        <label for="patrimonio_bruto_anio_anterior" class="bruto">
           ¿Cuál fue su patrimonio bruto el año anterior?
           <img
             src="./assets/images/icon.svg"
@@ -23,8 +23,8 @@
           (keydown)="filtrarNumero($event)"
           [value]="cantidad"
           (change)="updateValue($event.target || '', 30)"
-          name="patirmonio_bruto"
-          id="patirmonio_bruto"
+          name="patrimonio_bruto_anio_anterior"
+          id="patrimonio_bruto_anio_anterior"
           required
         />
       </div>
@@ -46,6 +46,8 @@
           (input)="updateValue($event.target || '', 31)"
           [value]="cantidadDos"
           (keydown)="filtrarNumero($event)"
+          name="patrimonio_bruto_anio_presente"
+          id="patrimonio_bruto_anio_presente"
           required
         />
       </div>
@@ -53,7 +55,7 @@
         <span>¿Cuáles fueron todos sus ingresos brutos del <b>año anterior</b> ?</span>
       </div>
       <div>
-        <label for="text">¿Ingresos de actividades gravadas con IVA?</label
+        <label for="actividades_gravadas_con_iva">¿Ingresos de actividades gravadas con IVA?</label
         ><input
           class="input"
           type="text"
@@ -63,11 +65,13 @@
           (change)="updateValue($event.target || '', 32)"
           [value]="cantidadTres"
           (keydown)="filtrarNumero($event)"
+          id="actividades_gravadas_con_iva"
+          name="actividades_gravadas_con_iva"
           required
         />
       </div>
       <div>
-        <label for="text" class="large-ques"
+        <label for="actividades_restaurantes" class="large-ques"
           >Ingresos de actividades de restaurante, cafeterías, autoservicio,
           bares y similares</label
         ><input
@@ -78,11 +82,13 @@
           (input)="updateValue($event.target || '', 33)"
           [value]="cantidadCuatro"
           (keydown)="filtrarNumero($event)"
+          name="actividades_restaurantes"
+          id="actividades_restaurantes"
           required
         />
       </div>
       <div>
-        <label for="text">Ingresos Laborales</label
+        <label for="ingresos_laborales">Ingresos Laborales</label
         ><input
           class="input"
           type="text"
@@ -91,11 +97,13 @@
           (input)="updateValue($event.target || '', 34)"
           [value]="cantidadCinco"
           (keydown)="filtrarNumero($event)"
+          id="ingresos_laborales"
+          name="ingresos_laborales"
           required
         />
       </div>
       <div>
-        <label for="text">Otros ingresos</label
+        <label for="otros_ingresos_uno">Otros ingresos</label
         ><input
           class="input"
           type="text"
@@ -104,16 +112,20 @@
           (input)="updateValue($event.target || '', 35)"
           [value]="cantidadSeis"
           (keydown)="filtrarNumero($event)"
+          id="otros_ingresos_uno"
+          name="otros_ingresos_uno"
           required
         />
       </div>
       <div>
-        <label for="text">Total de ingresos brutos</label
+        <label for="total_ingresos_uno">Total de ingresos brutos</label
         ><input
           class="input"
           type="text"
           (keydown)="(false)"
           [value]="cantidadSiete"
+          id="total_ingresos_uno"
+          name="total_ingresos_uno"
           required
         />
       </div>
@@ -121,7 +133,7 @@
         <span>¿Cuáles son sus ingresos brutos del <b>año en curso </b> ?</span>
       </div>
       <div>
-        <label for="text">¿Ingresos de actividades gravadas con IVA?</label
+        <label for="gravadas_con_iva_en_curso">¿Ingresos de actividades gravadas con IVA?</label
         ><input
           type="text"
           pattern="[0-9]"
@@ -130,11 +142,13 @@
           (input)="updateValue($event.target || '', 37)"
           [value]="cantidadOcho"
           (keydown)="filtrarNumero($event)"
+          id="gravadas_con_iva_en_curso"
+          name="gravadas_con_iva_en_curso"
           required
         />
       </div>
       <div>
-        <label for="text"
+        <label for="actividades_restaurantes_en_curso"
           >Ingresos de actividades de restaurante, cafeterías, autoservicio,
           bares y similares</label
         ><input
@@ -145,11 +159,13 @@
           (input)="updateValue($event.target || '', 38)"
           [value]="cantidadNueve"
           (keydown)="filtrarNumero($event)"
+          id="actividades_restaurantes_en_curso"
+          name="actividades_restaurantes_en_curso"
           required
         />
       </div>
       <div>
-        <label for="text">Ingresos Laborales</label
+        <label for="ingresos_laborales_en_curso">Ingresos Laborales</label
         ><input
           type="text"
           pattern="[0-9]"
@@ -158,11 +174,13 @@
           (input)="updateValue($event.target || '', 39)"
           [value]="cantidadDiez"
           (keydown)="filtrarNumero($event)"
+          id="ingresos_laborales_en_curso"
+          name="ingresos_laborales_en_curso"
           required
         />
       </div>
       <div>
-        <label for="text">Otros ingresos</label
+        <label for="otros_ingresos_en_curso">Otros ingresos</label
         ><input
           type="text"
           pattern="[0-9]"
@@ -171,20 +189,28 @@
           (input)="updateValue($event.target || '', 40)"
           [value]="cantidadOnce"
           (keydown)="filtrarNumero($event)"
+          id="otros_ingresos_en_curso"
+          name="otros_ingresos_en_curso"
           required
         />
       </div>
       <div>
-        <label for="text">Total de ingresos brutos</label
-        ><input type="text" class="input"  (keydown)="(false)"
-        [value]="cantidadDoce" />
+        <label for="total_ingresos_dos">Total de ingresos brutos</label>
+        <input
+          type="text"
+          class="input"
+          (keydown)="(false)"
+          id="total_ingresos_dos"
+          name="total_ingresos_dos"
+          [value]="cantidadDoce"
+        />
       </div>
 
   </section>
   <section class="other-container">
     <img src="/assets/icons/recurso-11.png" alt="image" />
     <div class="footer-form">
-      <button type="button" value="" (click)="handleClick()">
+      <button type="button" (click)="handleClick()" aria-label="Ver ruta de la <br> formalización" role="button" id="boton_continuar">
         Ver ruta de la <br> formalización
       </button>
       <app-loading [loading]="loading"/>

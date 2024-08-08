@@ -1,0 +1,306 @@
+{
+  "token": "tx12x2wefqj61nnf9mbsrfswx16gd5kgsdwmpw2pftfiby2o8xsaltidlh5y73x5tq8a4gl5o2w1qlmbb8j9hw9947n8tan3t6w12h4jl2wsp7exbbp1nikyu5nj0k28n28n8n4ka5x3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+  "Conocimiento_del_usuario": [
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 1,
+      "userAnswer": "Mujer",
+      "question": "¿Cuál es tu sexo?"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 2,
+      "question": "¿En qué rango de edad te encuentras?",
+      "userAnswer": "18 a 29"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 3,
+      "question": "Selecciona el departamento donde vives",
+      "userAnswer": "Amazonas"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 4,
+      "question": "Selecciona el municipio donde vives",
+      "userAnswer": "El Encanto"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 5,
+      "question": "¿En qué tipo de zona vives?",
+      "userAnswer": "Urbana"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 6,
+      "question": "¿Qué uso le dará al simulador?",
+      "userAnswer": "Proyectar un negocio"
+    }
+  ],
+  "caracterizacion_de_negocio": {
+    "titular": {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 7,
+      "userAnswer": "persona natural",
+      "question": "Titular del negocio"
+    },
+    "negocio": {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 8,
+      "userAnswer": "comercial",
+      "question": "Clasifica el negocio de acuerdo a la Actividad del negocio"
+    },
+    "trabajadores": {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 9,
+      "userAnswer": "si",
+      "question": "¿Emplea trabajadores?"
+    }
+  },
+  "negocio_esta_formalizado": [
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 10,
+      "question": "¿Tiene Registro Único Tributario (RUT)?",
+      "userAnswer": "si"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 11,
+      "question": "¿Tiene Registro Mercantil?",
+      "userAnswer": "si"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 12,
+      "question": "¿Renueva el Registro Mercantil cada año?",
+      "userAnswer": "si"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 13,
+      "question": "¿Paga su salud, pensiones y riesgos laborales de los trabajadores?",
+      "userAnswer": "si"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 14,
+      "question": "¿Paga su salud, pensiones y riesgos laborales?",
+      "userAnswer": "si"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 15,
+      "question": "¿Conoce los requerimientos o permisos para desarrollar su actividad y cumple con estos?",
+      "userAnswer": "si"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 16,
+      "question": "¿Conoce los deberes y obligaciones tributarias de su actividad?",
+      "userAnswer": "si"
+    }
+  ],
+  "actividad_economica_a_formalizar": [
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 17,
+      "question": "¿Corresponde una actividad de restaurante, cafeterías, autoservicio, bares y similares?",
+      "userAnswer": "si"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 18,
+      "question": "¿Es realizada con una franquicia?",
+      "userAnswer": "si"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 19,
+      "question": "¿Se utilizan marcas propias?",
+      "userAnswer": "si"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 20,
+      "question": "¿Está gravada con IVA?",
+      "userAnswer": "nose"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 21,
+      "question": "¿Consiste en venta de bienes corporales muebles?",
+      "userAnswer": "si"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 22,
+      "question": "¿Estos bienes están excluidos?",
+      "userAnswer": "si"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 23,
+      "question": "¿Consiste en la prestación de servicios en el territorio nacional o desde el exterior?",
+      "userAnswer": "si"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 24,
+      "question": "¿Estos servicios están excluidos?",
+      "userAnswer": "si"
+    }
+  ],
+  "formulario_sobre_actividad_economica": [
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 25,
+      "question": "¿Tiene más de un establecimiento de comercio?",
+      "userAnswer": "si"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 26,
+      "question": "¿Cual fue el monto de sus consignaciones bancarias, depositos o inversiones financieras en el año inmediatamente anterior?",
+      "userAnswer": "11111"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 27,
+      "question": "¿Cual fue el monto de sus consignaciones bancarias, depositos o inversiones financieras en el año inmediatamente anterior?",
+      "userAnswer": "11111"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 28,
+      "question": "¿Realizo compras y consumos totales superioes a 1400 unidades de Valor Tributario (UVT) ($65.891.000) durante el año inmediatamente anterior ?",
+      "userAnswer": "si"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 29,
+      "question": "¿La actividad económica se realiza bajo un sistema que implique la explotación de\n        intangibles (por ejemplo, franquicia, concesión, regalía o similar) ?",
+      "userAnswer": "si"
+    }
+  ],
+  "response-Three": [
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 30,
+      "userAnswer": "$1,111",
+      "text": "¿Cuál fue su patrimonio bruto el año anterior?"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 31,
+      "userAnswer": "$11,111",
+      "text": "¿Cuál es su patrimonio bruto del presente año?"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 32,
+      "userAnswer": "$11,111",
+      "text": "¿Ingresos de actividades gravadas con IVA?"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 33,
+      "userAnswer": "$1,111",
+      "text": "Ingresos de actividades de restaurante, cafeterías, autoservicio, bares y similares"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 34,
+      "userAnswer": "$1,111",
+      "text": "Ingresos Laborales"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 35,
+      "userAnswer": "$1,111",
+      "text": "Otros ingresos"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 36,
+      "userAnswer": "$14,444",
+      "text": "Total de ingresos brutos"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 37,
+      "userAnswer": "$11,111",
+      "text": "¿Ingresos de actividades gravadas con IVA?"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 38,
+      "userAnswer": "$11,111",
+      "text": "Ingresos de actividades de restaurante, cafeterías, autoservicio, bares y similares"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 39,
+      "userAnswer": "$11,111",
+      "text": "Ingresos Laborales"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 40,
+      "userAnswer": "$11,111",
+      "text": "Otros ingresos"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 41,
+      "userAnswer": "$44,444",
+      "text": "Total de ingresos brutos"
+    }
+  ],
+  "encuesta": [
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 42,
+      "userAnswer": "4",
+      "question": "En una escala del 1 a 5, donde uno es muy malo y 5 muy bueno, la experiencia de uso del simulador"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 43,
+      "userAnswer": "4",
+      "question": "En una escala del 1 a 5, donde uno es muy malo y 5 muy util, la información arrojada por el simulador"
+    },
+    {
+      "questionId": 44,
+      "userAnswer": "4",
+      "question": "En una escala del 1 a 5, donde 1 es muy dificil y 5 muy facil, la el acceso al simulador fue"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 45,
+      "userAnswer": "si",
+      "question": "¿Recomendaría el simulador a amigos o familiares que deseen formalizar su negocio?"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 46,
+      "userAnswer": "hola",
+      "question": "¿En qué considera que podríamos mejorar para hacer un proceso más amigable y eficiente para nuestros usuarios? Déjenos un comentario en el recuadro."
+    }
+  ],
+  "modelos_hipoteticos": [
+    {
+      "questionId": 47,
+      "userAnswer": true,
+      "question": " Menores de 1400 UVT ($65.891.000)",
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y"
+    },
+    {
+      "userId": "3ejt7tgwuy3hngy3zcfjsf2evaxvjxmlaw5b65g6gcwtq7bdabevg6ryuar1y",
+      "questionId": 48,
+      "userAnswer": true,
+      "question": "Igual o menos de 4500 UVT (Igual o menos de $ 211.792.500)"
+    }
+  ]
+}

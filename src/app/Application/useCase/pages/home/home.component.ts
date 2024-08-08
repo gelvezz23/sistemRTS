@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { FormularioComponent } from '../formulario';
-import { NavbarComponent } from '../../components/navbar';
-//import { RecaptchaService } from '../../../../Infraestructure/recaptcha/recaptcha.service';
+import { RecaptchaService } from '../../../../Infraestructure/recaptcha/recaptcha.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoadingComponent } from '../../components/loading/loading.component';
-//import { adapterToken } from '../../../adapters/adapterToken';
+import { adapterToken } from '../../../adapters/adapterToken';
 import { generateRandomString } from '../../utils/generateToken';
+import { FirstnavbarComponent } from '../../components/firstnavbar/firstnavbar.component';
+import { environment } from 'environments/environment';
+import { FormsttedValuesService } from 'app/Infraestructure/formatedValues/formstted-values.service';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -16,30 +18,32 @@ import { generateRandomString } from '../../utils/generateToken';
   imports: [
     FormularioComponent,
     RecaptchaModule,
-    NavbarComponent,
     HttpClientModule,
     LoadingComponent,
+    FirstnavbarComponent,
   ],
 })
-class HomeComponent {
+class HomeComponent implements OnInit {
   error = '';
   loading = false;
   viewRecaptcha = false;
-  //test 6LeL20YUAAAAAB43haRm-v93jNxwi7EBraClHUgX
-  // 6LdB5QAqAAAAAHYSYRSKHVYCSivYmz9WIDsIBVBU
-  public readonly recaptcha = '6LfPTd8mAAAAAI8JTLzFdG0jOUfWe12EkX67xcAt';
+  enabledCaptcha = window.localStorage.getItem('enabled_captchap') || false;
+  public readonly recaptcha = environment.recaptcha;
   constructor(
-    private router: Router // private recaptchaService: RecaptchaService
+    private router: Router,
+    private recaptchaService: RecaptchaService
   ) {}
   ngOnInit() {
     localStorage.clear();
+    console.log(environment.recaptcha);
+    console.log(this.enabledCaptcha);
   }
   resolved(captchaResponse: any) {
     this.loading = true;
     this.error = '';
 
     if (captchaResponse) {
-      /* this.recaptchaService.getVerificationCaptcha(captchaResponse).subscribe({
+      this.recaptchaService.getVerificationCaptcha(captchaResponse).subscribe({
         next: (response: string) => {
           this.loading = false;
           this.error = '';
@@ -60,17 +64,17 @@ class HomeComponent {
           console.log('Verification complete');
         },
       });
-       */
     }
   }
 
   public handleClick() {
-    const dataToken = generateRandomString(200);
-    //const token = adapterToken(dataToken);
-    localStorage.setItem('token', dataToken);
-    this.router.navigate(['info']);
-
-    this.viewRecaptcha = true;
+    if (this.enabledCaptcha) {
+      this.viewRecaptcha = true;
+    } else {
+      const dataToken = generateRandomString(200);
+      window.localStorage.setItem('token', dataToken);
+      this.router.navigate(['/info']);
+    }
   }
 }
 

@@ -13,7 +13,7 @@
             [attr.data-bs-target]="'#exampleModal-tipo-persona'"
           />
           <div class="selectError">
-            <select name="business" [(ngModel)]="titular.value" id="business" (change)="getAnswer($event, 1, 'Titular del negocio')">
+            <select name="titular_negocio" id="titular_negocio" [(ngModel)]="titular.value" id="business" (change)="getAnswer($event, 1, 'Titular del negocio')">
               <option value="">Seleccione</option>
               <option value="persona natural">Persona Natural</option>
               <option value="persona juridica">Persona Jurídica</option>
@@ -34,7 +34,7 @@
             [attr.data-bs-target]="'#exampleModal-actividad-comercial'"
           />
           <div class="selectError">
-            <select [(ngModel)]="negocio.value" [disabled]="titular.value === 'persona juridica'" name="business" id="business" (change)="getAnswer($event, 2, 'Clasifica el negocio de acuerdo a la Actividad del negocio')">
+            <select [(ngModel)]="negocio.value" [disabled]="titular.value === 'persona juridica'" name="tipo_negocio" id="tipo_negocio" (change)="getAnswer($event, 2, 'Clasifica el negocio de acuerdo a la Actividad del negocio')">
               <option value="">Seleccione</option>
               <option value="comercial">Comercial</option>
               <option value="profesion liberal o artistica">
@@ -54,7 +54,7 @@
       <div class="ques-container yesNo">
         <label>¿Emplea trabajadores?</label>
         <div class="selectError">
-          <select name="business" id="business" (change)="getAnswer($event, 3, '¿Emplea trabajadores?')">
+          <select name="emplea" id="emplea" (change)="getAnswer($event, 3, '¿Emplea trabajadores?')">
             <option value="">Seleccione</option>
             <option value="si">Sí</option>
             <option value="no">No</option>
@@ -72,8 +72,8 @@
     <img class="content-image" src="/assets/icons/recurso-2.png" alt="imagen"/>
   </div>
 </section>
-<div class="button">
-  <button (click)="handleClick()">Continuar</button>
+<div class="button" >
+  <button (click)="handleClick()" aria-label="Continuar" role="button" id="boton_continuar">Continuar</button>
   <app-loading [loading]="loading"/>
 </div>
 @if(error){

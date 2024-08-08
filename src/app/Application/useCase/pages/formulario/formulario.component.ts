@@ -11,6 +11,8 @@ import { adapterToken } from '../../../adapters/adapterToken';
 import { HttpClientModule } from '@angular/common/http';
 import { AdapterFormAnswer } from '../../../adapters/formAdapter';
 import { NavbarBgBlackComponent } from '../../components/navbar-bg-black/navbar-bg-black.component';
+import { URL } from './constants';
+import { FormatedURLService } from 'app/Infraestructure/formatedURL/formated-url.service';
 
 @Component({
   selector: 'app-formulario',
@@ -29,12 +31,31 @@ import { NavbarBgBlackComponent } from '../../components/navbar-bg-black/navbar-
   ],
 })
 class FormularioComponent {
+  URL = URL;
   loading = false;
   error = '';
   isValid: boolean = false;
   public questions: QuestionType[];
-  constructor(private router: Router, private serviceSaveDa: SaveDataService) {
+  constructor(
+    private router: Router,
+    private serviceSaveDa: SaveDataService,
+    private serviceParametrization: FormatedURLService
+  ) {
     this.questions = questions;
+  }
+
+  ngOnInit(): void {
+    this.serviceParametrization.getFormatedURL().subscribe({
+      next: (response) => {
+        if (response) {
+          const { URL2 } = response;
+          this.URL = URL2;
+        }
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
 
   public saveLocalStorage(): void {

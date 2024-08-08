@@ -4,7 +4,7 @@ article{
   padding: 3rem;
 }
 .container-info{
-  height: 100vh;
+  height: auto;
 }
 
 section{
@@ -97,7 +97,7 @@ label{
     display: flex;
     justify-content: center;
 
-    max-width: 100%;
+    max-width: auto;
     padding: 5rem 0px;
   }
 

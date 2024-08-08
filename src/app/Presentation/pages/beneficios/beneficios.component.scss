@@ -16,6 +16,7 @@ section{
 
 .info .column2{
   padding: 1rem;
+  margin-left: 2rem;
   width: 70%;
 }
 .footer{
@@ -74,7 +75,7 @@ li:before {
   color: #272944;
   content: counter(item);
   font-weight: bold;
-  
+
 }
 h3{
   background-color: #0098da;
@@ -118,6 +119,7 @@ button{
   }
   .info .column2{
     margin-top: 1rem;
+    margin-left: 0rem;
     width: 90%;
   }
   .column2{

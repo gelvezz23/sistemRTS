@@ -6,6 +6,14 @@ import { NavbarTwoComponent } from '../../components/navbar-two';
 import { getCaracterizacion } from './utils/caracterizacionDeNegocio/getCaracterizacion';
 import { caracterizacionValidate } from './utils/caracterizacionDeNegocio/caracterizacionValidate';
 import { getModeloHipotetico } from './utils/modeloHipotetico/getModeloHipotetico';
+import { getModeloyCaracterizacion } from './utils/getModeloyCaracterizacion';
+import {
+  ANSWER_FOUR,
+  ANSWER_SEVEN,
+  ANSWER_SIX,
+  ANSWER_THREE,
+  ANSWER_TWO,
+} from '../form-cuatro/constants';
 
 @Component({
   selector: 'app-form-cinco',
@@ -35,6 +43,9 @@ class FormCincoComponent {
       window.localStorage.getItem('caracterizacion_de_negocio') || '';
     const { titular, negocio } = getCaracterizacion(data);
     const validate = caracterizacionValidate(titular, negocio);
+    if (negocio === 'profesion liberal o artistica') {
+      return true;
+    }
     return validate;
   }
 
@@ -43,67 +54,36 @@ class FormCincoComponent {
       window.localStorage.getItem('modelos_hipoteticos') || ''
     );
 
-    if (questCero === 'Más de 30.000 UVT ($1.411.950.000)') {
+    if (questCero === ANSWER_FOUR) {
       return true;
     }
-    if (
-      questCero ===
-      'Igual o más de 3500 UVT a igual o menos de 30.000 UVT (de $164.727.500 a $1.411.950.000)'
-    ) {
+    if (questCero === ANSWER_THREE) {
       return true;
     }
     return false;
   }
 
   public viewButtonSeven() {
-    const { questCero, questUno } = getModeloHipotetico(
-      window.localStorage.getItem('modelos_hipoteticos') || ''
-    );
-    const caracterizacion =
-      window.localStorage.getItem('caracterizacion_de_negocio') || '';
-    const { titular } = getCaracterizacion(caracterizacion);
+    const { titular, questCero, questUno } = getModeloyCaracterizacion();
 
-    if (titular === 'persona juridica') {
-      return true;
+    switch (true) {
+      case titular === 'persona juridica' || titular === 'persona natural':
+        return true;
+      case questUno === ANSWER_SIX && titular === 'persona natural':
+        return true;
+      case questCero === ANSWER_TWO:
+        return true;
+      case questUno === ANSWER_TWO && titular === 'persona natural':
+        return true;
+      case questCero === ANSWER_THREE && titular === 'persona natural':
+        return true;
+      case questCero === ANSWER_FOUR && titular === 'persona natural':
+        return true;
+      case questUno === ANSWER_SEVEN && titular === 'persona natural':
+        return true;
+      default:
+        return false;
     }
-    if (
-      questUno ===
-        'Más de 4500 a igual o menos de 30.000 UVT (Más de 4500 a igual o menos de 30.000 UVT (Más de $ 211.792.500 a igual o menos de $ 1.411.950.000)' &&
-      titular === 'persona natural'
-    ) {
-      return true;
-    }
-    if (
-      questUno ===
-        'Igual o más de 1400 UVT a menos de 3500 UVT (de $65.891.000 a $164.727.500)' &&
-      titular === 'persona natural'
-    ) {
-      return true;
-    }
-
-    if (
-      questCero ===
-        'Igual o más de 3500 UVT a igual o menos de 30.000 UVT (de $164.727.500 a $1.411.950.000)' &&
-      titular === 'persona natural'
-    ) {
-      return true;
-    }
-
-    if (
-      questCero === 'Más de 30.000 UVT ($1.411.950.000)' &&
-      titular === 'persona natural'
-    ) {
-      return true;
-    }
-
-    if (
-      questUno === 'Más de 30.000 UVT (Más de $ 1.411.950.000)' &&
-      titular === 'persona natural'
-    ) {
-      return true;
-    }
-
-    return false;
   }
 
   public viewButtonEigth() {
@@ -118,18 +98,11 @@ class FormCincoComponent {
       return true;
     }
 
-    if (
-      titular === 'persona natural' &&
-      questCero ===
-        'Igual o más de 3500 UVT a igual o menos de 30.000 UVT (de $164.727.500 a $1.411.950.000)'
-    ) {
+    if (titular === 'persona natural' && questCero === ANSWER_THREE) {
       return true;
     }
 
-    if (
-      questCero === 'Más de 30.000 UVT ($1.411.950.000)' &&
-      titular === 'persona natural'
-    ) {
+    if (questCero === ANSWER_FOUR && titular === 'persona natural') {
       return true;
     }
     return false;
@@ -159,18 +132,11 @@ class FormCincoComponent {
       window.localStorage.getItem('modelos_hipoteticos') || ''
     );
 
-    if (
-      negocio === 'comercial' &&
-      questCero ===
-        'Igual o más de 3500 UVT a igual o menos de 30.000 UVT (de $164.727.500 a $1.411.950.000)'
-    ) {
+    if (negocio === 'comercial' && questCero === ANSWER_THREE) {
       return true;
     }
 
-    if (
-      questCero === 'Más de 30.000 UVT ($1.411.950.000)' &&
-      negocio === 'comercial'
-    ) {
+    if (questCero === ANSWER_FOUR && negocio === 'comercial') {
       return true;
     }
     return false;

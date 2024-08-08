@@ -11,8 +11,7 @@
       }
 
       @if(count === 5 || count === 6){
-      <p class="title">El negocio tiene un grado de formalización alto pero aún tiene que trabajar para disminuir los
-        riesgos a los que está expuesto.</p>
+      <p class="title">Su negocio tiene un grado de formalización alto, pero le falta disminuir algunos riesgos.</p>
       }
 
       @if(count === 4 || count === 3 || count === 2){
@@ -29,28 +28,28 @@
       <div class="text-options">
         <p class="text-result-titulo">
           Estar formalizado implica cumplir con las condiciones exigidas<br>
-          por el Estado para el correcto funcionamiento de un negocio, <br>
-          abarcando las siguientes cuatro dimensiones. </p>
-        <ul>
-          <li>
+          por el Estado para el correcto funcionamiento de un negocio <br>
+          y abarca cuatro pasos: </p>
+        <ul role="tree">
+          <li role="treeitem">
             <p class="text-result">
               <b>Entrada:</b> lo que se requiere para crear legalmente su negocio, <br>
               como el RUT.
             </p>
           </li>
-          <li>
+          <li role="treeitem">
             <p class="text-result">
               <b>Insumos:</b> lo que se requiere para tener el material de trabajo y a <br>
               los trabajadores en orden, como los aportes a seguridad social.
             </p>
           </li>
-          <li>
+          <li role="treeitem">
             <p class="text-result">
               <b>Producción:</b> lo que se requiere para llevar a cabo la operación, <br>
               como el registro INVIMA.
             </p>
           </li>
-          <li>
+          <li role="treeitem">
             <p class="text-result"><b>Tributaria:</b> lo que se requiere para estar al día con los <br> impuestos y
               deberes asociados.</p>
           </li>
@@ -70,14 +69,14 @@
           contratar con el estado, exportar y tener mejores <br>
           proveedores.</p>
         <p class="text-result-2">
-          Más posibilidades y mejores condiciones para acceder a <br>
+          Tener más posibilidades y mejores condiciones para acceder a <br>
           créditos y otras fuentes de financiación.</p>
         <p class="text-result-2">Tener mejor personal y cubrir los riesgos laborales.</p>
         <p class="text-result-2">Evitar sanciones grandes y demandas.</p>
         <p class="text-result-2">Acceder a programas de fortalecimiento empresarial.</p>
         <p class="text-result-2">En fin, tener un negocio sostenible.</p>
       </div>
-      <button (click)="handleClick()">Continuar</button>
+      <button (click)="handleClick()" id="boton_continuar" aria-label="Continuar" role="button">Continuar</button>
     </div>
   </div>
 </section>

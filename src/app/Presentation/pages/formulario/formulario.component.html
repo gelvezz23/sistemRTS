@@ -27,8 +27,8 @@
           (change)="getAnswer('si', quest.id)"
           class="input-checkbox disabled"
           type="radio"
-          id="si"
-          name="{{ quest.id }}"
+          [id]="quest.id +'_answer'"
+          [name]="quest.id +'_answer'"
           value="si"
           [checked]="quest.checkedYes"
           [disabled]="quest.disabled"
@@ -38,8 +38,8 @@
           (change)="getAnswer('no', quest.id)"
           class="input-checkbox disabled"
           type="radio"
-          id="no"
-          name="{{ quest.id }}"
+          [id]="quest.id +'_answer'"
+          [name]="quest.id +'_answer'"
           [checked]="quest.checkedNo"
           [disabled]="quest.disabled"
           [required]="quest.required"
@@ -51,9 +51,10 @@
           (change)="getAnswer('no se', quest.id)"
           class="input-checkbox disabled"
           type="radio"
-          id="nose"
+          [id]="quest.id +'_answer'"
+          [name]="quest.id +'_answer'"
           [checked]="quest.checkedNose"
-          name="{{ quest.id }}"
+          name="{{ quest.id + 'nose' }}"
           value="no se"
           required
         />
@@ -63,8 +64,8 @@
           (change)="getAnswer('si', quest.id)"
           class="input-checkbox"
           type="radio"
-          id="si"
-          name="{{ quest.id }}"
+          [id]="quest.id +'_answer'"
+          [name]="quest.id +'_answer'"
           value="si"
           [checked]="quest.checkedYes"
           [disabled]="quest.disabled"
@@ -75,8 +76,8 @@
           (change)="getAnswer('no', quest.id)"
           class="input-checkbox"
           type="radio"
-          id="no"
-          name="{{ quest.id }}"
+          [id]="quest.id +'_answer'"
+          [name]="quest.id +'_answer'"
           [checked]="quest.checkedNo"
           [disabled]="quest.disabled"
           [required]="quest.required"
@@ -88,8 +89,8 @@
           (change)="getAnswer('nose', quest.id)"
           class="input-checkbox"
           type="radio"
-          id="nose"
-          name="{{ quest.id }}"
+          [id]="quest.id +'_answer'"
+          [name]="quest.id +'_answer'"
           [checked]="quest.checkedNose"
           value="nose"
           required
@@ -101,6 +102,7 @@
         [id]="quest.id"
         [modalTitle]="quest.question"
         [modalContent]="quest.content"
+        [URL]="URL"
       />
     </div>
     @if(quest.error){
@@ -124,7 +126,7 @@
     <img src="/assets/icons/recurso-8.png" alt="imagen"/>
 
     <div class="footer-form">
-      <input type="submit" value="Continuar" (click)="handleSubmit($event)"  />
+      <input type="submit" value="Continuar" (click)="handleSubmit($event)" id="boton_continuar" />
       <app-loading [loading]="loading"/>
     </div>
 

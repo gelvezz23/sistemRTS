@@ -1,5 +1,5 @@
 
-nav{
+footer{
   display: flex;
   width: 100%;
   padding: 3rem 1rem;
@@ -12,7 +12,7 @@ nav{
   border-left: 1px solid white;
   padding-left: 0.5rem;
 }
-a{
+.img-content a{
   content: url(https://cdn.www.gov.co/assets/images/logo.svg);
     height: 2rem;
     width: 8.5rem;
@@ -41,18 +41,36 @@ ul{
   position: absolute;
   width: 1px;
 }
+.footer_2{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: auto;
+  color: white;
+  font-size: 0.8rem;
+  background-color: #3666CC;
+  padding: 1rem;
 
+}
+
+.he_footer_redes {
+  margin: 0;
+  padding:1rem;
+  display: flex;
+  justify-content: center;
+}
 
 @media (max-width:900px) {
   .img-content{
     padding: 1rem;
   }
-  nav{
+  footer{
     padding: 1rem;
     height: auto;
     flex-direction: column;
     align-items: start;
-  justify-content: start;
+    justify-content: start;
   }
   .column-1, .column-2{
     width: 100%;

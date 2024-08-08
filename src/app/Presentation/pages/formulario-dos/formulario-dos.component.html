@@ -38,8 +38,8 @@
             (change)="getAnswer('si', questions[0].id)"
             class="input-checkbox"
             type="radio"
-            id="si"
-            name="{{ questions[0].id }}"
+            id="{{ questions[0].id+'_establecimiento_answer' }}"
+            name="{{ questions[0].id+'_establecimiento_answer' }}"
             value="si"
             [checked]="questions[0].checkedYes"
             [disabled]="questions[0].disabled"
@@ -52,8 +52,8 @@
           (change)="getAnswer('no', questions[0].id)"
           class="input-checkbox"
           type="radio"
-          id="no"
-          name="{{ questions[0].id }}"
+          id="{{ questions[0].id+'_establecimiento_answer' }}"
+            name="{{ questions[0].id+'_establecimiento_answer' }}"
           [checked]="questions[0].checkedNo"
           [disabled]="questions[0].disabled"
           [required]="questions[0].required"
@@ -71,9 +71,9 @@
       <div class="question">
 
         @if(questions[1].disabled ){
-          <h3 class="quest-10 disabled">¿Cuál fue el monto de sus consignaciones bancarias, depósitos o inversiones financieras en el año inmediatamente anterior?</h3>
+          <h3 class="quest-10 disabled">¿Cuál fue el monto total de sus consignaciones bancarias, depósitos o inversiones financieras en el año inmediatamente anterior?</h3>
         } @else {
-          <h3 class="quest-10" style=" color: #186a88;">¿Cuál fue el monto de sus consignaciones bancarias, depósitos o inversiones financieras en el año inmediatamente anterior?</h3>
+          <h3 class="quest-10" style=" color: #186a88;">¿Cuál fue el monto total de sus consignaciones bancarias, depósitos o inversiones financieras en el año inmediatamente anterior?</h3>
         }
       </div>
 
@@ -119,7 +119,7 @@
                 [value]="cantidadDos.trim()"
                 class="input-checkbox"
                 type="text"
-                id="nose"
+                id="gravada-con-iva"
                 min="0"
                 name="gravada-con-iva"
                 [required]="questions[2].required"
@@ -137,10 +137,10 @@
     <div class="container_question">
       <div class="question">
         @if(questions[3].disabled){
-          <h3 class="quest-10 disabled">¿Realizó compras y consumos totales superiores a $65.891.000 (equivalentes a 1.400 UVT) durante el año inmediatamente anterior?</h3>
+          <h3 class="quest-10 disabled">{{ANSWER_EIGHT}}</h3>
 
         } @else {
-          <h3 class="quest-10">¿Realizó compras y consumos totales superiores a $65.891.000 (equivalentes a 1.400 UVT) durante el año inmediatamente anterior?</h3>
+          <h3 class="quest-10">{{ANSWER_EIGHT}}</h3>
 
         }
 
@@ -153,8 +153,8 @@
           (change)="getAnswer('si', questions[3].id)"
           class="input-checkbox"
           type="radio"
-          id="si"
-          name="{{ questions[3].id }}"
+          id="{{ questions[3].id+'_compras_y_consumo_answer' }}"
+          name="{{ questions[3].id+'_compras_y_consumo_answer' }}"
           value="si"
           [checked]="questions[3].checkedYes"
           [disabled]="questions[3].disabled"
@@ -167,8 +167,8 @@
             (change)="getAnswer('no',questions[3].id)"
             class="input-checkbox"
             type="radio"
-            id="no"
-            name="{{ questions[3].id }}"
+            id="{{ questions[3].id+'_compras_y_consumo_answer' }}"
+            name="{{ questions[3].id+'_compras_y_consumo_answer' }}"
             [checked]="questions[3].checkedNo"
             [disabled]="questions[3].disabled"
             [required]="questions[3].required"
@@ -185,7 +185,7 @@
       <div class="question">
 
         @if(questions[4].disabled){
-          <h3 class="quest-10 disabled">¿La actividad económica se realiza bajo un sistema que implique la explotación de
+          <h3 class="quest-10 disabled">¿Desarrolla su actividad económica bajo un sistema que implique la explotación de
             intangibles (por ejemplo, franquicia, concesión, regalía o similar)?</h3>
           <img
           src="./assets/images/icon-disabled.svg"
@@ -193,7 +193,7 @@
           [attr.data-bs-toggle]="'modal'"
           [attr.data-bs-target]="'#exampleModal-'+ questions[4].id"/>
         } @else {
-          <h3 class="quest-10">¿La actividad económica se realiza bajo un sistema que implique la explotación de
+          <h3 class="quest-10">¿Desarrolla su actividad económica bajo un sistema que implique la explotación de
             intangibles (por ejemplo, franquicia, concesión, regalía o similar)?</h3>
           <img
           src="./assets/images/icon.svg"
@@ -214,8 +214,8 @@
           (change)="getAnswer('si', questions[4].id)"
           class="input-checkbox"
           type="radio"
-          id="si"
-          name="{{ questions[4].id }}"
+          id="{{ questions[4].id+'_explotacion_intangibles_answer' }}"
+          name="{{ questions[4].id+'_explotacion_intangibles_answer' }}"
           value="si"
           [checked]="questions[4].checkedYes"
           [disabled]="questions[4].disabled"
@@ -228,8 +228,8 @@
           (change)="getAnswer('no',questions[4].id)"
           class="input-checkbox"
           type="radio"
-          id="no"
-          name="{{ questions[4].id }}"
+          id="{{ questions[4].id+'_explotacion_intangibles_answer' }}"
+          name="{{ questions[4].id+'_explotacion_intangibles_answer' }}"
           [checked]="questions[4].checkedNo"
           [disabled]="questions[4].disabled"
           [required]="questions[4].required"
@@ -246,7 +246,7 @@
 
     <div class="footer-form">
      <label>Recuerda que las respuestas son anónimas</label>
-     <input type="submit" value="Continuar" (click)="handleSubmit($event)" />
+     <input type="submit" value="Continuar" (click)="handleSubmit($event)" id="button_continuar"/>
      <app-loading [loading]="loading"/>
     </div>
     @if(error){

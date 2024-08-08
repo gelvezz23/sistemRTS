@@ -24,27 +24,26 @@
             </div>
 
             <div>
-              <input id="answer-one" name="check-one" type="radio" (change)="getAnswer(true,47, ' Menores de 1400 UVT ($65.891.000)')">
+              <input id="answer-one" name="check-one" type="radio" (change)="getAnswer(true,47, ANSWER_ONE)">
               <label for="answer-one">
-                Menores de $65.891.000 (equivalentes a 1.400 UVT)
+                {{ ANSWER_ONE }}
               </label>
               </div>
             <div>
-              <input id="answer-two" name="check-one" type="radio" (change)="getAnswer(true,47, 'Igual o más de 1400 UVT a menos de 3500 UVT (de $65.891.000 a $164.727.500)')">
+              <input id="answer-two" name="check-one" type="radio" (change)="getAnswer(true,47, ANSWER_TWO)">
               <label for="answer-two">
-                Igual o más de $65.891.000  pero menos de $164.727.500
-                (equivalente a igual o más de  1.400 UVT pero menos de 3.500 UVT)
+                {{ANSWER_TWO}}
               </label>
             </div>
             <div>
-              <input id="answer-three" name="check-one" type="radio" (change)="getAnswer(true,47, 'Igual o más de 3500 UVT a igual o menos de 30.000 UVT (de $164.727.500 a $1.411.950.000)')">
+              <input id="answer-three" name="check-one" type="radio" (change)="getAnswer(true,47, ANSWER_THREE)">
               <label for="answer-three">
-                Igual o más de $164.727.500 (equivalente a 3.500 UVT)
+                {{ANSWER_THREE}}
               </label>
             </div>
             <div>
-              <input id="answer-four" name="check-one" type="radio" (change)="getAnswer(true,47, 'Más de 30.000 UVT ($1.411.950.000)')">
-              <label for="answer-four"> Más de $1.411.950.000 (equivalente a más de 30.000 UVT)</label>
+              <input id="answer-four" name="check-one" type="radio" (change)="getAnswer(true,47, ANSWER_FOUR)">
+              <label for="answer-four"> {{ANSWER_FOUR}}</label>
             </div>
 
 
@@ -58,20 +57,20 @@
             />
           </div>
             <div>
-              <input id="answer-five" name="check-two" type="radio" (change)="getAnswer(true,48, 'Igual o menos de 4500 UVT (Igual o menos de $ 211.792.500)')">
+              <input id="answer-five" name="check-two" type="radio" (change)="getAnswer(true,48, ANSWER_FIVE)">
               <label for="answer-five">
-                Igual o menos de $ 211.792.500 (equivalente a igual o menos de 4.500 UVT)
+                {{ANSWER_FIVE}}
               </label>
             </div>
             <div>
-              <input id="answer-six" name="check-two" type="radio" (change)="getAnswer(true,48, 'Más de 4500 a igual o menos de 30.000 UVT (Más de 4500 a igual o menos de 30.000 UVT (Más de $ 211.792.500 a igual o menos de $ 1.411.950.000)')">
+              <input id="answer-six" name="check-two" type="radio" (change)="getAnswer(true,48, ANSWER_SIX)">
               <label for="answer-six">
-                Más de $211.792.500 (equivalente a más de 4.500 UVT)
+                {{ANSWER_SIX}}
               </label>
             </div>
             <div>
-              <input id="answer-seven" name="check-two" type="radio" (change)="getAnswer(true,48, 'Más de 30.000 UVT (Más de $ 1.411.950.000)')">
-              <label for="answer-seven"> Más de $1.411.950.000 (equivalente a más de 30.000 UVT)</label>
+              <input id="answer-seven" name="check-two" type="radio" (change)="getAnswer(true,48, ANSWER_SEVEN)">
+              <label for="answer-seven"> {{ANSWER_SEVEN}}</label>
             </div>
 
 
@@ -83,19 +82,25 @@
 
         <div>
           <span>Recuerde que las respuestas son anónimas</span>
-          <button [disabled]="avalible === true" (click)="handleClickButton()">Continuar</button>
-    <app-loading [loading]="loading"/>
+          <button
+            [disabled]="avalible === true"
+            (click)="handleClickButton()"
+            aria-label="Continuar"
+            role="button"
+            id="boton_continuar">Continuar
+          </button>
+          <app-loading [loading]="loading"/>
 
-          @if(error){
-            <div class="alert alert-danger" role="alert">
-              {{error}}
-            </div>
-          }
+
         </div>
 
       </div>
     </section>
-
+    @if(error){
+      <div class="alert alert-danger" role="alert">
+        {{error}}
+      </div>
+    }
     <app-modal
     [id]="'ingreso'"
     [modalTitle]="''"

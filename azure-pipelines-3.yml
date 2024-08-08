@@ -1,0 +1,70 @@
+# Node.js with Angular
+
+# Build a Node.js project that uses Angular.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- kyn_develop
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '20.x'
+  displayName: 'Install Node.js'
+- task: AdvancedSecurity-Codeql-Init@1
+  inputs:
+    languages: 'javascript'
+    querysuite: 'security-extended'
+
+- script: |
+    npm install -g @angular/cli
+    npm install --force
+    npm audit fix
+    npm run build
+    ls
+    pwd
+    ls '$(Build.ArtifactStagingDirectory)'
+    ls '$(Build.BinariesDirectory)'
+    ls '$(System.DefaultWorkingDirectory)'
+    
+  displayName: 'npm install and build'
+
+- task: AdvancedSecurity-Dependency-Scanning@1
+- task: AdvancedSecurity-Codeql-Analyze@1
+
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.BinariesDirectory)'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+
+- task: DownloadBuildArtifacts@1
+  inputs:
+    buildType: 'current'
+    downloadType: 'single'
+    artifactName: 'drop'
+    downloadPath: '$(System.ArtifactsDirectory)'
+
+# - task: AzureStaticWebApp@0
+#  inputs:
+#   
+ #   app_build_command: 'ng build'
+ #   app_location: 'dist/system-rts/browser/'
+ #   output_location: 'dist/out-tsc'
+ #   skip_app_build: true
+ ##   skip_api_build: true
+ #   azure_static_web_apps_api_token: '$(token)'
+ 

@@ -77,13 +77,20 @@ width: 100%;
   display: flex;
   justify-content: center;
 }
+.see-results-btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .see-results-btn button {
   background-color: #006591;
   color: #ffffff;
   border: none;
   font-weight: 600;
-  width: 12rem;
-  cursor: pointer;
+  width: 100%;
+    cursor: pointer;
+    max-width: 18rem;
 }
 .inputs-container input[type="radio"] {
   width: 24px;
